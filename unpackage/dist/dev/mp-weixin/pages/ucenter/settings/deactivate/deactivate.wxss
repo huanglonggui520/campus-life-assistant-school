@@ -1,0 +1,41 @@
+
+.content{
+	display: flex;
+	flex-direction: column;
+	font-size: 28rpx;
+}
+.words{
+	padding: 0 26rpx;
+	line-height:46rpx;
+	margin-top:20rpx;
+	margin-bottom: 80px;
+}
+.button-group{
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	height: 50px;
+	bottom: 10px;
+	width: 750rpx;
+	justify-content: center;
+	align-items: center;
+	border-top: solid 1px #e4e6ec;
+	padding-top: 10px;
+	background-color: #FFFFFF;
+}
+.button-group button{
+	border-radius: 100px;
+	border: none;
+	width: 300rpx;
+	height: 42px;
+	line-height: 42px;
+	font-size: 32rpx;
+}
+.button-group button:after{
+	border: none;
+}
+.button-group button.next{
+	color: #e64340;
+	border:solid 1px #e64340 ;
+}
+

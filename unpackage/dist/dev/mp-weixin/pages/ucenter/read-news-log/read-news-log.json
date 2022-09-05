@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "阅读记录",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "unicloud-db": "/node-modules/@dcloudio/uni-cli-shared/components/unicloud-db",
+    "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-list-item": "/uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "uni-dateformat": "/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat",
+    "uni-load-state": "/components/uni-load-state/uni-load-state"
+  }
+}

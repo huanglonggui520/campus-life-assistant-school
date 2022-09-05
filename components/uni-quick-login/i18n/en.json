@@ -1,0 +1,15 @@
+{
+	"accountLogin": "Account",
+	"SMSLogin": "SMS",
+	"wechatLogin": "wechat",
+	"appleLogin": "Apple",
+	"oneClickLogin": "One click login",
+	"QQLogin": "QQ",
+	"xiaomiLogin": "Xiaomi",
+	"getProviderFail": "Failed to get service provider",
+	"loginErr": "Login service initialization error",
+	"chooseOtherLogin": "Click the third-party login",
+	"weibo":"weibo",
+	"noAgree": "You have not agreed to the privacy policy agreement",
+	"gotIt": "got it"
+}

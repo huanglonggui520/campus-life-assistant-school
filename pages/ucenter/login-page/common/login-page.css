@@ -1,0 +1,61 @@
+/* #ifndef APP-NVUE */
+view {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+}
+
+/* #endif */
+
+.content {
+	padding: 0 50rpx;
+	/* width: 750rpx; */
+	flex: 1;
+}
+
+.input-box {
+	padding: 0 15px;
+	margin-bottom: 10px;
+	background-color: #F8F8F8;
+	border-radius: 6px;
+	font-size: 28rpx;
+}
+
+.get-code {
+	margin: 0;
+	margin-top: 15px;
+	background-color: #007aff;
+	color: #FFFFFF;
+}
+
+.input-box,
+.get-code {
+	height: 45px;
+	line-height: 45px;
+}
+
+.title {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.tip {
+	color: #666666;
+	font-size: 26rpx;
+	margin: 6px 0;
+}
+
+.easyinput {
+	background-color: #F8F8F8;
+	border-radius: 6rpx;
+}
+
+.send-btn {
+	width: 100%;
+	margin-top: 15px;
+	border-radius: 6rpx;
+}
+
+.link {
+	color: #04498c;
+}

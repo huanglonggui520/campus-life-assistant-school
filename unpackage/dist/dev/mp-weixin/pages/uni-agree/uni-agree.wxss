@@ -1,0 +1,72 @@
+
+view,
+label,
+swiper-item,
+scroll-view {
+  display:flex;
+  flex-direction:column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  align-items: stretch;
+  align-content: flex-start;
+}
+view,
+image,
+input,
+scroll-view,
+swiper,
+swiper-item,
+text,
+textarea,
+video {
+  position: relative;
+  border: 0px solid #000000;
+  box-sizing: border-box;
+}
+swiper-item {
+  position: absolute;
+}
+button {
+  margin: 0;
+}
+
+
+.page {
+        padding: 80px 30px;
+}
+.title {
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 20px;
+}
+.flex-r {
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+.text-item {
+        margin-bottom: 5px;
+}
+.tl {
+        font-size: 14px;
+        line-height: 20px;
+}
+.hl {
+        color: #007AFF;
+}
+.service {
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 20px;
+}
+.confirm {
+        margin-top: 50px;
+		flex-direction: row;
+}
+.btn-privacy {
+       flex: 1;
+}
+.btn-disagree {
+        margin-left: 20px;
+}
+

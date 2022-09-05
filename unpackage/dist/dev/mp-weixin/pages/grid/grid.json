@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "unicloud-db": "/node-modules/@dcloudio/uni-cli-shared/components/unicloud-db",
+    "uni-swiper-dot": "/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot",
+    "uni-section": "/components/uni-section/uni-section",
+    "uni-grid": "/uni_modules/uni-grid/components/uni-grid/uni-grid",
+    "uni-grid-item": "/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item",
+    "status-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar"
+  }
+}

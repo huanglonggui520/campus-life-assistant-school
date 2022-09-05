@@ -1,0 +1,9 @@
+
+.item{
+	display: flex;
+	flex-direction: column;
+}
+.article-date {
+	color: #C8C7CC;
+}
+

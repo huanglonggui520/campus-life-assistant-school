@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-captcha": "/uni_modules/uni-captcha/components/uni-captcha/uni-captcha"
+  },
+  "component": true
+}

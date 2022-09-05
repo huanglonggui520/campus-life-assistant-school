@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-sign-in": "/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in",
+    "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
+    "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-list-item": "/uni_modules/uni-list/components/uni-list-item/uni-list-item"
+  }
+}

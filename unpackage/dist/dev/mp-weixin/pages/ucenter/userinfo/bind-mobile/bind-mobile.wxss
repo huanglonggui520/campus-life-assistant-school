@@ -1,0 +1,22 @@
+
+.uni-content {
+	padding: 0;
+	align-items: center;
+	justify-content: center;
+	padding: 50rpx;
+	padding-top: 10px;
+}
+.uni-content .uni-easyinput__content {}
+.input-box {
+	width: 100%;
+	margin-top: 16px;
+	background-color: #f9f9f9;
+	border-radius: 6rpx;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-bottom: 10px;
+}
+.send-btn-box {
+	margin-top: 15px;
+}
+

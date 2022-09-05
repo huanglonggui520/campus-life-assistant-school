@@ -1,0 +1,1 @@
+<view class="short-code-btn data-v-6e7445d8" hover-class="hover" data-event-opts="{{[['tap',[['start',['$event']]]]]}}" bindtap="__e"><text class="{{['inner-text','data-v-6e7445d8',reverseNumber==0?'inner-text-active':'']}}">{{innerText}}</text></view>

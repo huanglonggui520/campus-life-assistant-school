@@ -1,0 +1,15 @@
+{
+	"accountLogin": "账号登录",
+	"SMSLogin": "短信验证码",
+	"wechatLogin": "微信登录",
+	"appleLogin": "苹果登录",
+	"oneClickLogin": "一键登录",
+	"QQLogin": "QQ登录",
+	"xiaomiLogin": "小米登录",
+	"getProviderFail": "获取服务供应商失败",
+	"loginErr": "登录服务初始化错误",
+	"chooseOtherLogin": "点击了第三方登录",
+	"weibo": "微博",
+	"noAgree": "你未同意隐私政策协议",
+	"gotIt": "知道了"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "getindex",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

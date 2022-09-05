@@ -1,0 +1,58 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": "auth.uid != null",
+		"update": "auth.uid != null",
+		"delete": "auth.uid != null"
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"time":{  //发表时间
+			"bsonType": "timestamp",
+			"forceDefaultValue":{
+				"$env":"now"
+			}
+		},
+		// 动态类型，,1 表白墙 ，2失物招领，3，二手闲置，4快递代取
+		"state":{
+				"bsonType": "int"
+		},
+		"statetext":{
+			"bsonType": "string"
+		},
+		"text":{
+			"bsonType": "string"
+		},
+		"textwb":{
+			"bsonType": "string"
+		},
+		"school":{
+			"bsonType": "string"
+		},
+		"fabulous":{ //点赞认识
+			"bsonType": "int"
+			// "defaultValue":
+		},
+		"collection":{  //收藏人数
+			"bsonType": "int",
+			// "defaultValue":{
+			// 	"collection":"0"
+			// }
+		},
+		"user_id":{  //用户id
+			"bsonType": "string",
+			"foreignKey": "uni-id-users._id",//关联uni-id-users用户表，将查询的结果返回user_id
+			"forceDefaultValue":{
+				"$env":"uid"  //禁止前端修改uid,使用token中的uid
+			}
+		},
+		"img_url":{
+			"bsonType": "array"
+		}
+	}
+}

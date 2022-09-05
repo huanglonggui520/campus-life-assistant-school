@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "绑定手机号码",
+  "usingComponents": {
+    "uni-easyinput": "/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput",
+    "uni-send-sms-code": "/components/uni-send-sms-code/uni-send-sms-code",
+    "uni-popup-captcha": "/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha"
+  }
+}

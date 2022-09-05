@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "选择发布",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-grid": "/node-modules/uview-ui/components/u-grid/u-grid",
+    "u-grid-item": "/node-modules/uview-ui/components/u-grid-item/u-grid-item",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image"
+  }
+}

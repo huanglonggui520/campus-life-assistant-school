@@ -1,0 +1,12 @@
+{
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast",
+    "u-subsection": "/node-modules/uview-ui/components/u-subsection/u-subsection"
+  }
+}
