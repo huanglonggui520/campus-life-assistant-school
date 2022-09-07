@@ -35,11 +35,11 @@
 			"bsonType": "string"
 		},
 		"fabulous":{ //点赞认识
-			"bsonType": "int"
+			"bsonType": "array"
 			// "defaultValue":
 		},
 		"collection":{  //收藏人数
-			"bsonType": "int",
+			"bsonType": "array",
 			// "defaultValue":{
 			// 	"collection":"0"
 			// }

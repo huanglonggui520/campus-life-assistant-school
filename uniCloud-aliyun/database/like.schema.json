@@ -1,0 +1,40 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": "auth.uid != null",
+		"update": "auth.uid != null",
+		"delete": "auth.uid != null"
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id":{
+			"bsonType": "string",
+			"description": "点赞收藏人的信息",
+			"foreignKey": "uni-id-users._id",
+			"forceDefaultValue":{
+				"$env":"uid"
+			}
+		},
+		"like_id":{
+			"bsonType": "string",
+			"foreignKey": "love._id",
+			"description": "文章id"
+		},
+		"state_type":{
+			"bsonType": "int",
+			"description": "点赞还是收藏, 0表示收藏，1表示点赞"
+		},
+		"time":{
+			"bsonType": "timestamp",
+			"forceDefaultValue":{
+				"$env":"now"
+			}
+		}
+		
+	}
+}

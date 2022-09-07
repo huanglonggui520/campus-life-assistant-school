@@ -5,12 +5,17 @@ module.exports = {
 	_before: function () { // 通用预处理器
 
 	},
-	// async comment(params){
-	// 	const res=await db.collection('comments').add(params)
-		
-	// 	return {res}
+	async souchang(params){
+		let collection = db.collection("love")
+		let res = await collection.where({_id:params._id})
+		  .update({
+		    name: "Hey",
+		    count: {
+		      fav: 1
+		    }
+		  });
 		  
-	// }
+	}
 	/**
 	 * method1方法描述
 	 * @param {string} param1 参数1描述
