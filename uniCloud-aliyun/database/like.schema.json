@@ -34,6 +34,14 @@
 			"forceDefaultValue":{
 				"$env":"now"
 			}
+		},
+		"numsc":{
+			"bsonType": "int",
+			"defaultValue":0
+		},
+		"numdz":{
+			"bsonType": "int",
+			"defaultValue":0
 		}
 		
 	}
