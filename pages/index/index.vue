@@ -144,17 +144,23 @@
 				<view class="bot">
 					<view>
 						
+<<<<<<< HEAD
 						<u-icon name="star-fill" color="#F3295C" :label="item._id.like.length" v-if='item.color' size='40' @tap='fabulous(item)'></u-icon>
 						<u-icon name="star" color="#909399" :label="item._id.like.length" v-else  size='40' @tap='fabulous(item)'></u-icon>
 							
 						
+=======
+						<u-icon name="star-fill" color="#F3295C" :label='item.numsc'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
+						<u-icon name="star" color="#909399"  :label='item.numsc' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
+>>>>>>> school
 					</view>
 					<view>
 						<u-icon name="chat" size='40' label="0" color='#909399' @tap='comment(item)'></u-icon>
 						
 					</view>
 					<view>
-						<u-icon name="thumb-up" size='40' :label="item.collection" color='#909399'></u-icon>
+						<u-icon name="thumb-up-fill" :label='item.numdz' size='40' v-if='item.colordz'  color='#F3295C' @tap='fabulous(item,1)'></u-icon>
+						<u-icon name="thumb-up" size='40' :label='item.numdz' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon>
 					</view>
 				</view>
 			</view>
@@ -243,6 +249,7 @@
 				textid:'',
 				type:1,
 				
+				
 			}
 		},
 		components: {ygcComment},
@@ -280,55 +287,142 @@
 				return this.slotRight ? 0 : 1;
 			},
 			
+<<<<<<< HEAD
 		},
 		methods: {
 			// 收藏
 			async fabulous(e){ //e为每篇文章的对象
+=======
+			
+		},
+		methods: {
+			// 收藏
+			async fabulous(e,val){ //e为每篇文章的对象,val为点赞还是收藏
+>>>>>>> school
 				const db = uniCloud.database()
 				// 添加收藏数据
 				const params={
 					like_id:e._id._value,
 					state_type:0
 				}
+<<<<<<< HEAD
 				// 收藏成功添加到本地收藏数据
+=======
+				// 添加点赞数据
+				const paramsdz={
+					like_id:e._id._value,
+					state_type:1
+				}
+				// 更新到本地收藏数据
+>>>>>>> school
 				const pushdata={
 					like_id:e._id._value,
 					state_type:0,
 					user_id:this.$store.state.user.info._id
 				}
+<<<<<<< HEAD
+=======
+				const pushdatadz={
+					like_id:e._id._value,
+					state_type:1,
+					user_id:this.$store.state.user.info._id
+				}
+>>>>>>> school
 				let count=0
 				if(e._id.like.length){ //e._id.like为文章收藏人的数组
 					e._id.like.forEach(async (item,index)=>{
 						// 查看本人是否已经点赞，如果已经点赞则取消点赞
+<<<<<<< HEAD
 						if(item.user_id==this.$store.state.user.info._id && !item.state_type){
+=======
+						if(!val && item.user_id==this.$store.state.user.info._id && !item.state_type){
+>>>>>>> school
 							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
 							uni.showToast({
 								title:"取消收藏"
 							})
 							e.color=0
+<<<<<<< HEAD
+=======
+							e.numsc-=1
+							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
+							return
+						}
+						// 点赞点赞
+						if(val && item.user_id==this.$store.state.user.info._id && item.state_type){
+							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
+							
+							uni.showToast({
+								title:"取消点赞"
+							})
+							e.colordz=0
+							e.numdz-=1
+							// e.color
+>>>>>>> school
 							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
 							return
 						}
 						count+=1
 					})
+<<<<<<< HEAD
 				}else{
+=======
+				}else if(!val){
+>>>>>>> school
 					await db.collection('like').add(params)
 					uni.showToast({
 						title:"收藏成功"
 					})
+<<<<<<< HEAD
 					e._id.like.push(pushdata)  //添加到本地数组
 					e.color=1 //设置文章收藏按钮
 				}
 				
 				if(count>e._id.like.length){
+=======
+					e.color=1 //设置文章收藏按钮
+					e.numsc+=1
+					e._id.like.push(pushdata)  //添加到本地数组
+					
+				}else if(val){
+					await db.collection('like').add(paramsdz)
+					uni.showToast({
+						title:"点赞成功"
+					})
+					e.numdz+=1
+					e.colordz=1 //设置文章收藏按钮
+					e._id.like.push(pushdatadz)  //添加到本地数组
+					
+				}
+				
+				if(count>=e._id.like.length && !val){
+>>>>>>> school
 					await db.collection('like').add(params)
 					uni.showToast({
 						title:"收藏成功"
 					})
+<<<<<<< HEAD
 					e._id.like.push(pushdata)
 					e.color=1
 				}
 				console.log(e)
+=======
+					e.color=1
+					e.numsc+=1
+					e._id.like.push(pushdata)
+				}
+				if(count>=e._id.like.length && val){
+					await db.collection('like').add(paramsdz)
+					uni.showToast({
+						title:"点赞成功"
+					})
+					e.colordz=1
+					e.numdz+=1
+					e._id.like.push(pushdatadz)
+					
+				}
+				console.log('77',e)
+>>>>>>> school
 				
 			},
 			// 获取收藏信息
@@ -407,12 +501,36 @@
 								.get()
 				}
 				let data = restext.result.data
+<<<<<<< HEAD
 				// 将已经点赞的按钮颜色改为红色
 				data.forEach((item)=>{
 					item._id.like.forEach((itemchildren)=>{
 						if(itemchildren.user_id==this.$store.state.user.info._id && !itemchildren.state_type){
 							item.color=1 //将收藏按钮变为实心
 							return
+=======
+				
+				// 将已经点赞的按钮颜色改为红色
+				data.forEach((item)=>{
+					// 初始化点赞收藏按钮
+					item.color=0 //收藏是否为实心
+					item.colordz=0//点赞按钮是否为实心
+					item.numsc=0//初始化收藏人数
+					item.numdz=0//初始化点赞人数
+					item._id.like.forEach((itemchildren)=>{
+						if(itemchildren.user_id==this.$store.state.user.info._id && !itemchildren.state_type){
+							item.color=1 //将收藏按钮变为实心
+							
+							// return
+						}else if(itemchildren.user_id==this.$store.state.user.info._id && itemchildren.state_type){
+							item.colordz=1 //将点赞按钮变为实心
+							
+						}
+						if(!itemchildren.state_type){
+							item.numsc+=1 //计算收藏人数
+						}else if(itemchildren.state_type){
+							item.numdz+=1//计算点赞人数
+>>>>>>> school
 						}
 					})
 				})
