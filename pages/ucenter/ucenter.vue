@@ -4,6 +4,7 @@
 		<view class="userInfo" @click.capture="toUserInfo">
 			<!-- <u-avatar :src="src"></u-avatar> -->
 			<u-avatar style="border-radius: 150rpx;" width="200rpx" size='large' height="200rpx" v-if="userInfo.avatar_file&&userInfo.avatar_file.url" :src="userInfo.avatar_file.url"></u-avatar>
+			<image v-else-if="$store.state.user.hasLogin" class="logo-img" src="@/static/uni-center/tx.jpg"></image>
 			<image v-else class="logo-img" src="@/static/uni-center/defaultAvatarUrl.png"></image>
 			<view class="logo-title">
 				<text class="uer-name" v-if="hasLogin">{{userInfo.nickname||userInfo.username||userInfo.mobile}}</text>
@@ -345,7 +346,7 @@
 	.userInfo {
 		padding: 20rpx;
 		padding-top: 50px;
-		background-image: url(../../static/uni-center/headers.png);
+		background-image: url(/static/uni-center/121.JPG);
 		flex-direction: column;
 		align-items: center;
 	}

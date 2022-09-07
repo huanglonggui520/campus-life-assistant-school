@@ -67,12 +67,12 @@
 				<view class="content">
 					<view>
 						<u-avatar  size='large'
-							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : ''"></u-avatar>
+							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg'"></u-avatar>
 					</view>
 					<view class="name">
 						<view style='display: flex;justify-content: space-between;width: 550rpx;'>
 							<view style="">
-								{{item.user_id[0].nickname}}
+								{{item.user_id[0].nickname ? item.user_id[0].nickname : item.user_id[0].mobile}}
 							</view>
 							<u-tag text="表白墙" :bg-color='color[2]' size='mini' mode="dark" />
 							
@@ -139,15 +139,19 @@
 								
 							</view>
 						</view>
-					
 					</view>
 				</view>
 				<view class="bot">
 					<view>
-						<u-icon name="star" :label="item.fabulous" color='#909399' size='40'></u-icon>
+						
+						<u-icon name="star-fill" color="#F3295C" :label="item._id.like.length" v-if='item.color' size='40' @tap='fabulous(item)'></u-icon>
+						<u-icon name="star" color="#909399" :label="item._id.like.length" v-else  size='40' @tap='fabulous(item)'></u-icon>
+							
+						
 					</view>
 					<view>
 						<u-icon name="chat" size='40' label="0" color='#909399' @tap='comment(item)'></u-icon>
+						
 					</view>
 					<view>
 						<u-icon name="thumb-up" size='40' :label="item.collection" color='#909399'></u-icon>
@@ -155,7 +159,7 @@
 				</view>
 			</view>
 			<!-- 动态之间分割线 -->
-			<view style="background-color: #f3f4f6;width: 100%;height: 6rpx;margin-top: -60rpx;">
+			<view style="background-color: #f3f4f6;width: 100%;height: 8rpx;margin-top: -60rpx;">
 			</view>
 			
 		</view>
@@ -178,8 +182,8 @@
 				scrollTop: 0,
 				count:0,
 				show: false,
+				colors:'#909399',
 				isshow:false,
-				
 				listschool: [
 						{
 							value: 1,
@@ -262,7 +266,6 @@
 				})
 			}
 			uni.stopPullDownRefresh()
-			
 		},
 		async onReachBottom() {
 			this.isshow=true
@@ -275,9 +278,68 @@
 		computed: {
 			slotRightCurrent() {
 				return this.slotRight ? 0 : 1;
-			}
+			},
+			
 		},
 		methods: {
+			// 收藏
+			async fabulous(e){ //e为每篇文章的对象
+				const db = uniCloud.database()
+				// 添加收藏数据
+				const params={
+					like_id:e._id._value,
+					state_type:0
+				}
+				// 收藏成功添加到本地收藏数据
+				const pushdata={
+					like_id:e._id._value,
+					state_type:0,
+					user_id:this.$store.state.user.info._id
+				}
+				let count=0
+				if(e._id.like.length){ //e._id.like为文章收藏人的数组
+					e._id.like.forEach(async (item,index)=>{
+						// 查看本人是否已经点赞，如果已经点赞则取消点赞
+						if(item.user_id==this.$store.state.user.info._id && !item.state_type){
+							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
+							uni.showToast({
+								title:"取消收藏"
+							})
+							e.color=0
+							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
+							return
+						}
+						count+=1
+					})
+				}else{
+					await db.collection('like').add(params)
+					uni.showToast({
+						title:"收藏成功"
+					})
+					e._id.like.push(pushdata)  //添加到本地数组
+					e.color=1 //设置文章收藏按钮
+				}
+				
+				if(count>e._id.like.length){
+					await db.collection('like').add(params)
+					uni.showToast({
+						title:"收藏成功"
+					})
+					e._id.like.push(pushdata)
+					e.color=1
+				}
+				console.log(e)
+				
+			},
+			// 获取收藏信息
+			async getlike(id){
+				const db = uniCloud.database()
+				const res= await db.collection('like').where({
+					like_id:id
+				}).get()
+				return res
+				// console.log(res)
+			},
 			// 发布评论
 			async pubComment(e){
 					
@@ -287,11 +349,8 @@
 						comment_content:e,
 						comment_type:this.type,
 						article_id:this.textid,
-						
 					})
-					
 					console.log(res)
-					
 			},
 			comment(item){
 				console.log(item)
@@ -309,7 +368,6 @@
 					urls: urlList,
 					longPressActions:true
 				})
-
 			},
 			//更新vuex里学校名字
 			async school(e){
@@ -331,7 +389,7 @@
 				// 获取表白墙动态
 				if(this.current==0){
 					// console.log('S',SCHOOL.toString())
-					var restext = await db.collection("love,uni-id-users")
+					var restext = await db.collection("love,like,uni-id-users")
 								.where({school:SCHOOL})
 								.field('_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 								.orderBy('time desc')
@@ -339,16 +397,26 @@
 								.limit(8)
 								.get()
 				}else{
-					var restext = await db.collection("love,uni-id-users")
+					var restext = await db.collection("love,uni-id-users,like")
 								.where({state:this.current,school:SCHOOL})
 								.field(
-								'time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+								'_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 								.orderBy('time desc')
 								.skip((this.pages-1)*8)
 								.limit(8)
 								.get()
 				}
 				let data = restext.result.data
+				// 将已经点赞的按钮颜色改为红色
+				data.forEach((item)=>{
+					item._id.like.forEach((itemchildren)=>{
+						if(itemchildren.user_id==this.$store.state.user.info._id && !itemchildren.state_type){
+							item.color=1 //将收藏按钮变为实心
+							return
+						}
+					})
+				})
+				console.log('bbq',data)
 				if(data.length==0){
 					this.buttomtitle='我也是有底线的'
 					this.isshow=true
