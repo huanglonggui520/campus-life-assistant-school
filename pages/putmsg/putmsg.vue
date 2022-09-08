@@ -63,9 +63,9 @@
 					const data = {
 						img_url: this.imageValue,
 						text: this.contentVal,
-						collection: [],
+						collection: 0,
 						school:this.$store.state.user.school,
-						fabulous: [],
+						fabulous: 0,
 						// time:nowtime,
 						textwb:this.contentText,
 						state:parseInt(this.id),

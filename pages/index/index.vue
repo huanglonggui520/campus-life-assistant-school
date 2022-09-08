@@ -1,5 +1,5 @@
 <template>
-	<view style="padding-bottom: 20rpx;">
+	<view style="padding-bottom: 25rpx;">
 		<u-navbar title-color="#fff" back-icon-color="#ffffff" :is-fixed="true" :is-back="false"
 			:background="{ background: '#1CBBB4' }" :back-text-style="{color: '#fff'}" :title="null">
 			<view class="slot-wrap">
@@ -64,18 +64,17 @@
 		<!-- 表白墙 -->
 		<view v-for="item in databbai">
 			<view class="textitem">
-				<view class="content">
+				<view class="content" @tap='goxiangq(item)'>
 					<view>
 						<u-avatar  size='large'
 							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg'"></u-avatar>
 					</view>
 					<view class="name">
-						<view style='display: flex;justify-content: space-between;width: 550rpx;'>
+						<view style='display: flex; align-items: center;'>
+							<u-tag style='margin-right: 15rpx;height: 35rpx;' :text="item.statetext" :bg-color='color[item.state-1]' size='mini' mode="dark" />
 							<view style="">
 								{{item.user_id[0].nickname ? item.user_id[0].nickname : item.user_id[0].mobile}}
 							</view>
-							<u-tag text="表白墙" :bg-color='color[2]' size='mini' mode="dark" />
-							
 						</view>
 						
 						<view style="font-size: 28rpx;color: #C6C8CB;">
@@ -86,7 +85,7 @@
 
 				</view>
 				<view class="text">
-					<view style="color: #606266;">
+					<view style="color: #606266;" @tap='goxiangq(item)'>
 						<u-parse :html="item.text"></u-parse>
 					</view>
 					<!-- 适配图片排列问题 -->
@@ -143,6 +142,7 @@
 				</view>
 				<view class="bot">
 					<view>
+<<<<<<< HEAD
 						
 <<<<<<< HEAD
 						<u-icon name="star-fill" color="#F3295C" :label="item._id.like.length" v-if='item.color' size='40' @tap='fabulous(item)'></u-icon>
@@ -150,6 +150,9 @@
 							
 						
 =======
+=======
+						<!-- 点赞评论收藏 -->
+>>>>>>> school
 						<u-icon name="star-fill" color="#F3295C" :label='item.numsc'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
 						<u-icon name="star" color="#909399"  :label='item.numsc' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
 >>>>>>> school
@@ -296,6 +299,13 @@
 			
 		},
 		methods: {
+			// 前往详情
+			goxiangq(item){
+				console.log(item)
+				uni.navigateTo({
+					url:`/pages/details/details?id=${item._id._value}`
+				})
+			},
 			// 收藏
 			async fabulous(e,val){ //e为每篇文章的对象,val为点赞还是收藏
 >>>>>>> school
@@ -329,6 +339,7 @@
 				}
 >>>>>>> school
 				let count=0
+				// console.log('77',e)
 				if(e._id.like.length){ //e._id.like为文章收藏人的数组
 					e._id.like.forEach(async (item,index)=>{
 						// 查看本人是否已经点赞，如果已经点赞则取消点赞
@@ -356,10 +367,20 @@
 								title:"取消点赞"
 							})
 							e.colordz=0
-							e.numdz-=1
+							e.numdz-=1 //每篇文章点赞数
 							// e.color
+<<<<<<< HEAD
+>>>>>>> school
+=======
+							console.log(e)
 >>>>>>> school
 							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
+							let collection = db.collection("love")
+							let res = await collection.where({_id:e._id._value})
+							  .update({
+							    fabulous:e.numdz
+							   
+							  });
 							return
 						}
 						count+=1
@@ -368,6 +389,10 @@
 				}else{
 =======
 				}else if(!val){
+<<<<<<< HEAD
+>>>>>>> school
+=======
+					
 >>>>>>> school
 					await db.collection('like').add(params)
 					uni.showToast({
@@ -386,13 +411,20 @@
 					
 				}else if(val){
 					await db.collection('like').add(paramsdz)
+					
 					uni.showToast({
 						title:"点赞成功"
 					})
 					e.numdz+=1
+					
 					e.colordz=1 //设置文章收藏按钮
 					e._id.like.push(pushdatadz)  //添加到本地数组
-					
+					let collection = db.collection("love")
+					let res = await collection.where({_id:e._id._value})
+					  .update({
+					    fabulous:e.numdz
+					   
+					  });
 				}
 				
 				if(count>=e._id.like.length && !val){
@@ -418,10 +450,21 @@
 					})
 					e.colordz=1
 					e.numdz+=1
+					
 					e._id.like.push(pushdatadz)
+					let collection = db.collection("love")
+					let res = await collection.where({_id:e._id._value}) //更新点赞数
+					  .update({
+					    fabulous:e.numdz
+					   
+					  });
 					
 				}
+<<<<<<< HEAD
 				console.log('77',e)
+>>>>>>> school
+=======
+				// console.log('77',e)
 >>>>>>> school
 				
 			},
