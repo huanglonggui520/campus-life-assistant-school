@@ -74,7 +74,30 @@
 					</view>
 				</view> 
 			</view>
-			
+			<!-- 浏览多少次 -->
+			<view class="watch">
+				<view>
+					<u-icon name="thumb-up-fill" size='40' @tap='dz' color='#F3295C' v-if="isdz"></u-icon>
+					<u-icon name="thumb-up" size='40' color='#909399' @tap='dz' v-else ></u-icon>
+					<!-- <u-icon name="thumb-up" size='40' :label='item.numdz' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon> -->
+				</view>
+				<view class="right">
+					<view style="margin-right: 15rpx;">123人浏览 </view>
+					<view>{{lengths}}人点赞</view>
+				</view>
+			</view>
+			<!-- 分割线 -->
+			<view style="width: 100vw;height: 15rpx;background-color: #EEEEEE;"></view>
+			<view class="bottom-title">
+				<view>全部评论</view>
+				<view style='color:#859BF5' @tap='comment(item)'>评论</view>
+			</view>
+			<!-- 分割线 -->
+			<view class="line"></view>
+			<u-divider style='margin-top: 30rpx;'>还没有评论...</u-divider>
+			<ygc-comment ref="ygcComment"
+					:placeholder="'发布评论'" 
+					@pubComment="pubComment"></ygc-comment>
 		</view>
 		
 	
@@ -90,19 +113,63 @@
 				time:'',
 				state:null,
 				text:'',
-				user_id:{},
-				img_url:[],
-				likedz:[],
-				likesc:[]
+				user_id:{},//作者信息
+				img_url:[],//图片
+				likedz:[],//点赞人的信息
+				likesc:[],
+				isdz:false, //是否点赞
+				lengths:0 //点赞人数
 				
 			}
 		},
-		onLoad(val){
+		async onLoad(val){
 			this.id=val.id
 			console.log(this.id)
-			this.getdetails()
+			await this.getdetails()
+			this.lengths=this.likedz.length //点赞人数
 		},
 		methods:{
+			async pubComment(e){
+					
+					// const db = uniCloud.database()
+					this.$refs.ygcComment.toggleMask('none')
+					// const res=await db.collection('comments').add({
+					// 	comment_content:e,
+					// 	comment_type:this.type,
+					// 	article_id:this.textid,
+					// })
+					// console.log(res)
+			},
+			comment(item){
+				// console.log(item)
+				// this.textid=item._id
+				this.$refs.ygcComment.toggleMask('show')
+					
+			},
+			// 点赞
+			async dz(){
+				const db = uniCloud.database()
+				const paramsdz={
+					like_id:this.id,
+					state_type:1
+				}
+				if(this.isdz){
+					await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:this.id,state_type:1}).remove()
+					uni.showToast({
+						title:"取消点赞"
+					})
+					this.isdz=false
+					this.lengths-=1
+				}else{
+					await db.collection('like').add(paramsdz)
+					
+					uni.showToast({
+						title:"点赞成功"
+					})
+					this.isdz=true
+					this.lengths+=1
+				}
+			},
 			async getdetails(){
 				const db = uniCloud.database()
 				// 获取文章内容以及作者信息
@@ -131,7 +198,14 @@
 						this.likedz=[...this.likedz,item]
 					}
 				})
-				console.log(this.img_url)
+				// 查看本人是否点赞
+				this.likedz.forEach((item)=>{
+					if(item.user_id==this.$store.state.user.info._id){
+						this.isdz=true
+						return
+					}
+				})
+				console.log(this.likedz)
 			}
 		}
 		
@@ -164,7 +238,7 @@
 .line{
 	width: 100%;
 	height: 1rpx;
-	background-color: #CECEC9;
+	background-color: #EEEDED;
 }
 .rich{
 	color: #5C5D61;
@@ -184,8 +258,23 @@
 		display: flex;
 	}
 
-
-
+.watch{
+	padding: 20rpx;
+	display: flex;
+	justify-content: space-between;
+	.right{
+		display: flex;
+		color: #AFB2B7;
+		font-size: 30rpx;
+	}
+}
+.bottom-title{
+	display: flex;
+	justify-content: space-between;
+	padding: 20rpx;
+	// font-size: 32rpx;
+	// margin-top: 20rpx;
+}
 
 	
 </style>
