@@ -16,7 +16,7 @@
 						</view>
 						
 						<view style="font-size: 28rpx;color: #C6C8CB;">
-							{{$u.timeFormat(time,'yyyy-mm-dd hh:MM:ss')}}
+							{{$u.timeFrom(time, "yyyy-mm-dd hh:MM:ss")}}
 							
 						</view>
 					</view>
@@ -38,10 +38,20 @@
 							:lazy-load='true' 
 							class='u-image' 
 							
-							:style="{'width':item.image.width+'rpx'}" 
+							:style="{'width':img_url[0].image.width*9/35+'rpx'}"
 							mode='widthFix' 
 							:src="item.url "
-							v-if="img_url.length==1"
+							v-if="img_url.length==1 && img_url[0].image.width>900"
+						>
+					</image>
+					<image
+							:lazy-load='true' 
+							class='u-image' 
+							
+							:style="{'width':img_url[0].image.width*9/12+'rpx'}"
+							mode='widthFix' 
+							:src="item.url "
+							v-if="img_url.length==1 && img_url[0].image.width<900"
 						>
 					</image>
 					
@@ -90,61 +100,221 @@
 			<view style="width: 100vw;height: 15rpx;background-color: #EEEEEE;"></view>
 			<view class="bottom-title">
 				<view>全部评论</view>
-				<view style='color:#859BF5' @tap='comment(item)'>评论</view>
+				<view style='color:#859BF5' @tap='comment'>评论</view>
 			</view>
+			
 			<!-- 分割线 -->
-			<view class="line"></view>
-			<u-divider style='margin-top: 30rpx;'>还没有评论...</u-divider>
+			<view class="line" style="margin-bottom: 16rpx;"></view>
+			
+			<comment v-if="commentscs.length" :comments="commentlist" @comment-like="handLike" @send-comment="handSend" v-model="commentText" @lower="lower" @reply="reply"></comment>
+			<u-divider v-else style='margin-top: 30rpx;'>还没有评论...</u-divider>
 			<ygc-comment ref="ygcComment"
 					:placeholder="'发布评论'" 
-					@pubComment="pubComment"></ygc-comment>
+					@pubComment="pubComment">
+			</ygc-comment>
 		</view>
 		
 	
 </template>
 <script>
 	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
+	import comment from '@/components/comment/comment.vue'
 	export default {
 		data() {
 			return {
 				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				id:'',
+				commentText: '',
 				statetext:'',
 				time:'',
 				state:null,
+				commentscs:[],//初始评论数据
+				type:1,
 				text:'',
 				user_id:{},//作者信息
 				img_url:[],//图片
 				likedz:[],//点赞人的信息
 				likesc:[],
 				isdz:false, //是否点赞
-				lengths:0 //点赞人数
+				lengths:0, //点赞人数,
+				commentlist:[],//评论列表
+				comments: [
+					{
+						id: 1,
+						avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
+						nickname: 'zzz',
+						content: '我是评论olh  更厉害管理过来老公不好吧于港股与里。',
+						addTime: '刚刚',
+						isLike: '0',
+						likeNums: 26,
+						layer: 1,
+						superNickname: null,
+						superCommentId: null,
+						children: [
+							{
+								id: 2,
+								avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
+								nickname: '程序猿2',
+								content: '我是回额外的群群恶趣味陈乔恩而且废弃物无千待万期待期待企鹅岛群无亲爱的复。',
+								addTime: '刚刚',
+								isLike: '0',
+								likeNums: 23,
+								layer: 2,
+								superNickname: 'zzz',
+								superCommentId: 1
+							},
+							{
+								id: 3,
+								avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
+								nickname: '马老师',
+								content: '我是回复的回复。',
+								addTime: '刚刚',
+								isLike: '0',
+								likeNums: 69,
+								layer: 3,
+								superNickname: '程序猿2',
+								superCommentId: 1
+							}
+						]
+					}
+				],
 				
 			}
 		},
 		async onLoad(val){
 			this.id=val.id
-			console.log(this.id)
+			// console.log(this.id)
 			await this.getdetails()
+			await this.getcomments()
 			this.lengths=this.likedz.length //点赞人数
+			this.setcomments()
 		},
 		methods:{
+			// 点赞触发事件
+			handLike(e) {
+				// 在此发送点赞请求
+				console.log('11111111', e);
+			},
+			// 发送消息
+			handSend() {
+				// 在此处发送评论请求layer = 1则是一级评论
+				if (layer == 1) {
+					this.comments.unshift({
+						id: 2,
+						avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
+						nickname: 'www',
+						content: this.commentText,
+						addTime: '刚刚',
+						isLike: '0',
+						likeNums: 55,
+						layer: 1,
+						superNickname: null,
+						superCommentId: null,
+						children: []
+					});
+				}
+			},
+			lower() {
+				console.log('到底了');
+			},
+			// 点击回复触发事件
+			reply(index, id, userNickName, layer, reply) {
+				console.log(index, id, userNickName, layer, reply);
+				console.log('00')
+			},
 			async pubComment(e){
 					
-					// const db = uniCloud.database()
+					const db = uniCloud.database()
 					this.$refs.ygcComment.toggleMask('none')
-					// const res=await db.collection('comments').add({
-					// 	comment_content:e,
-					// 	comment_type:this.type,
-					// 	article_id:this.textid,
-					// })
-					// console.log(res)
+					const res=await db.collection('comments').add({
+						comment_content:e,
+						comment_type:this.type,
+						article_id:this.id,
+					})
+					console.log(res)
 			},
-			comment(item){
+			comment(){
 				// console.log(item)
 				// this.textid=item._id
 				this.$refs.ygcComment.toggleMask('show')
 					
+			},
+			// 获取评论
+			async getcomments(){
+				const db = uniCloud.database()
+				const res = await db.collection('comments,uni-id-users')
+				.where({article_id:this.id})
+				.field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+				.get()
+				this.commentscs=res.result.data
+				
+			},
+			// 设置评论格式
+			setcomments(){
+				console.log(1)
+				this.commentscs.forEach(item =>{
+					const commentlists={}
+					// 找出所有的一级评论
+					if(item.comment_type==1){
+						commentlists.id=item._id
+						commentlists.avatar=item.user_id[0].avatar_file.url
+						commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
+						commentlists.content=item.comment_content
+						commentlists.addTime=item.time
+						commentlists.isLike='0'
+						commentlists.layer=1
+						commentlists.superNickname=null
+						commentlists.superCommentId=null
+						commentlists.children=[]
+						this.commentlist.push(commentlists)
+					}
+				})
+				console.log(2)
+				this.commentscs.forEach(item =>{
+					const commentlists={}
+					// 找出所有的2级评论
+					if(item.comment_type==2){
+						this.commentlist.forEach(item2 =>{
+							if(item2.id==item.reply_id){
+								commentlists.id=item._id
+								commentlists.avatar=item.user_id[0].avatar_file.url
+								commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
+								commentlists.content=item.comment_content
+								commentlists.addTime=item.time
+								commentlists.isLike='0'
+								commentlists.layer=2
+								commentlists.superNickname=item2.nickname
+								commentlists.superCommentId=item2.id
+								item2.children.push(commentlists)
+							}
+							
+							
+						})
+					}
+				})
+				this.commentscs.forEach(item =>{
+					const commentlists={}
+					// 找出所有的3级评论
+					if(item.comment_type==3){
+						this.commentlist.forEach(item2 =>{
+							if(item2.id==item.reply_id){
+								commentlists.id=item._id
+								commentlists.avatar=item.user_id[0].avatar_file.url
+								commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
+								commentlists.content=item.comment_content
+								commentlists.addTime=item.time
+								commentlists.isLike='0'
+								commentlists.layer=3
+								commentlists.superNickname=item.reply_user_id[0].nickname ?  item.reply_user_id[0].nickname:item.reply_user_id[0].mobile
+								commentlists.superCommentId=item.reply_user_id[0]._id
+								item2.children.push(commentlists)
+							}
+							
+							
+						})
+					}
+				})
+				console.log('评论',this.commentlist)
 			},
 			// 点赞
 			async dz(){
@@ -214,7 +384,14 @@
 </script>
 
 <style lang="scss" scoped>
-	
+	.pl{
+		display: flex;
+		font-size: 30rpx;
+		padding: 20rpx;
+		.avatar{
+			margin-right: 15rpx;
+		}
+	}
 	.textitem {
 		padding: 20rpx;
 		// margin-bottom: 60rpx;
@@ -238,17 +415,18 @@
 .line{
 	width: 100%;
 	height: 1rpx;
+	// margin-top: 10rpx;
 	background-color: #EEEDED;
 }
 .rich{
 	color: #5C5D61;
 	// margin-top: ;
-	padding: 25rpx;
+	padding: 20rpx;
 }
 
 .u-image {
 		max-width: 90vw;
-		max-height: 800rpx;
+		// max-height: 800rpx;
 		border-radius: 15rpx;
 	}
 	
@@ -272,9 +450,9 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 20rpx;
+	// margin-bottom: 10rpx;
 	// font-size: 32rpx;
 	// margin-top: 20rpx;
 }
 
-	
 </style>
