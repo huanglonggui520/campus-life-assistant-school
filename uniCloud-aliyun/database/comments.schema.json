@@ -33,6 +33,9 @@
 			"bsonType": "string",
 			"foreignKey": "uni-id-users._id"
 		},
+		"reply_id":{
+			"bsonType": "string"
+		},
 		"reply_comment_id":{
 			"bsonType": "string",
 			"foreignKey": "comments_id"

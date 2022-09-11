@@ -78,7 +78,7 @@
 						</view>
 						
 						<view style="font-size: 28rpx;color: #C6C8CB;">
-							{{$u.timeFormat(item.time,'yyyy-mm-dd hh:MM:ss')}}
+							{{$u.timeFrom(item.time, "yyyy-mm-dd hh:MM:ss")}}
 						</view>
 
 					</view>
@@ -158,7 +158,7 @@
 >>>>>>> school
 					</view>
 					<view>
-						<u-icon name="chat" size='40' label="0" color='#909399' @tap='comment(item)'></u-icon>
+						<u-icon name="chat" size='40' label="0" color='#909399' ></u-icon>
 						
 					</view>
 					<view>
@@ -175,15 +175,12 @@
 		<!-- 加载中 -->
 		<u-divider v-if='isshow'>{{buttomtitle}}</u-divider>
 
-		<ygc-comment ref="ygcComment" 
-				:placeholder="'发布评论'" 
-				@pubComment="pubComment"></ygc-comment>
 		<!-- 回到顶部 -->
 		<u-back-top :scroll-top="scrollTop"></u-back-top>
 	</view>
 </template>
 <script>
-	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
+	
 	export default {
 		data() {
 			return {
@@ -255,7 +252,7 @@
 				
 			}
 		},
-		components: {ygcComment},
+		
 		async onLoad() {
 			// const comments=uniCloud.importObject('comments')
 			// const a=await comments.comment()
@@ -478,23 +475,8 @@
 				// console.log(res)
 			},
 			// 发布评论
-			async pubComment(e){
-					
-					const db = uniCloud.database()
-					this.$refs.ygcComment.toggleMask('none')
-					const res=await db.collection('comments').add({
-						comment_content:e,
-						comment_type:this.type,
-						article_id:this.textid,
-					})
-					console.log(res)
-			},
-			comment(item){
-				console.log(item)
-				this.textid=item._id
-				this.$refs.ygcComment.toggleMask('show')
-					
-			},
+			
+			
 			//图片预览
 			look(url) {
 				var urlList = []
