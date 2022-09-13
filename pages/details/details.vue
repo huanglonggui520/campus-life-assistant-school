@@ -37,7 +37,7 @@
 					<image   
 							:lazy-load='true' 
 							class='u-image' 
-							
+							@tap="look(item.url)"
 							:style="{'width':img_url[0].image.width*9/35+'rpx'}"
 							mode='widthFix' 
 							:src="item.url "
@@ -47,7 +47,7 @@
 					<image
 							:lazy-load='true' 
 							class='u-image' 
-							
+							@tap="look(item.url)"
 							:style="{'width':img_url[0].image.width*9/12+'rpx'}"
 							mode='widthFix' 
 							:src="item.url "
@@ -60,7 +60,7 @@
 						
 							<u-image 
 								class='u-image' 
-								
+								@tap="look(item.url)"
 								style='margin-left: 10rpx;margin-bottom: 10rpx;' 
 								:src='item.url' 
 								width='45vw'
@@ -73,7 +73,7 @@
 						
 							<u-image 
 								class='u-image' 
-								 
+								 @tap="look(item.url)"
 								style='margin-left: 10rpx;margin-bottom: 10rpx;' 
 								:src='item.url' 
 								width='30vw'
@@ -100,7 +100,7 @@
 			<view style="width: 100vw;height: 15rpx;background-color: #EEEEEE;"></view>
 			<view class="bottom-title">
 				<view>全部评论</view>
-				<view style='color:#859BF5' @tap='comment'>评论</view>
+				<view style='color:#859BF5' @tap='comment(1)'>评论</view>
 			</view>
 			
 			<!-- 分割线 -->
@@ -125,8 +125,13 @@
 				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				id:'',
 				commentText: '',
+				commentone_id:'',
+				superNickname:'',
+				reply_user_id:'',
+				layer:0,
 				statetext:'',
 				time:'',
+				etext:'',//回复框内容
 				state:null,
 				commentscs:[],//初始评论数据
 				type:1,
@@ -138,81 +143,32 @@
 				isdz:false, //是否点赞
 				lengths:0, //点赞人数,
 				commentlist:[],//评论列表
-				comments: [
-					{
-						id: 1,
-						avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
-						nickname: 'zzz',
-						content: '我是评论olh  更厉害管理过来老公不好吧于港股与里。',
-						addTime: '刚刚',
-						isLike: '0',
-						likeNums: 26,
-						layer: 1,
-						superNickname: null,
-						superCommentId: null,
-						children: [
-							{
-								id: 2,
-								avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
-								nickname: '程序猿2',
-								content: '我是回额外的群群恶趣味陈乔恩而且废弃物无千待万期待期待企鹅岛群无亲爱的复。',
-								addTime: '刚刚',
-								isLike: '0',
-								likeNums: 23,
-								layer: 2,
-								superNickname: 'zzz',
-								superCommentId: 1
-							},
-							{
-								id: 3,
-								avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
-								nickname: '马老师',
-								content: '我是回复的回复。',
-								addTime: '刚刚',
-								isLike: '0',
-								likeNums: 69,
-								layer: 3,
-								superNickname: '程序猿2',
-								superCommentId: 1
-							}
-						]
-					}
-				],
+				
 				
 			}
 		},
 		async onLoad(val){
+			// const db = uniCloud.database();
+			// const res=await db.collection("comments").remove()
+			this.$bus.$on('comment',this.comment)
 			this.id=val.id
-			// console.log(this.id)
+			
 			await this.getdetails()
 			await this.getcomments()
 			this.lengths=this.likedz.length //点赞人数
 			this.setcomments()
+			console.log(this.commentscs)
 		},
 		methods:{
-			// 点赞触发事件
-			handLike(e) {
-				// 在此发送点赞请求
-				console.log('11111111', e);
-			},
-			// 发送消息
-			handSend() {
-				// 在此处发送评论请求layer = 1则是一级评论
-				if (layer == 1) {
-					this.comments.unshift({
-						id: 2,
-						avatar: 'https://thirdwx.qlogo.cn/mmopen/vi_32/s1l0JVpxz2AFVEs3QmvYCP0w0LliazLmict2qCSQs1Otts8YoCHutdicnW0VicfEez2m9D8wXVlA18IjGTTmfOaMHA/132',
-						nickname: 'www',
-						content: this.commentText,
-						addTime: '刚刚',
-						isLike: '0',
-						likeNums: 55,
-						layer: 1,
-						superNickname: null,
-						superCommentId: null,
-						children: []
-					});
-				}
+			look(url) {
+				var urlList = []
+				urlList.push(url) //push中的参数为 :src="item.img_url" 中的图片地址
+				uni.previewImage({
+					indicator: "number",
+			        loop: true,
+					urls: urlList,
+					longPressActions:true
+				})
 			},
 			lower() {
 				console.log('到底了');
@@ -220,22 +176,93 @@
 			// 点击回复触发事件
 			reply(index, id, userNickName, layer, reply) {
 				console.log(index, id, userNickName, layer, reply);
-				console.log('00')
+				this.commentone_id=id
+				this.superNickname=userNickName
+				this.layer=layer
+				this.reply_user_id=reply.super_user_id //上一个评论人的id
+				// this.pubComment(e)
+				// console.log('00',this.etext)
 			},
 			async pubComment(e){
-					
+					let params={}
+					let e_id=''
 					const db = uniCloud.database()
+					
 					this.$refs.ygcComment.toggleMask('none')
-					const res=await db.collection('comments').add({
-						comment_content:e,
-						comment_type:this.type,
-						article_id:this.id,
+					console.log(this.layer)
+					
+					if(this.layer==2 || this.layer==3){
+						const resid=await db.collection('comments').add({
+							comment_content:e,
+							comment_type:this.layer,
+							article_id:this.id,
+							reply_id:this.commentone_id,
+							reply_user_id:this.reply_user_id
+						})
+						e_id=resid.result.id
+						// 找出刚刚的评论
+						
+					}else if(this.layer==1){
+						
+						const resid=await db.collection('comments').add({
+							comment_content:e,
+							comment_type:this.layer,
+							article_id:this.id,
+						})
+						e_id=resid.result.id
+						// 找出刚刚的评论
+						
+						// this.commentlist.unshift()
+						// console.log(res)
+					}
+					const res = await db.collection('comments,uni-id-users')
+					.where({_id:e_id})
+					.field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+					.get()
+					
+					if(this.layer==1){
+						params.id=res.result.data[0]._id
+						params.avatar=res.result.data[0].user_id[0].avatar_file?res.result.data[0].user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
+						params.nickname=res.result.data[0].user_id[0].nickname?res.result.data[0].user_id[0].nickname:res.result.data[0].user_id[0].mobile
+						params.content=res.result.data[0].comment_content
+						params.addTime=res.result.data[0].time
+						params.isLike='0'
+						params.user_id=res.result.data[0].user_id[0]._id
+						params.layer=1
+						params.superCommentId=null
+						params.superNickname=null
+						params.children=[]
+						this.commentlist.unshift(params)
+					}
+					else if(this.layer==2 || this.layer==3){
+						params.id=res.result.data[0]._id
+						params.avatar=res.result.data[0].user_id[0].avatar_file?res.result.data[0].user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
+						params.nickname=res.result.data[0].user_id[0].nickname?res.result.data[0].user_id[0].nickname:res.result.data[0].user_id[0].mobile
+						params.content=res.result.data[0].comment_content
+						params.addTime=res.result.data[0].time
+						params.user_id=res.result.data[0].user_id[0]._id
+						params.isLike='0'
+						params.super_user_id=res.result.data[0].user_id[0]._id
+						params.layer=res.result.data[0].comment_type
+						params.superCommentId=res.result.data[0].reply_id
+						params.superNickname=res.result.data[0].reply_user_id.length?res.result.data[0].reply_user_id[0].nickname ||res.result.data[0].reply_user_id[0].mobile:null
+						// params.children=[]
+						this.commentlist.forEach(item =>{
+							if(item.layer==1 && item.id==res.result.data[0].reply_id){
+								item.children.push(params)
+								console.log('767',item)
+							}
+						})
+					}
+					uni.showToast({
+						title:'发表成功'
 					})
-					console.log(res)
+					console.log('单个评论',res.result.data[0])
+					console.log('params',params)
 			},
-			comment(){
-				// console.log(item)
-				// this.textid=item._id
+			comment(val){
+				console.log(val)
+				this.layer=val
 				this.$refs.ygcComment.toggleMask('show')
 					
 			},
@@ -245,21 +272,24 @@
 				const res = await db.collection('comments,uni-id-users')
 				.where({article_id:this.id})
 				.field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+				.orderBy('time desc')
 				.get()
 				this.commentscs=res.result.data
+				
 				
 			},
 			// 设置评论格式
 			setcomments(){
-				console.log(1)
+				
 				this.commentscs.forEach(item =>{
 					const commentlists={}
 					// 找出所有的一级评论
 					if(item.comment_type==1){
 						commentlists.id=item._id
-						commentlists.avatar=item.user_id[0].avatar_file.url
+						commentlists.avatar=item.user_id[0].avatar_file?item.user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
 						commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
 						commentlists.content=item.comment_content
+						commentlists.user_id=item.user_id[0]._id
 						commentlists.addTime=item.time
 						commentlists.isLike='0'
 						commentlists.layer=1
@@ -269,7 +299,7 @@
 						this.commentlist.push(commentlists)
 					}
 				})
-				console.log(2)
+			
 				this.commentscs.forEach(item =>{
 					const commentlists={}
 					// 找出所有的2级评论
@@ -277,14 +307,16 @@
 						this.commentlist.forEach(item2 =>{
 							if(item2.id==item.reply_id){
 								commentlists.id=item._id
-								commentlists.avatar=item.user_id[0].avatar_file.url
+								commentlists.avatar=item.user_id[0].avatar_file?item.user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
 								commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
 								commentlists.content=item.comment_content
+								commentlists.user_id=item.user_id[0]._id
 								commentlists.addTime=item.time
 								commentlists.isLike='0'
 								commentlists.layer=2
-								commentlists.superNickname=item2.nickname
-								commentlists.superCommentId=item2.id
+								commentlists.super_user_id=item.user_id[0]._id //上一级评论的作者id
+								commentlists.superNickname=item2.nickname //上一级评论人的昵称
+								commentlists.superCommentId=item2.id //第一级评论id
 								item2.children.push(commentlists)
 							}
 							
@@ -299,22 +331,23 @@
 						this.commentlist.forEach(item2 =>{
 							if(item2.id==item.reply_id){
 								commentlists.id=item._id
-								commentlists.avatar=item.user_id[0].avatar_file.url
+								commentlists.user_id=item.user_id[0]._id
+								commentlists.avatar=item.user_id[0].avatar_file?item.user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
 								commentlists.nickname=item.user_id[0].nickname ? item.user_id[0].nickname:item.user_id[0].mobile
 								commentlists.content=item.comment_content
 								commentlists.addTime=item.time
 								commentlists.isLike='0'
 								commentlists.layer=3
-								commentlists.superNickname=item.reply_user_id[0].nickname ?  item.reply_user_id[0].nickname:item.reply_user_id[0].mobile
-								commentlists.superCommentId=item.reply_user_id[0]._id
+								commentlists.super_user_id=item.user_id[0]._id
+								commentlists.superNickname=item.reply_user_id[0].nickname?  item.reply_user_id[0].nickname:item.reply_user_id[0].mobile
+								commentlists.superCommentId=item2.id
 								item2.children.push(commentlists)
 							}
-							
-							
 						})
 					}
 				})
-				console.log('评论',this.commentlist)
+				console.log('初始数据',this.commentscs)
+				console.log('评论列表',this.commentlist)
 			},
 			// 点赞
 			async dz(){
@@ -342,6 +375,7 @@
 			},
 			async getdetails(){
 				const db = uniCloud.database()
+				// db.collection("comments").remove()
 				// 获取文章内容以及作者信息
 				const res = await db.collection('love,uni-id-users')
 				.where({_id:this.id})
@@ -375,7 +409,7 @@
 						return
 					}
 				})
-				console.log(this.likedz)
+				
 			}
 		}
 		

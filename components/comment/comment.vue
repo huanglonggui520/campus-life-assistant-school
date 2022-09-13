@@ -7,13 +7,14 @@
 					<view class="left"><image :src="item.avatar" class="img"></image></view>
 					<view class="content">
 						<view class="title-name">{{ item.nickname }}</view>
-						<view class="content-text">
+						<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,item)" @tap="replyComment(item.nickname, item.id, 2, index,item)">
 							<text>{{ item.content }}</text>
 						</view>
-						<view class="content-btm">
+						<view class="content-btm" @tap="replyComment(item.nickname, item.id, 2, index,item)">
 							<text>{{ $u.timeFrom(item.addTime, "yyyy-mm-dd hh:MM:ss")}}</text>
-							<text class="btm-back" @click="replyComment(item.nickname, item.id, 2, index,item)">回复</text>
+							<text class="btm-back">回复</text>
 						</view>
+						<!-- <view style="width: 100%;height: 1rpx;background-color: black;"></view> -->
 					</view>
 					
 				</view>
@@ -22,26 +23,21 @@
 						<view class="left"><image :src="reply.avatar" class="img"></image></view>
 						<view class="content">
 							<view class="title-name">
-								<view>{{ reply.nickname }}</view>
-								<view v-if="reply.superNickname">@</view>
-								<view v-if="reply.superNickname">{{ reply.superNickname }}</view>
+								<view>{{ reply.nickname }}{{reply.layer}}</view>
+								<view v-if="reply.superNickname && reply.layer==3"><u-icon name="play-right-fill" size='10'></u-icon></view>
+								<view v-if="reply.superNickname && reply.layer==3">{{ reply.superNickname }}</view>
 							</view>
-							<view class="content-text">
+							<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,item)" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
 								<text>{{ reply.content }}</text>
 							</view>
-							<view class="content-btm">
-								<text>{{ $u.timeFrom(item.addTime, "yyyy-mm-dd hh:MM:ss")}}</text>
-								<text class="btm-back" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">回复</text>
+							<view class="content-btm" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
+								<text>{{ $u.timeFrom(reply.addTime, "yyyy-mm-dd hh:MM:ss")}}</text>
+								<text class="btm-back" >回复</text>
 							</view>
 						</view>
-						<view class="right">
-						<!-- 	<view class="img-like" @click="commentLike(reply)">
-								<image src="../../static/aixin.png" v-if="reply.isLike == 0 || reply.isLike == null"></image>
-								<image src="../../static/aixin3.png" v-else></image>
-								<text class="comment-like-num">{{ reply.likeNums == 0 || reply.likeNums == null ? '' : reply.likeNums }}</text>
-							</view> -->
-						</view>
+					
 					</view>
+					
 				</view>
 				<view class="spread" v-if="item.children.length > 0" @click="isShowReply(item.id, index)">
 					<text>{{ showReplyList.indexOf(item.id) !== -1 ? '收起' : '展开' + item.children.length + '条回复' }}</text>
@@ -49,7 +45,14 @@
 				</view>
 			</view>
 		</scroll-view>
-		
+		<u-popup v-model="isshow" mode="bottom" length="30%" border-radius='25'>
+					<view >
+						<u-cell-group>
+								<u-cell-item @tap='deletecomment' v-if="this.$store.state.user.info._id==deleteuser_id" :border='true' :arrow="false" icon="setting-fill" title="删除"></u-cell-item>
+								<u-cell-item  icon="setting-fill" title="回复"></u-cell-item>
+							</u-cell-group>
+					</view>
+				</u-popup>
 	</view>
 </template>
 
@@ -71,6 +74,9 @@ export default {
 			placeholderComment: '发条评论吧~',
 			iptFocus: false,
 			layer: 1,
+			deleteuser_id:'',//删除评论作者ID,用来展示是否有删除按钮
+			deleteid:'',
+			isshow:false,
 			superCommentId: null
 		};
 	},
@@ -91,6 +97,7 @@ export default {
 		},
 		// 回复评论
 		replyComment(userNickName, id, tier, index, reply) {
+			this.$bus.$emit('comment') //调起评论输入框
 			console.log('index', index);
 			this.iptFocus = true;
 			this.placeholderComment = '回复@' + userNickName;
@@ -99,6 +106,21 @@ export default {
 			this.layer = tier;
 			this.CommentIndex = index;
 			this.$emit('reply',index,id,userNickName,tier,reply)
+		},
+		show(userNickName, id, tier, index, reply){
+			this.isshow=true
+			this.deleteuser_id=reply.user_id
+			this.deleteid=reply.id
+			
+			console.log('长按')
+		},
+		async deletecomment(){
+			const db = uniCloud.database();
+			const res=await db.collection("comments").where({_id:this.deleteid,user_id:this.$store.state.user.info._id}).remove()
+			uni.showToast({
+				title:'删除成功'
+			})
+			console.log(res)
 		},
 		// 发送评论
 		sendCourseComment() {
@@ -152,7 +174,7 @@ export default {
 				view {
 					max-width: 150rpx;
 					display: inline-block;
-					margin-right: 20rpx;
+					margin-right: 10rpx;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					white-space: nowrap;
