@@ -63,8 +63,8 @@
 		</view>
 		<!-- 表白墙 -->
 		<view v-for="item in databbai">
-			<view class="textitem">
-				<view class="content" @tap='goxiangq(item)'>
+			<view class="textitem" @tap='goxiangq(item)'>
+				<view class="content" >
 					<view>
 						<u-avatar  size='large'
 							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg'"></u-avatar>
@@ -93,7 +93,7 @@
 						<image   
 								:lazy-load='true' 
 								class='u-image' 
-								@tap='look(item.img_url[0].url)' 
+								@tap.stop='look(item.img_url[0].url)' 
 								:style="{'width':item.img_url[0].image.width*9/35+'rpx'}" 
 								mode='widthFix' 
 								:src="item.img_url[0].url "
@@ -102,7 +102,7 @@
 						</image>
 						<image 
 							:lazy-load='true' class='u-image'  
-							@tap='look(item.img_url[0].url)'
+							@tap.stop='look(item.img_url[0].url)'
 							:style="{'width':item.img_url[0].image.width*9/12+'rpx'}" 
 							mode='widthFix' 
 							:src="item.img_url[0].url "
@@ -114,7 +114,7 @@
 								<u-image 
 									class='u-image' 
 									v-for='itemimg in item.img_url' 
-									@tap='look(itemimg.url)'
+									@tap.stop='look(itemimg.url)'
 										
 									style='margin-left: 10rpx;margin-bottom: 10rpx;' 
 									:src='itemimg.url' 
@@ -129,7 +129,7 @@
 								<u-image 
 									class='u-image' 
 									v-for='itemimg in item.img_url' 
-									@tap='look(itemimg.url)'
+									@tap.stop='look(itemimg.url)'
 									style='margin-left: 10rpx;margin-bottom: 10rpx;' 
 									:src='itemimg.url' 
 									width='30vw'
@@ -262,7 +262,7 @@
 			console.log(this.databbai)
 		},
 		async onPullDownRefresh() {
-			this.pages=this.pages+1
+			this.pages=1
 			const arr =await this.get()
 			if(arr.length!=0){
 				this.databbai=arr
@@ -276,7 +276,7 @@
 		},
 		async onReachBottom() {
 			this.isshow=true
-			this.buttomtitle='加载中...'
+			this.buttomtitle='玩命加载中...'
 			this.pages=this.pages+1
 			const arr=await this.get()
 			this.databbai=[...this.databbai,...arr]
