@@ -120,7 +120,7 @@
 			}
 		},
 		onLoad() {
-			// console.log(313,this.userInfo,this.hasLogin);
+			console.log(313,this.userInfo,this.hasLogin);
 			//#ifdef APP-PLUS
 			this.ucenterList[this.ucenterList.length - 2].unshift({
 				title:this.$t('mine.checkUpdate'),// this.this.$t('mine.checkUpdate')"检查更新"
@@ -346,7 +346,8 @@
 	.userInfo {
 		padding: 20rpx;
 		padding-top: 50px;
-		background-image: url(/static/uni-center/121.JPG);
+		background-image: linear-gradient(#c471ed, #40e0d0);
+		// background-image: url(/static/uni-center/121.JPG);
 		flex-direction: column;
 		align-items: center;
 	}

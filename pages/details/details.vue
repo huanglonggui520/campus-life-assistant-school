@@ -1,5 +1,5 @@
 <template>
-	<view style="padding-bottom: 25rpx;">
+	<view style="padding-bottom: 35rpx;">
 		<!-- 头像部分 -->
 		<view class="top">
 			<view class="textitem">
@@ -21,15 +21,13 @@
 						</view>
 					</view>
 				</view>
-				
-						
 			</view>
 		</view>
 		<!-- 分割线 -->
 		<view class="line"></view>
 		<!-- 富文本 -->
 		<view class="rich">
-			<u-parse :html="text"></u-parse>
+			<u-parse :html="text.replaceAll('\n','<br>')"></u-parse>
 		</view>
 		<!-- 图片 -->
 			<view style="padding-left: 20rpx;display: flex;">
@@ -104,14 +102,19 @@
 			</view>
 			
 			<!-- 分割线 -->
-			<view class="line" style="margin-bottom: 16rpx;"></view>
+			<view class="line" style="margin-bottom: 20rpx;"></view>
 			
-			<comment v-if="commentscs.length" :comments="commentlist" @comment-like="handLike" @send-comment="handSend" v-model="commentText" @lower="lower" @reply="reply"></comment>
-			<u-divider v-else style='margin-top: 30rpx;'>还没有评论...</u-divider>
+			<comment v-if="commentlist.length" :comments="commentlist" @comment-like="handLike" @send-comment="handSend" v-model="commentText" @lower="lower" @reply="reply"></comment>
+			<!-- <u-divider v-else style='margin-top: 30rpx;'>还没有评论...</u-divider> -->
+			<view v-else @tap='comment(1)'>
+				<u-empty  text="还没有评论哦,赶快来评论吧..."  mode="message"></u-empty>
+			</view>
 			<ygc-comment ref="ygcComment"
-					:placeholder="'发布评论'" 
+					:placeholder="placeholderComment" 
 					@pubComment="pubComment">
 			</ygc-comment>
+			<!-- <view class="bottom-input"><u-input v-model="value" :type="type" :border="border" /></view> -->
+			<u-back-top :scroll-top="scrollTop"></u-back-top>
 		</view>
 		
 	
@@ -120,11 +123,16 @@
 	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
 	import comment from '@/components/comment/comment.vue'
 	export default {
+		components:{
+				comment,
+				ygcComment
+		},
 		data() {
 			return {
 				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				id:'',
 				commentText: '',
+				placeholderComment:'说点什么吧...',
 				commentone_id:'',
 				superNickname:'',
 				reply_user_id:'',
@@ -135,6 +143,7 @@
 				state:null,
 				commentscs:[],//初始评论数据
 				type:1,
+				scrollTop: 0,
 				text:'',
 				user_id:{},//作者信息
 				img_url:[],//图片
@@ -143,8 +152,6 @@
 				isdz:false, //是否点赞
 				lengths:0, //点赞人数,
 				commentlist:[],//评论列表
-				
-				
 			}
 		},
 		async onLoad(val){
@@ -157,7 +164,7 @@
 			await this.getcomments()
 			this.lengths=this.likedz.length //点赞人数
 			this.setcomments()
-			console.log(this.commentscs)
+			console.log('user',this.user_id)
 		},
 		methods:{
 			look(url) {
@@ -173,11 +180,15 @@
 			lower() {
 				console.log('到底了');
 			},
+			onPageScroll(e) {
+					this.scrollTop = e.scrollTop;
+				},
 			// 点击回复触发事件
-			reply(index, id, userNickName, layer, reply) {
-				console.log(index, id, userNickName, layer, reply);
+			reply(placeholderComment,index, id, userNickName, layer, reply) {
+				console.log(placeholderComment,index, id, userNickName, layer, reply);
 				this.commentone_id=id
 				this.superNickname=userNickName
+				this.placeholderComment=placeholderComment
 				this.layer=layer
 				this.reply_user_id=reply.super_user_id //上一个评论人的id
 				// this.pubComment(e)
@@ -219,15 +230,15 @@
 					.where({_id:e_id})
 					.field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 					.get()
-					
+					params.id=res.result.data[0]._id
+					params.avatar=res.result.data[0].user_id[0].avatar_file?res.result.data[0].user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
+					params.nickname=res.result.data[0].user_id[0].nickname?res.result.data[0].user_id[0].nickname:res.result.data[0].user_id[0].mobile
+					params.content=res.result.data[0].comment_content
+					params.addTime=res.result.data[0].time
+					params.isLike='0'
+					params.user_id=res.result.data[0].user_id[0]._id
 					if(this.layer==1){
-						params.id=res.result.data[0]._id
-						params.avatar=res.result.data[0].user_id[0].avatar_file?res.result.data[0].user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
-						params.nickname=res.result.data[0].user_id[0].nickname?res.result.data[0].user_id[0].nickname:res.result.data[0].user_id[0].mobile
-						params.content=res.result.data[0].comment_content
-						params.addTime=res.result.data[0].time
-						params.isLike='0'
-						params.user_id=res.result.data[0].user_id[0]._id
+						
 						params.layer=1
 						params.superCommentId=null
 						params.superNickname=null
@@ -235,13 +246,7 @@
 						this.commentlist.unshift(params)
 					}
 					else if(this.layer==2 || this.layer==3){
-						params.id=res.result.data[0]._id
-						params.avatar=res.result.data[0].user_id[0].avatar_file?res.result.data[0].user_id[0].avatar_file.url:'/static/uni-center/tx.jpg'
-						params.nickname=res.result.data[0].user_id[0].nickname?res.result.data[0].user_id[0].nickname:res.result.data[0].user_id[0].mobile
-						params.content=res.result.data[0].comment_content
-						params.addTime=res.result.data[0].time
-						params.user_id=res.result.data[0].user_id[0]._id
-						params.isLike='0'
+						
 						params.super_user_id=res.result.data[0].user_id[0]._id
 						params.layer=res.result.data[0].comment_type
 						params.superCommentId=res.result.data[0].reply_id
@@ -258,13 +263,13 @@
 						title:'发表成功'
 					})
 					console.log('单个评论',res.result.data[0])
-					console.log('params',params)
+					console.log('礼拜',this.commentlist)
 			},
 			comment(val){
 				console.log(val)
 				this.layer=val
-				this.$refs.ygcComment.toggleMask('show')
-					
+				this.$refs.ygcComment.toggleMask('show')	
+				// this.$bus.$emit('toggleMask','show')
 			},
 			// 获取评论
 			async getcomments(){
@@ -275,7 +280,6 @@
 				.orderBy('time desc')
 				.get()
 				this.commentscs=res.result.data
-				
 				
 			},
 			// 设置评论格式
@@ -319,8 +323,6 @@
 								commentlists.superCommentId=item2.id //第一级评论id
 								item2.children.push(commentlists)
 							}
-							
-							
 						})
 					}
 				})
@@ -418,6 +420,16 @@
 </script>
 
 <style lang="scss" scoped>
+	.bottom-input{
+		width: 100%;
+		height: 80rpx;
+		// color: red;
+		background-color: red;
+		position: fixed;
+		bottom: 0rpx;
+		right: 0rpx;
+		left: 0rpx;
+	}
 	.pl{
 		display: flex;
 		font-size: 30rpx;

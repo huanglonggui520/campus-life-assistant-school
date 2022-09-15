@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uni-user-profile": "/components/uni-user-profile/uni-user-profile"
+  },
+  "component": true
+}

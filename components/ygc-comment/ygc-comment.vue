@@ -10,7 +10,7 @@
 					:show-confirm-bar = "false"
 					:focus="focus"
 					maxlength="140"></textarea>
-					<view class="right" @click="pubComment">发布</view>
+				<view class="right" @click="pubComment">发布</view>
 			</view>
 			
 		</view>
@@ -33,12 +33,13 @@
 				focus: false
 			};
 		},
-		created() {
+		mounted() {
+			this.$bus.$on('toggleMask',this.toggleMask)
 		},
 		methods: {
 			stopPrevent(){
 			},
-			toggleMask(type){
+			toggleMask(type='show'){
 				let timer = type === 'show' ? 10 : 300;
 				let	state = type === 'show' ? 1 : 0;
 				// this.maskState = 2;
@@ -71,7 +72,7 @@
 		align-items: flex-end;
 		position: fixed;
 		left: 0;
-		top: var(--window-top);
+		top: var(--window-top);//元素到页面顶端的距离
 		bottom: 0;
 		width: 100%;
 		background: rgba(0,0,0,0);

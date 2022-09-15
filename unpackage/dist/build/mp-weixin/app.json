@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/putmsg/putmsg",
+    "pages/list/list",
+    "pages/grid/grid",
+    "pages/ucenter/login-page/index/index",
+    "pages/list/search/search",
+    "pages/list/detail",
+    "pages/ucenter/userinfo/bind-mobile/bind-mobile",
+    "pages/ucenter/ucenter",
+    "pages/ucenter/about/about",
+    "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+    "pages/uni-agree/uni-agree",
+    "pages/ucenter/settings/settings",
+    "pages/ucenter/userinfo/userinfo",
+    "pages/ucenter/userinfo/cropImage",
+    "pages/ucenter/login-page/pwd-login/pwd-login",
+    "pages/ucenter/login-page/pwd-retrieve/pwd-retrieve",
+    "pages/ucenter/login-page/phone-code/phone-code",
+    "pages/common/webview/webview",
+    "pages/ucenter/login-page/register/register",
+    "pages/ucenter/read-news-log/read-news-log",
+    "pages/ucenter/invite/invite",
+    "pages/ucenter/settings/deactivate/deactivate",
+    "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
+    "pages/release/release",
+    "pages/details/details"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "校园生活助手",
+    "navigationBarBackgroundColor": "#1CBBB4",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": false,
+    "rpxCalcMaxDeviceWidth": 375,
+    "rpxCalcBaseDeviceWidth": 375
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1CBBB4",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/index.png",
+        "selectedIconPath": "static/tabbar/indexxz.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/release/release",
+        "iconPath": "static/tabbar/add.png",
+        "selectedIconPath": "static/tabbar/addxz.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/ucenter/ucenter",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/homexz.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

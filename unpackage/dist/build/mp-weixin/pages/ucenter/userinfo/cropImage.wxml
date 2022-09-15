@@ -1,0 +1,1 @@
+<view class="content"><lime-clipper vue-id="0d73e6f3-1" width="{{options.width}}" scale-ratio="{{2}}" is-lock-width="{{false}}" is-lock-height="{{false}}" height="{{options.height}}" image-url="{{path}}" data-event-opts="{{[['^success',[['successFn']]],['^cancel',[['cancel']]]]}}" bind:success="__e" bind:cancel="__e" bind:__l="__l"></lime-clipper></view>
