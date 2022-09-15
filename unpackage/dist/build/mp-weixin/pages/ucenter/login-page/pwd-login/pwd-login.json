@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "uni-captcha": "/uni_modules/uni-captcha/components/uni-captcha/uni-captcha",
+    "uni-agreements": "/components/uni-agreements/uni-agreements",
+    "uni-quick-login": "/components/uni-quick-login/uni-quick-login"
+  }
+}

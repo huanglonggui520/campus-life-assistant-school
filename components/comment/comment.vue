@@ -7,7 +7,7 @@
 					<view class="left"><image :src="item.avatar" class="img"></image></view>
 					<view class="content">
 						<view class="title-name">{{ item.nickname }}</view>
-						<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,item)" @tap="replyComment(item.nickname, item.id, 2, index,item)">
+						<view class="content-text" @longpress="show(item.nickname, item.id, 1, index,item)" @tap="replyComment(item.nickname, item.id, 2, index,item)">
 							<text>{{ item.content }}</text>
 						</view>
 						<view class="content-btm" @tap="replyComment(item.nickname, item.id, 2, index,item)">
@@ -27,7 +27,7 @@
 								<view v-if="reply.superNickname && reply.layer==3"><u-icon name="play-right-fill" size='10'></u-icon></view>
 								<view v-if="reply.superNickname && reply.layer==3">{{ reply.superNickname }}</view>
 							</view>
-							<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,item)" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
+							<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,reply)" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
 								<text>{{ reply.content }}</text>
 							</view>
 							<view class="content-btm" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
@@ -48,7 +48,7 @@
 		<u-popup v-model="isshow" mode="bottom" length="30%" border-radius='25'>
 					<view >
 						<u-cell-group>
-								<u-cell-item @tap='deletecomment' v-if="this.$store.state.user.info._id==deleteuser_id" :border='true' :arrow="false" icon="setting-fill" title="删除"></u-cell-item>
+								<u-cell-item @tap='deletecomment' v-if="isshowdeleteid==deleteuser_id" :border='true' :arrow="false" icon="setting-fill" title="删除"></u-cell-item>
 								<u-cell-item  icon="setting-fill" title="回复"></u-cell-item>
 							</u-cell-group>
 					</view>
@@ -71,6 +71,7 @@ export default {
 	data() {
 		return {
 			showReplyList: [],
+			isshowdeleteid:this.$store.state.user.info._id,
 			placeholderComment: '发条评论吧~',
 			iptFocus: false,
 			layer: 1,
@@ -97,6 +98,7 @@ export default {
 		},
 		// 回复评论
 		replyComment(userNickName, id, tier, index, reply) {
+			console.log('commment',this.comments)
 			this.$bus.$emit('comment') //调起评论输入框
 			console.log('index', index);
 			this.iptFocus = true;
@@ -105,22 +107,49 @@ export default {
 			this.superUserId = userNickName;
 			this.layer = tier;
 			this.CommentIndex = index;
-			this.$emit('reply',index,id,userNickName,tier,reply)
+			this.$emit('reply',this.placeholderComment,index,id,userNickName,tier,reply)
 		},
 		show(userNickName, id, tier, index, reply){
 			this.isshow=true
 			this.deleteuser_id=reply.user_id
 			this.deleteid=reply.id
-			
-			console.log('长按')
+			this.superCommentId = id;
+			this.layer = tier
+			console.log('长按',this.layer)
+			console.log(this.superCommentId)
 		},
+		// 删除评论
 		async deletecomment(){
+			
 			const db = uniCloud.database();
-			const res=await db.collection("comments").where({_id:this.deleteid,user_id:this.$store.state.user.info._id}).remove()
+			await db.collection("comments").where({_id:this.deleteid,user_id:this.$store.state.user.info._id}).remove()
+			if(this.layer==1){
+				const res=await db.collection("comments").where({reply_id:this.superCommentId}).remove()
+				this.comments.forEach((item,index)=>{
+					if(item.id==this.deleteid){
+						this.comments.splice(index,1)
+					}
+				})
+			}
+			else{
+					this.comments.forEach((item,index)=>{
+						if(item.id==this.superCommentId){
+							item.children.forEach((item2,index2)=>{
+								if(item2.id==this.deleteid){
+									item.children.splice(index2,1)
+								}
+							})
+						}
+				})
+				
+			}
+			
 			uni.showToast({
 				title:'删除成功'
 			})
-			console.log(res)
+			this.isshow=false
+			
+			// console.log(res)
 		},
 		// 发送评论
 		sendCourseComment() {

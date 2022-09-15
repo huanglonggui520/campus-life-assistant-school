@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "lime-clipper": "/pages/ucenter/userinfo/limeClipper/limeClipper"
+  }
+}

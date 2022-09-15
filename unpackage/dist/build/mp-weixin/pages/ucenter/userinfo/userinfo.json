@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "个人资料",
+  "usingComponents": {
+    "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-list-item": "/uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "cloud-image": "/components/cloud-image/cloud-image",
+    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-popup-dialog": "/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog",
+    "uni-bind-mobile-by-mp-weixin": "/components/uni-bindMobileByMpWeixin/uni-bindMobileByMpWeixin"
+  }
+}

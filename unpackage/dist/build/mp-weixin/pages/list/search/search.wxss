@@ -1,0 +1,12 @@
+view,
+label,
+swiper-item,
+scroll-view{display:flex;flex-direction:column;flex-shrink:0;flex-grow:0;flex-basis:auto;align-items:stretch;align-content:flex-start}view,
+image,
+input,
+scroll-view,
+swiper,
+swiper-item,
+text,
+textarea,
+video{position:relative;border:0 solid #000;box-sizing:border-box}swiper-item{position:absolute}button{margin:0}page{height:100%;flex:1}.status-bar.data-v-5b18a3e6{background-color:#fff}.container.data-v-5b18a3e6{height:100%;flex:1;background-color:#f7f7f7}.search-body.data-v-5b18a3e6{background-color:#fff;border-bottom-right-radius:10px;border-bottom-left-radius:10px}.flex-center.data-v-5b18a3e6{display:flex;justify-content:center;align-items:center}.flex-row.data-v-5b18a3e6{display:flex;flex-direction:row}.data-v-5b18a3e6 .uni-searchbar__box{border-width:0}.data-v-5b18a3e6 .uni-input-placeholder{font-size:28rpx}.search-container.data-v-5b18a3e6{height:52px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;background-color:#fff}.search-container-bar.data-v-5b18a3e6{display:flex;flex-direction:row;justify-content:center;align-items:center;position:absolute;top:0;left:0;right:0}.search-associative.data-v-5b18a3e6{overflow-y:auto;position:absolute;top:52px;left:0;right:0;bottom:0;background-color:#fff;margin-top:10rpx;padding-left:10rpx;padding-right:10rpx}.search-icons.data-v-5b18a3e6{padding:16rpx}.word-display.data-v-5b18a3e6{font-size:26rpx;color:#666}.word-container.data-v-5b18a3e6{padding:20rpx}.word-container_header.data-v-5b18a3e6{display:flex;height:72rpx;line-height:72rpx;flex-direction:row;justify-content:space-between;align-items:center}.word-container_header-text.data-v-5b18a3e6{color:#3e3e3e;font-size:30rpx;font-weight:700}.word-container_body.data-v-5b18a3e6{display:flex;flex-wrap:wrap;flex-direction:row}.word-container_body-text.data-v-5b18a3e6{display:flex;font-size:26rpx;color:#666;justify-content:center;align-items:center;background-color:#f6f6f6;padding:10rpx 20rpx;margin:20rpx 30rpx 0 0;border-radius:30rpx;box-sizing:border-box;text-align:center}.word-container_body-info.data-v-5b18a3e6{display:block;flex:1;text-align:center;font-size:26rpx;color:grey;margin-top:20rpx}

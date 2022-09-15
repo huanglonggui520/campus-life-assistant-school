@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "发布信息",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-file-picker": "/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+  }
+}

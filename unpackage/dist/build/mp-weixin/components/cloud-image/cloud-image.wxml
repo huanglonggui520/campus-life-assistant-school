@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['onClick',['$event']]]]]}}" style="{{'width:'+(width)+';'+('height:'+(height)+';')}}" bindtap="__e"><block wx:if="{{cSrc}}"><image style="{{'width:'+(width)+';'+('height:'+(height)+';')}}" src="{{cSrc}}" mode="{{mode}}"></image></block></view>

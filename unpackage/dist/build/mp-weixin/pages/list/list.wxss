@@ -1,0 +1,12 @@
+view,
+label,
+swiper-item,
+scroll-view{display:flex;flex-direction:column;flex-shrink:0;flex-grow:0;flex-basis:auto;align-items:stretch;align-content:flex-start}view,
+image,
+input,
+scroll-view,
+swiper,
+swiper-item,
+text,
+textarea,
+video{position:relative;border:0 solid #000;box-sizing:border-box}swiper-item{position:absolute}button{margin:0}.u-demo.data-v-d9cf466c{height:calc(100% - 44px);height:calc(100% - 44px - constant(safe-area-inset-top));height:calc(100% - 44px - env(safe-area-inset-top))}.wrap.data-v-d9cf466c{padding:24rpx}.navbar-right.data-v-d9cf466c{margin-right:24rpx;display:flex}.search-wrap.data-v-d9cf466c{margin:0 20rpx;flex:1}.right-item.data-v-d9cf466c{margin:0 12rpx;position:relative;color:#fff;display:flex}.slot-wrap.data-v-d9cf466c{display:flex;align-items:center;flex:1}.map-wrap.data-v-d9cf466c{display:flex;align-items:center;padding:4px 6px;background-color:hsla(0,0%,94.1%,.35);color:#fff;font-size:22rpx;border-radius:100rpx;margin-left:30rpx}.map-wrap-text.data-v-d9cf466c{padding:0 6rpx}
