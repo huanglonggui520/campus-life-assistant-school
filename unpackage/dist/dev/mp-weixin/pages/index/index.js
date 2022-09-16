@@ -98,37 +98,43 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 268))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 266))
     },
     uIcon: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 275))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 273))
+    },
+    uSelect: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 280))
     },
     uSearch: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-search/u-search */ "node-modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 282))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-search/u-search */ "node-modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 287))
     },
     uNoticeBar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 289))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 294))
     },
     uSwiper: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 296))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 301))
     },
     uImage: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 303))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 308))
     },
     uTabs: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */ "node-modules/uview-ui/components/u-tabs/u-tabs").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 310))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */ "node-modules/uview-ui/components/u-tabs/u-tabs").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 315))
     },
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 317))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 322))
     },
     uTag: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 745))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 329))
     },
     uParse: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 324))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 336))
+    },
+    uDivider: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 346))
     },
     uBackTop: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 334))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 353))
     }
   }
 } catch (e) {
@@ -155,12 +161,20 @@ var render = function() {
   var l0 = _vm.__map(_vm.databbai, function(item, __i0__) {
     var $orig = _vm.__get_orig(item)
 
-    var g0 = _vm.$u.timeFormat(item.time, "yyyy-mm-dd hh:MM:ss")
+    var g0 = _vm.$u.timeFrom(item.time, "yyyy-mm-dd hh:MM:ss")
+    var g1 = item.text.replace("\n", "<br>")
     return {
       $orig: $orig,
-      g0: g0
+      g0: g0,
+      g1: g1
     }
   })
+
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.show = true
+    }
+  }
 
   _vm.$mp.data = Object.assign(
     {},
@@ -200,278 +214,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/uniappprojrcy/校园生活助手/pages/index/index.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      scrollTop: 0,
-      color: ['#F0C461', '#AF58F2', '#F270D0', '#4FDC46'],
-      keyword: '',
-      list: [],
-      list1: [{
-        image: 'https://cdn.uviewui.com/uview/swiper/1.jpg',
-        title: '昨夜星辰昨夜风，画楼西畔桂堂东' },
-
-      {
-        image: 'https://cdn.uviewui.com/uview/swiper/2.jpg',
-        title: '身无彩凤双飞翼，心有灵犀一点通' },
-
-      {
-        image: 'https://cdn.uviewui.com/uview/swiper/3.jpg',
-        title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳' }],
-
-
-      listtab: [
-      {
-        name: '最新动态' },
-
-      {
-        name: '表白墙' },
-      {
-        name: '二手闲置' },
-
-
-      {
-        name: '快递代取' },
-
-
-      {
-        name: '失物招领' }],
-
-
-
-      current: 0,
-      databbai: [] };
-
-
-
-
-
-
-
-  },
-  onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
-                _this.get(0));case 2:case "end":return _context.stop();}}}, _callee);}))();
-
-  },
-  computed: {
-    slotRightCurrent: function slotRightCurrent() {
-      return this.slotRight ? 0 : 1;
-    } },
-
-  methods: {
-    //图片预览
-    look: function look(url) {
-      console.log('0909090');
-      var urlList = [];
-      urlList.push(url); //push中的参数为 :src="item.img_url" 中的图片地址
-      uni.previewImage({
-        indicator: "number",
-        loop: true,
-        urls: urlList,
-        longPressActions: true });
-
-
-    },
-    get: function get(val) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var db, res, restext, data;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                //获取notice滚动通知
-                db = uniCloud.database();_context2.next = 3;return (
-                  db.collection('nocite').get());case 3:res = _context2.sent;
-                _this2.list = res.result.data[0].text;
-                // 获取表白墙动态
-                if (!(val == 0)) {_context2.next = 11;break;}_context2.next = 8;return (
-                  db.collection("love,uni-id-users").field(
-                  'time,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
-                  orderBy('time desc').limit(28).get());case 8:restext = _context2.sent;_context2.next = 14;break;case 11:_context2.next = 13;return (
-
-                  db.collection("love,uni-id-users").where("state==".concat(val)).field(
-                  'time,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
-                  orderBy('time desc').limit(28).get());case 13:restext = _context2.sent;case 14:
-
-                data = restext.result.data;
-                _this2.databbai = data;
-                console.log(data);case 17:case "end":return _context2.stop();}}}, _callee2);}))();
-    },
-    onPageScroll: function onPageScroll(e) {
-      this.scrollTop = e.scrollTop;
-    },
-    change: function change(index) {
-      this.current = index;
-
-      this.get(this.current);
-    } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
+throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js):\nSyntaxError: Unexpected token (297:0)\n    at Object._raise (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:746:17)\n    at Object.raiseWithData (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:739:17)\n    at Object.raise (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:733:17)\n    at Object.unexpected (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8807:16)\n    at Object.parseIdentifierName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10823:18)\n    at Object.parseIdentifier (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10800:23)\n    at Object.parseMaybePrivateName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10157:19)\n    at Object.parsePropertyName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10624:126)\n    at Object.parseObjectMember (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10525:10)\n    at Object.parseObj (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10448:25)\n    at Object.parseExprAtom (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10055:28)\n    at Object.parseExprSubscripts (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9656:23)\n    at Object.parseMaybeUnary (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9636:21)\n    at Object.parseMaybeUnary (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6877:20)\n    at Object.parseExprOps (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9506:23)\n    at Object.parseMaybeConditional (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9479:23)");
 
 /***/ }),
 

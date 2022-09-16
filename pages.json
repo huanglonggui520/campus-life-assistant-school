@@ -23,7 +23,9 @@
 		    "style" :                                                                                    
 		    {
 		        "navigationBarTitleText": "发布信息",
-		        "enablePullDownRefresh": false
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "black"
 		    }
 		    
 		},

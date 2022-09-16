@@ -24,12 +24,13 @@
     "pages/ucenter/invite/invite",
     "pages/ucenter/settings/deactivate/deactivate",
     "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
-    "pages/release/release"
+    "pages/release/release",
+    "pages/details/details"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "uni-starter",
+    "navigationBarTitleText": "校园生活助手",
     "navigationBarBackgroundColor": "#1CBBB4",
     "backgroundColor": "#F8F8F8",
     "enablePullDownRefresh": false,

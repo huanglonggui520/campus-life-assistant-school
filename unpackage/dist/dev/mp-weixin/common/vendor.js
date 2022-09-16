@@ -1430,7 +1430,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2508,7 +2508,7 @@ uni$1;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" }, "usingComponents": { "mp-sticky": "@miniprogram-component-plus/sticky" }, "pages": [{ "path": "pages/index/index", "style": { "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/putmsg/putmsg", "style": { "navigationBarTitleText": "发布信息", "enablePullDownRefresh": false } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/ucenter/login-page/index/index", "style": { "navigationBarTitleText": "", "app-plus": { "animationType": "none", "popGesture": "none" } } }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/ucenter/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "pages/ucenter/userinfo/cropImage", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/login-page/pwd-login/pwd-login", "style": { "navigationBarTitleText": "" } }, { "path": "pages/ucenter/login-page/pwd-retrieve/pwd-retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "pages/ucenter/login-page/phone-code/phone-code", "style": { "navigationBarTitleText": "" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/login-page/register/register", "style": { "navigationBarTitleText": "注册", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/settings/deactivate/deactivate", "style": { "navigationBarTitleText": "注销提醒", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "pages/release/release", "style": { "navigationBarTitleText": "选择发布", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-starter", "navigationBarBackgroundColor": "#1CBBB4", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/login-page/index/index" }, { "path": "pages/ucenter/userinfo/userinfo" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#1CBBB4", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/index/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/indexxz.png", "text": "首页" }, { "pagePath": "pages/release/release", "iconPath": "static/tabbar/add.png", "selectedIconPath": "static/tabbar/addxz.png", "text": "发布" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/home.png", "selectedIconPath": "static/tabbar/homexz.png", "text": "我的" }] } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" }, "usingComponents": { "mp-sticky": "@miniprogram-component-plus/sticky" }, "pages": [{ "path": "pages/index/index", "style": { "enablePullDownRefresh": true, "navigationStyle": "custom" } }, { "path": "pages/putmsg/putmsg", "style": { "navigationBarTitleText": "发布信息", "enablePullDownRefresh": false, "navigationStyle": "custom", "navigationBarTextStyle": "black" } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/ucenter/login-page/index/index", "style": { "navigationBarTitleText": "", "app-plus": { "animationType": "none", "popGesture": "none" } } }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/ucenter/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "pages/ucenter/userinfo/cropImage", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/login-page/pwd-login/pwd-login", "style": { "navigationBarTitleText": "" } }, { "path": "pages/ucenter/login-page/pwd-retrieve/pwd-retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "pages/ucenter/login-page/phone-code/phone-code", "style": { "navigationBarTitleText": "" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/login-page/register/register", "style": { "navigationBarTitleText": "注册", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/settings/deactivate/deactivate", "style": { "navigationBarTitleText": "注销提醒", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "pages/release/release", "style": { "navigationBarTitleText": "选择发布", "enablePullDownRefresh": false } }, { "path": "pages/details/details", "style": { "navigationBarTitleText": "详情", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "校园生活助手", "navigationBarBackgroundColor": "#1CBBB4", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/login-page/index/index" }, { "path": "pages/ucenter/userinfo/userinfo" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#1CBBB4", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/index/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/indexxz.png", "text": "首页" }, { "pagePath": "pages/release/release", "iconPath": "static/tabbar/add.png", "selectedIconPath": "static/tabbar/addxz.png", "text": "发布" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/home.png", "selectedIconPath": "static/tabbar/homexz.png", "text": "我的" }] } };exports.default = _default;
 
 /***/ }),
 
@@ -2524,7 +2524,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 131:
+/***/ 125:
 /*!****************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-upgrade-center-app/utils/check-update.js ***!
   \****************************************************************************************/
@@ -2532,7 +2532,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _callCheckVersion = _interopRequireDefault(__webpack_require__(/*! ./call-check-version */ 132));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _callCheckVersion = _interopRequireDefault(__webpack_require__(/*! ./call-check-version */ 126));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 推荐再App.vue中使用
 var PACKAGE_INFO_KEY = '__package_info__';
@@ -2691,7 +2691,7 @@ function updateUseModal(packageInfo) {var
 
 /***/ }),
 
-/***/ 132:
+/***/ 126:
 /*!**********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-upgrade-center-app/utils/call-check-version.js ***!
   \**********************************************************************************************/
@@ -3256,110 +3256,7 @@ var db = uniCloud.database();function _default() {return _ref.apply(this, argume
 
 /***/ }),
 
-/***/ 16:
-/*!*****************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni-starter.config.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //这是应用的配置页面，App.vue挂载到getApp().globalData.config
-var _default = {
-  //是否打开调试模式
-  "debug": false,
-  "h5": {
-    "url": "https://uni-starter.dcloud.net.cn" //	前端网页托管的域名	
-    // 在h5端全局悬浮引导用户下载app的功能 更多自定义要求在/common/openApp.js中修改	
-    // "openApp": { //如不需要本功能直接移除本节点即可	
-    // 	//点击悬浮下载栏后打开的网页链接
-    // 	"openUrl": '/#/pages/ucenter/invite/invite',
-    // 	//左侧显示的应用名称	
-    // 	"appname": 'uni-starter',
-    // 	//应用的图标	
-    // 	"logo": './static/logo.png',
-    // }
-  },
-  "mp": {
-    "weixin": {
-      //微信小程序原始id，微信小程序分享时
-      "id": "gh_33446d7f7a26" } },
-
-
-  "router": {
-    /*
-              	名词解释：“强制登录页”
-              		在打开定义的需强制登录的页面之前会自动检查（前端校验）uni_id_token的值是否有效,
-              		如果无效会自动跳转到登录页面
-              	两种模式：
-              		1.needLogin：黑名单模式。枚举游客不可访问的页面。
-              		2.visitor：白名单模式。枚举游客可访问的页面。
-              	* 注意：黑名单与白名单模式二选一
-              */
-    // "needLogin" : [
-    //  	{pattern:/^\/pages\/list.*/},	//支持正则表达式
-    // 		"/uni_modules/uni-news-favorite/pages/uni-news-favorite/list",
-    // 		"/uni_modules/uni-feedback/pages/uni-feedback/add"
-    // ],
-    "visitor": [
-    "/", //注意入口页必须直接写 "/"
-    { "pattern": /^\/pages\/list.*/ }, //支持正则表达式
-    { "pattern": /^\/pages\/ucenter\/login-page.*/ },
-    "/pages/common/webview/webview",
-    "/pages/grid/grid",
-    "/pages/ucenter/ucenter",
-    "/pages/ucenter/about/about",
-    "/pages/ucenter/settings/settings"],
-
-    /*
-                                         login:配置登录类型与优先级
-                                         	未列举到的，或设备环境不支持的选项，将被隐藏。如果你需要在不同平台有不同的配置，直接用条件编译即可
-                                         	根据数组的第0项，决定登录方式的第一优先级。
-                                         */
-    "login": ["weixin", "univerify", "username", "smsCode", "apple"] },
-
-  //关于应用
-  "about": {
-    //应用名称
-    "appName": "uni-starter",
-    //应用logo
-    "logo": "/static/logo.png",
-    //公司名称
-    "company": "北京xx网络技术有限公司",
-    //口号
-    "slogan": "云端一体应用快速开发模版",
-    //政策协议
-    "agreements": [{
-      "title": "用户服务协议", //如果开启了多语言国际化，本配置将失效。请在 lang/en.js 和 lang/zh-Hans.js中配置
-      "url": "请填写用户服务协议链接" //对应的网络链接
-    },
-    {
-      "title": "隐私政策", //如果开启了多语言国际化，本配置将失效。请在 lang/en.js 和 lang/zh-Hans.js中配置
-      "url": "请填写隐私政策链接" //对应的网络链接
-    }],
-
-    //应用的链接，用于分享到第三方平台和生成关于我们页的二维码
-    "download": "",
-    //version
-    "version": "1.0.0" //用于非app端显示，app端自动获取
-  },
-  "download": { //用于生成二合一下载页面
-    "ios": "https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8",
-    "android": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-97fca9f2-41f6-449f-a35e-3f135d4c3875/6d754387-a6c3-48ed-8ad2-e8f39b40fc01.apk" },
-
-  //用于打开应用市场评分界面
-  "marketId": {
-    "ios": "id1417078253",
-    "android": "123456" },
-
-  //配置多语言国际化。i18n为英文单词 internationalization的首末字符i和n，18为中间的字符数 是“国际化”的简称
-  "i18n": {
-    "enable": false //默认关闭，国际化。如果你想使用国际化相关功能，请改为true
-  } };exports.default = _default;
-
-/***/ }),
-
-/***/ 167:
+/***/ 159:
 /*!**********************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/settings/dc-push/push.js ***!
   \**********************************************************************/
@@ -3488,6 +3385,109 @@ function setting() {
 
 /***/ }),
 
+/***/ 16:
+/*!*****************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni-starter.config.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //这是应用的配置页面，App.vue挂载到getApp().globalData.config
+var _default = {
+  //是否打开调试模式
+  "debug": false,
+  "h5": {
+    "url": "https://uni-starter.dcloud.net.cn" //	前端网页托管的域名	
+    // 在h5端全局悬浮引导用户下载app的功能 更多自定义要求在/common/openApp.js中修改	
+    // "openApp": { //如不需要本功能直接移除本节点即可	
+    // 	//点击悬浮下载栏后打开的网页链接
+    // 	"openUrl": '/#/pages/ucenter/invite/invite',
+    // 	//左侧显示的应用名称	
+    // 	"appname": 'uni-starter',
+    // 	//应用的图标	
+    // 	"logo": './static/logo.png',
+    // }
+  },
+  "mp": {
+    "weixin": {
+      //微信小程序原始id，微信小程序分享时
+      "id": "gh_33446d7f7a26" } },
+
+
+  "router": {
+    /*
+              	名词解释：“强制登录页”
+              		在打开定义的需强制登录的页面之前会自动检查（前端校验）uni_id_token的值是否有效,
+              		如果无效会自动跳转到登录页面
+              	两种模式：
+              		1.needLogin：黑名单模式。枚举游客不可访问的页面。
+              		2.visitor：白名单模式。枚举游客可访问的页面。
+              	* 注意：黑名单与白名单模式二选一
+              */
+    // "needLogin" : [
+    //  	{pattern:/^\/pages\/list.*/},	//支持正则表达式
+    // 		"/uni_modules/uni-news-favorite/pages/uni-news-favorite/list",
+    // 		"/uni_modules/uni-feedback/pages/uni-feedback/add"
+    // ],
+    "visitor": [
+    "/", //注意入口页必须直接写 "/"
+    { "pattern": /^\/pages\/list.*/ }, //支持正则表达式
+    { "pattern": /^\/pages\/ucenter\/login-page.*/ },
+    "/pages/common/webview/webview",
+    "/pages/grid/grid",
+    "/pages/ucenter/ucenter",
+    "/pages/ucenter/about/about",
+    "/pages/ucenter/settings/settings"],
+
+    /*
+                                         login:配置登录类型与优先级
+                                         	未列举到的，或设备环境不支持的选项，将被隐藏。如果你需要在不同平台有不同的配置，直接用条件编译即可
+                                         	根据数组的第0项，决定登录方式的第一优先级。
+                                         */
+    "login": ["weixin", "univerify", "username", "smsCode", "apple"] },
+
+  //关于应用
+  "about": {
+    //应用名称
+    "appName": "uni-starter",
+    //应用logo
+    "logo": "/static/logo.png",
+    //公司名称
+    "company": "北京xx网络技术有限公司",
+    //口号
+    "slogan": "云端一体应用快速开发模版",
+    //政策协议
+    "agreements": [{
+      "title": "用户服务协议", //如果开启了多语言国际化，本配置将失效。请在 lang/en.js 和 lang/zh-Hans.js中配置
+      "url": "请填写用户服务协议链接" //对应的网络链接
+    },
+    {
+      "title": "隐私政策", //如果开启了多语言国际化，本配置将失效。请在 lang/en.js 和 lang/zh-Hans.js中配置
+      "url": "请填写隐私政策链接" //对应的网络链接
+    }],
+
+    //应用的链接，用于分享到第三方平台和生成关于我们页的二维码
+    "download": "",
+    //version
+    "version": "1.0.0" //用于非app端显示，app端自动获取
+  },
+  "download": { //用于生成二合一下载页面
+    "ios": "https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8",
+    "android": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-97fca9f2-41f6-449f-a35e-3f135d4c3875/6d754387-a6c3-48ed-8ad2-e8f39b40fc01.apk" },
+
+  //用于打开应用市场评分界面
+  "marketId": {
+    "ios": "id1417078253",
+    "android": "123456" },
+
+  //配置多语言国际化。i18n为英文单词 internationalization的首末字符i和n，18为中间的字符数 是“国际化”的简称
+  "i18n": {
+    "enable": false //默认关闭，国际化。如果你想使用国际化相关功能，请改为true
+  } };exports.default = _default;
+
+/***/ }),
+
 /***/ 17:
 /*!**********************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/store/index.js ***!
@@ -3537,7 +3537,9 @@ var state = {
   //是否已经登录
   hasLogin: Boolean(Object.keys(userInfoHistory).length),
   //用户信息
-  info: userInfoHistory },
+  info: userInfoHistory,
+  //学校
+  school: '贵州师范大学' },
 
 getters = {
   info: function info(state) {
@@ -3548,6 +3550,10 @@ getters = {
   } },
 
 mutations = {
+  SCHOOL: function SCHOOL(state, value) {
+    console.log('2212', state);
+    state.school = value;
+  },
   login: function login(state, info) {//登录成功后的操作
     //原有的结合传来的参数
     var _info = state.info;
@@ -3577,6 +3583,7 @@ mutations = {
   } },
 
 actions = {
+
   logout: function logout(context) {
     uni.showLoading({ mask: true });
     uniCloud.callFunction({
@@ -3597,6 +3604,67 @@ actions = {
   mutations: mutations,
   actions: actions };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
+
+/***/ }),
+
+/***/ 184:
+/*!***********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/login-page/common/login-page.mixin.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vuex = __webpack_require__(/*! vuex */ 19);
+var _loginSuccess2 = _interopRequireDefault(__webpack_require__(/*! ./loginSuccess.js */ 185));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var mixin = {
+  methods: _objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)({
+    setUserInfo: 'user/login' })), {}, {
+
+    loginSuccess: function loginSuccess(result) {
+      (0, _loginSuccess2.default)(result);
+      delete result.userInfo.token;
+      if (result.type == "register") {
+        result.userInfo._id = result.uid;
+      }
+      this.setUserInfo(result.userInfo);
+    } }) };var _default =
+
+
+mixin;exports.default = _default;
+
+/***/ }),
+
+/***/ 185:
+/*!*******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/login-page/common/loginSuccess.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;function _default(result) {
+  uni.showToast({
+    title: '登录成功',
+    icon: 'none' });
+
+  console.log('登录成功', result);
+
+  var delta = 0; //判断需要返回几层
+  var pages = getCurrentPages();
+  // console.log(pages);
+  pages.forEach(function (page, index) {
+    // console.log(pages[pages.length-index-1].route.split('/')[2]);
+    pages[pages.length - index - 1].route.split('/');
+    if (pages[pages.length - index - 1].route.split('/')[2] == 'login-page') {
+      delta++;
+    }
+  });
+  // console.log('判断需要返回几层',delta);
+  uni.navigateBack({ delta: delta });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
@@ -4857,67 +4925,6 @@ module.exports = index_cjs;
 
 /***/ }),
 
-/***/ 192:
-/*!***********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/login-page/common/login-page.mixin.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vuex = __webpack_require__(/*! vuex */ 19);
-var _loginSuccess2 = _interopRequireDefault(__webpack_require__(/*! ./loginSuccess.js */ 193));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-var mixin = {
-  methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)({
-    setUserInfo: 'user/login' })), {}, {
-
-    loginSuccess: function loginSuccess(result) {
-      (0, _loginSuccess2.default)(result);
-      delete result.userInfo.token;
-      if (result.type == "register") {
-        result.userInfo._id = result.uid;
-      }
-      this.setUserInfo(result.userInfo);
-    } }) };var _default =
-
-
-mixin;exports.default = _default;
-
-/***/ }),
-
-/***/ 193:
-/*!*******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/login-page/common/loginSuccess.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;function _default(result) {
-  uni.showToast({
-    title: '登录成功',
-    icon: 'none' });
-
-  console.log('登录成功', result);
-
-  var delta = 0; //判断需要返回几层
-  var pages = getCurrentPages();
-  // console.log(pages);
-  pages.forEach(function (page, index) {
-    // console.log(pages[pages.length-index-1].route.split('/')[2]);
-    pages[pages.length - index - 1].route.split('/');
-    if (pages[pages.length - index - 1].route.split('/')[2] == 'login-page') {
-      delta++;
-    }
-  });
-  // console.log('判断需要返回几层',delta);
-  uni.navigateBack({ delta: delta });
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 2:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -5019,7 +5026,7 @@ function _default() {
 
 /***/ }),
 
-/***/ 224:
+/***/ 216:
 /*!******************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/login-page/register/validator.js ***!
   \******************************************************************************/
@@ -5218,6 +5225,113 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 247:
+/*!********************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-feedback/js_sdk/validator/opendb-feedback.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.filterToWhere = filterToWhere;exports.enumConverter = exports.validator = void 0;function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e2) {throw _e2;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e3) {didErr = true;err = _e3;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} // 表单校验规则由 schema2code 生成，不建议直接修改校验规则，而建议通过 schema2code 生成, 详情: https://uniapp.dcloud.net.cn/uniCloud/schema
+
+
+var validator = {
+  "content": {
+    "rules": [
+    {
+      "required": true },
+
+    {
+      "format": "string" }],
+
+
+    "label": "留言内容/回复内容" },
+
+  "imgs": {
+    "rules": [
+    {
+      "format": "array" },
+
+    {
+      "arrayType": "file" },
+
+    {
+      "maxLength": 6 }],
+
+
+    "label": "图片列表" },
+
+  "contact": {
+    "rules": [
+    {
+      "format": "string" }],
+
+
+    "label": "联系人" },
+
+  "mobile": {
+    "rules": [
+    {
+      "format": "string" },
+
+    {
+      "pattern": "^\\+?[0-9-]{3,20}$" }],
+
+
+    "label": "联系电话" } };exports.validator = validator;
+
+
+
+var enumConverter = {};exports.enumConverter = enumConverter;
+
+function filterToWhere(filter, command) {
+  var where = {};
+  for (var field in filter) {var _filter$field =
+    filter[field],type = _filter$field.type,value = _filter$field.value;
+    switch (type) {
+      case "search":
+        if (typeof value === 'string' && value.length) {
+          where[field] = new RegExp(value);
+        }
+        break;
+      case "select":
+        if (value.length) {
+          var selectValue = [];var _iterator = _createForOfIteratorHelper(
+          value),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var s = _step.value;
+              selectValue.push(command.eq(s));
+            }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
+          where[field] = command.or(selectValue);
+        }
+        break;
+      case "range":
+        if (value.length) {
+          var gt = value[0];
+          var lt = value[1];
+          where[field] = command.and([command.gte(gt), command.lte(lt)]);
+        }
+        break;
+      case "date":
+        if (value.length) {var _value = _slicedToArray(
+          value, 2),_s = _value[0],e = _value[1];
+          var startDate = new Date(_s);
+          var endDate = new Date(e);
+          where[field] = command.and([command.gte(startDate), command.lte(endDate)]);
+        }
+        break;
+      case "timestamp":
+        if (value.length) {var _value2 = _slicedToArray(
+          value, 2),_startDate = _value2[0],_endDate = _value2[1];
+          where[field] = command.and([command.gte(_startDate), command.lte(_endDate)]);
+        }
+        break;}
+
+  }
+  return where;
+}
+
+/***/ }),
+
 /***/ 25:
 /*!********************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/lang/i18n.js ***!
@@ -5329,113 +5443,6 @@ if (i18nEnable) {
   });
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 257:
-/*!********************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-feedback/js_sdk/validator/opendb-feedback.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.filterToWhere = filterToWhere;exports.enumConverter = exports.validator = void 0;function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e2) {throw _e2;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e3) {didErr = true;err = _e3;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} // 表单校验规则由 schema2code 生成，不建议直接修改校验规则，而建议通过 schema2code 生成, 详情: https://uniapp.dcloud.net.cn/uniCloud/schema
-
-
-var validator = {
-  "content": {
-    "rules": [
-    {
-      "required": true },
-
-    {
-      "format": "string" }],
-
-
-    "label": "留言内容/回复内容" },
-
-  "imgs": {
-    "rules": [
-    {
-      "format": "array" },
-
-    {
-      "arrayType": "file" },
-
-    {
-      "maxLength": 6 }],
-
-
-    "label": "图片列表" },
-
-  "contact": {
-    "rules": [
-    {
-      "format": "string" }],
-
-
-    "label": "联系人" },
-
-  "mobile": {
-    "rules": [
-    {
-      "format": "string" },
-
-    {
-      "pattern": "^\\+?[0-9-]{3,20}$" }],
-
-
-    "label": "联系电话" } };exports.validator = validator;
-
-
-
-var enumConverter = {};exports.enumConverter = enumConverter;
-
-function filterToWhere(filter, command) {
-  var where = {};
-  for (var field in filter) {var _filter$field =
-    filter[field],type = _filter$field.type,value = _filter$field.value;
-    switch (type) {
-      case "search":
-        if (typeof value === 'string' && value.length) {
-          where[field] = new RegExp(value);
-        }
-        break;
-      case "select":
-        if (value.length) {
-          var selectValue = [];var _iterator = _createForOfIteratorHelper(
-          value),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var s = _step.value;
-              selectValue.push(command.eq(s));
-            }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
-          where[field] = command.or(selectValue);
-        }
-        break;
-      case "range":
-        if (value.length) {
-          var gt = value[0];
-          var lt = value[1];
-          where[field] = command.and([command.gte(gt), command.lte(lt)]);
-        }
-        break;
-      case "date":
-        if (value.length) {var _value = _slicedToArray(
-          value, 2),_s = _value[0],e = _value[1];
-          var startDate = new Date(_s);
-          var endDate = new Date(e);
-          where[field] = command.and([command.gte(startDate), command.lte(endDate)]);
-        }
-        break;
-      case "timestamp":
-        if (value.length) {var _value2 = _slicedToArray(
-          value, 2),_startDate = _value2[0],_endDate = _value2[1];
-          where[field] = command.and([command.gte(_startDate), command.lte(_endDate)]);
-        }
-        break;}
-
-  }
-  return where;
-}
 
 /***/ }),
 
@@ -8967,7 +8974,283 @@ deepMerge;exports.default = _default;
 
 /***/ }),
 
-/***/ 329:
+/***/ 33:
+/*!********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/deepClone.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 判断arr是否为一个数组，返回一个bool值
+function isArray(arr) {
+  return Object.prototype.toString.call(arr) === '[object Array]';
+}
+
+// 深度克隆
+function deepClone(obj) {
+  // 对常见的“非”值，直接返回原来值
+  if ([null, undefined, NaN, false].includes(obj)) return obj;
+  if (typeof obj !== "object" && typeof obj !== 'function') {
+    //原始类型直接返回
+    return obj;
+  }
+  var o = isArray(obj) ? [] : {};
+  for (var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      o[i] = typeof obj[i] === "object" ? deepClone(obj[i]) : obj[i];
+    }
+  }
+  return o;
+}var _default =
+
+deepClone;exports.default = _default;
+
+/***/ }),
+
+/***/ 34:
+/*!***************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/test.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      * 验证电子邮箱格式
+                                                                                                      */
+function email(value) {
+  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(value);
+}
+
+/**
+   * 验证手机格式
+   */
+function mobile(value) {
+  return /^1[3-9]\d{9}$/.test(value);
+}
+
+/**
+   * 验证URL格式
+   */
+function url(value) {
+  return /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?/.test(value);
+}
+
+/**
+   * 验证日期格式
+   */
+function date(value) {
+  return !/Invalid|NaN/.test(new Date(value).toString());
+}
+
+/**
+   * 验证ISO类型的日期格式
+   */
+function dateISO(value) {
+  return /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(value);
+}
+
+/**
+   * 验证十进制数字
+   */
+function number(value) {
+  return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(value);
+}
+
+/**
+   * 验证整数
+   */
+function digits(value) {
+  return /^\d+$/.test(value);
+}
+
+/**
+   * 验证身份证号码
+   */
+function idCard(value) {
+  return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(
+  value);
+}
+
+/**
+   * 是否车牌号
+   */
+function carNo(value) {
+  // 新能源车牌
+  var xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/;
+  // 旧车牌
+  var creg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/;
+  if (value.length === 7) {
+    return creg.test(value);
+  } else if (value.length === 8) {
+    return xreg.test(value);
+  } else {
+    return false;
+  }
+}
+
+/**
+   * 金额,只允许2位小数
+   */
+function amount(value) {
+  //金额，只允许保留两位小数
+  return /^[1-9]\d*(,\d{3})*(\.\d{1,2})?$|^0\.\d{1,2}$/.test(value);
+}
+
+/**
+   * 中文
+   */
+function chinese(value) {
+  var reg = /^[\u4e00-\u9fa5]+$/gi;
+  return reg.test(value);
+}
+
+/**
+   * 只能输入字母
+   */
+function letter(value) {
+  return /^[a-zA-Z]*$/.test(value);
+}
+
+/**
+   * 只能是字母或者数字
+   */
+function enOrNum(value) {
+  //英文或者数字
+  var reg = /^[0-9a-zA-Z]*$/g;
+  return reg.test(value);
+}
+
+/**
+   * 验证是否包含某个值
+   */
+function contains(value, param) {
+  return value.indexOf(param) >= 0;
+}
+
+/**
+   * 验证一个值范围[min, max]
+   */
+function range(value, param) {
+  return value >= param[0] && value <= param[1];
+}
+
+/**
+   * 验证一个长度范围[min, max]
+   */
+function rangeLength(value, param) {
+  return value.length >= param[0] && value.length <= param[1];
+}
+
+/**
+   * 是否固定电话
+   */
+function landline(value) {
+  var reg = /^\d{3,4}-\d{7,8}(-\d{3,4})?$/;
+  return reg.test(value);
+}
+
+/**
+   * 判断是否为空
+   */
+function empty(value) {
+  switch (typeof value) {
+    case 'undefined':
+      return true;
+    case 'string':
+      if (value.replace(/(^[ \t\n\r]*)|([ \t\n\r]*$)/g, '').length == 0) return true;
+      break;
+    case 'boolean':
+      if (!value) return true;
+      break;
+    case 'number':
+      if (0 === value || isNaN(value)) return true;
+      break;
+    case 'object':
+      if (null === value || value.length === 0) return true;
+      for (var i in value) {
+        return false;
+      }
+      return true;}
+
+  return false;
+}
+
+/**
+   * 是否json字符串
+   */
+function jsonString(value) {
+  if (typeof value == 'string') {
+    try {
+      var obj = JSON.parse(value);
+      if (typeof obj == 'object' && obj) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+  return false;
+}
+
+
+/**
+   * 是否数组
+   */
+function array(value) {
+  if (typeof Array.isArray === "function") {
+    return Array.isArray(value);
+  } else {
+    return Object.prototype.toString.call(value) === "[object Array]";
+  }
+}
+
+/**
+   * 是否对象
+   */
+function object(value) {
+  return Object.prototype.toString.call(value) === '[object Object]';
+}
+
+/**
+   * 是否短信验证码
+   */
+function code(value) {var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return new RegExp("^\\d{".concat(len, "}$")).test(value);
+}var _default =
+
+
+{
+  email: email,
+  mobile: mobile,
+  url: url,
+  date: date,
+  dateISO: dateISO,
+  number: number,
+  digits: digits,
+  idCard: idCard,
+  carNo: carNo,
+  amount: amount,
+  chinese: chinese,
+  letter: letter,
+  enOrNum: enOrNum,
+  contains: contains,
+  range: range,
+  rangeLength: rangeLength,
+  empty: empty,
+  isEmpty: empty,
+  jsonString: jsonString,
+  landline: landline,
+  object: object,
+  array: array,
+  code: code };exports.default = _default;
+
+/***/ }),
+
+/***/ 341:
 /*!*********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
   \*********************************************************************************************/
@@ -8981,9 +9264,9 @@ deepMerge;exports.default = _default;
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 330),
+var cfg = __webpack_require__(/*! ./config.js */ 342),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 331),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 343),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -9558,41 +9841,7 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 33:
-/*!********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/deepClone.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 判断arr是否为一个数组，返回一个bool值
-function isArray(arr) {
-  return Object.prototype.toString.call(arr) === '[object Array]';
-}
-
-// 深度克隆
-function deepClone(obj) {
-  // 对常见的“非”值，直接返回原来值
-  if ([null, undefined, NaN, false].includes(obj)) return obj;
-  if (typeof obj !== "object" && typeof obj !== 'function') {
-    //原始类型直接返回
-    return obj;
-  }
-  var o = isArray(obj) ? [] : {};
-  for (var i in obj) {
-    if (obj.hasOwnProperty(i)) {
-      o[i] = typeof obj[i] === "object" ? deepClone(obj[i]) : obj[i];
-    }
-  }
-  return o;
-}var _default =
-
-deepClone;exports.default = _default;
-
-/***/ }),
-
-/***/ 330:
+/***/ 342:
 /*!***************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/config.js ***!
   \***************************************************************************************/
@@ -9682,14 +9931,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 331:
+/***/ 343:
 /*!*******************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/CssHandler.js ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 330),
+var cfg = __webpack_require__(/*! ./config.js */ 342),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {
@@ -9792,249 +10041,210 @@ parser.prototype.Content = function () {
 
 /***/ }),
 
-/***/ 34:
-/*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/test.js ***!
-  \***************************************************************************/
+/***/ 35:
+/*!**********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/queryParams.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      * 验证电子邮箱格式
+                                                                                                      * 对象转url参数
+                                                                                                      * @param {*} data,对象
+                                                                                                      * @param {*} isPrefix,是否自动加上"?"
                                                                                                       */
-function email(value) {
-  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(value);
-}
-
-/**
-   * 验证手机格式
-   */
-function mobile(value) {
-  return /^1[3-9]\d{9}$/.test(value);
-}
-
-/**
-   * 验证URL格式
-   */
-function url(value) {
-  return /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?/.test(value);
-}
-
-/**
-   * 验证日期格式
-   */
-function date(value) {
-  return !/Invalid|NaN/.test(new Date(value).toString());
-}
-
-/**
-   * 验证ISO类型的日期格式
-   */
-function dateISO(value) {
-  return /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(value);
-}
-
-/**
-   * 验证十进制数字
-   */
-function number(value) {
-  return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(value);
-}
-
-/**
-   * 验证整数
-   */
-function digits(value) {
-  return /^\d+$/.test(value);
-}
-
-/**
-   * 验证身份证号码
-   */
-function idCard(value) {
-  return /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/.test(
-  value);
-}
-
-/**
-   * 是否车牌号
-   */
-function carNo(value) {
-  // 新能源车牌
-  var xreg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}(([0-9]{5}[DF]$)|([DF][A-HJ-NP-Z0-9][0-9]{4}$))/;
-  // 旧车牌
-  var creg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9挂学警港澳]{1}$/;
-  if (value.length === 7) {
-    return creg.test(value);
-  } else if (value.length === 8) {
-    return xreg.test(value);
-  } else {
-    return false;
-  }
-}
-
-/**
-   * 金额,只允许2位小数
-   */
-function amount(value) {
-  //金额，只允许保留两位小数
-  return /^[1-9]\d*(,\d{3})*(\.\d{1,2})?$|^0\.\d{1,2}$/.test(value);
-}
-
-/**
-   * 中文
-   */
-function chinese(value) {
-  var reg = /^[\u4e00-\u9fa5]+$/gi;
-  return reg.test(value);
-}
-
-/**
-   * 只能输入字母
-   */
-function letter(value) {
-  return /^[a-zA-Z]*$/.test(value);
-}
-
-/**
-   * 只能是字母或者数字
-   */
-function enOrNum(value) {
-  //英文或者数字
-  var reg = /^[0-9a-zA-Z]*$/g;
-  return reg.test(value);
-}
-
-/**
-   * 验证是否包含某个值
-   */
-function contains(value, param) {
-  return value.indexOf(param) >= 0;
-}
-
-/**
-   * 验证一个值范围[min, max]
-   */
-function range(value, param) {
-  return value >= param[0] && value <= param[1];
-}
-
-/**
-   * 验证一个长度范围[min, max]
-   */
-function rangeLength(value, param) {
-  return value.length >= param[0] && value.length <= param[1];
-}
-
-/**
-   * 是否固定电话
-   */
-function landline(value) {
-  var reg = /^\d{3,4}-\d{7,8}(-\d{3,4})?$/;
-  return reg.test(value);
-}
-
-/**
-   * 判断是否为空
-   */
-function empty(value) {
-  switch (typeof value) {
-    case 'undefined':
-      return true;
-    case 'string':
-      if (value.replace(/(^[ \t\n\r]*)|([ \t\n\r]*$)/g, '').length == 0) return true;
-      break;
-    case 'boolean':
-      if (!value) return true;
-      break;
-    case 'number':
-      if (0 === value || isNaN(value)) return true;
-      break;
-    case 'object':
-      if (null === value || value.length === 0) return true;
-      for (var i in value) {
-        return false;
-      }
-      return true;}
-
-  return false;
-}
-
-/**
-   * 是否json字符串
-   */
-function jsonString(value) {
-  if (typeof value == 'string') {
-    try {
-      var obj = JSON.parse(value);
-      if (typeof obj == 'object' && obj) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch (e) {
-      return false;
+function queryParams() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var isPrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var arrayFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'brackets';
+  var prefix = isPrefix ? '?' : '';
+  var _result = [];
+  if (['indices', 'brackets', 'repeat', 'comma'].indexOf(arrayFormat) == -1) arrayFormat = 'brackets';var _loop = function _loop(
+  key) {
+    var value = data[key];
+    // 去掉为空的参数
+    if (['', undefined, null].indexOf(value) >= 0) {
+      return "continue";
     }
+    // 如果值为数组，另行处理
+    if (value.constructor === Array) {
+      // e.g. {ids: [1, 2, 3]}
+      switch (arrayFormat) {
+        case 'indices':
+          // 结果: ids[0]=1&ids[1]=2&ids[2]=3
+          for (var i = 0; i < value.length; i++) {
+            _result.push(key + '[' + i + ']=' + value[i]);
+          }
+          break;
+        case 'brackets':
+          // 结果: ids[]=1&ids[]=2&ids[]=3
+          value.forEach(function (_value) {
+            _result.push(key + '[]=' + _value);
+          });
+          break;
+        case 'repeat':
+          // 结果: ids=1&ids=2&ids=3
+          value.forEach(function (_value) {
+            _result.push(key + '=' + _value);
+          });
+          break;
+        case 'comma':
+          // 结果: ids=1,2,3
+          var commaStr = "";
+          value.forEach(function (_value) {
+            commaStr += (commaStr ? "," : "") + _value;
+          });
+          _result.push(key + '=' + commaStr);
+          break;
+        default:
+          value.forEach(function (_value) {
+            _result.push(key + '[]=' + _value);
+          });}
+
+    } else {
+      _result.push(key + '=' + value);
+    }};for (var key in data) {var _ret = _loop(key);if (_ret === "continue") continue;
   }
-  return false;
-}
-
-
-/**
-   * 是否数组
-   */
-function array(value) {
-  if (typeof Array.isArray === "function") {
-    return Array.isArray(value);
-  } else {
-    return Object.prototype.toString.call(value) === "[object Array]";
-  }
-}
-
-/**
-   * 是否对象
-   */
-function object(value) {
-  return Object.prototype.toString.call(value) === '[object Object]';
-}
-
-/**
-   * 是否短信验证码
-   */
-function code(value) {var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return new RegExp("^\\d{".concat(len, "}$")).test(value);
+  return _result.length ? prefix + _result.join('&') : '';
 }var _default =
 
-
-{
-  email: email,
-  mobile: mobile,
-  url: url,
-  date: date,
-  dateISO: dateISO,
-  number: number,
-  digits: digits,
-  idCard: idCard,
-  carNo: carNo,
-  amount: amount,
-  chinese: chinese,
-  letter: letter,
-  enOrNum: enOrNum,
-  contains: contains,
-  range: range,
-  rangeLength: rangeLength,
-  empty: empty,
-  isEmpty: empty,
-  jsonString: jsonString,
-  landline: landline,
-  object: object,
-  array: array,
-  code: code };exports.default = _default;
+queryParams;exports.default = _default;
 
 /***/ }),
 
-/***/ 346:
+/***/ 36:
+/*!****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/route.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 并且带有路由拦截功能
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */var
+
+Router = /*#__PURE__*/function () {
+  function Router() {_classCallCheck(this, Router);
+    // 原始属性定义
+    this.config = {
+      type: 'navigateTo',
+      url: '',
+      delta: 1, // navigateBack页面后退时,回退的层数
+      params: {}, // 传递的参数
+      animationType: 'pop-in', // 窗口动画,只在APP有效
+      animationDuration: 300, // 窗口动画持续时间,单位毫秒,只在APP有效
+      intercept: false // 是否需要拦截
+    };
+    // 因为route方法是需要对外赋值给另外的对象使用，同时route内部有使用this，会导致route失去上下文
+    // 这里在构造函数中进行this绑定
+    this.route = this.route.bind(this);
+  }
+
+  // 判断url前面是否有"/"，如果没有则加上，否则无法跳转
+  _createClass(Router, [{ key: "addRootPath", value: function addRootPath(url) {
+      return url[0] === '/' ? url : "/".concat(url);
+    }
+
+    // 整合路由参数
+  }, { key: "mixinParam", value: function mixinParam(url, params) {
+      url = url && this.addRootPath(url);
+
+      // 使用正则匹配，主要依据是判断是否有"/","?","="等，如“/page/index/index?name=mary"
+      // 如果有url中有get参数，转换后无需带上"?"
+      var query = '';
+      if (/.*\/.*\?.*=.*/.test(url)) {
+        // object对象转为get类型的参数
+        query = uni.$u.queryParams(params, false);
+        // 因为已有get参数,所以后面拼接的参数需要带上"&"隔开
+        return url += "&" + query;
+      } else {
+        // 直接拼接参数，因为此处url中没有后面的query参数，也就没有"?/&"之类的符号
+        query = uni.$u.queryParams(params);
+        return url += query;
+      }
+    }
+
+    // 对外的方法名称
+  }, { key: "route", value: function () {var _route = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var options,params,mergeConfig,isNext,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:options = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};params = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
+                // 合并用户的配置和内部的默认配置
+                mergeConfig = {};
+
+                if (typeof options === 'string') {
+                  // 如果options为字符串，则为route(url, params)的形式
+                  mergeConfig.url = this.mixinParam(options, params);
+                  mergeConfig.type = 'navigateTo';
+                } else {
+                  mergeConfig = uni.$u.deepClone(options, this.config);
+                  // 否则正常使用mergeConfig中的url和params进行拼接
+                  mergeConfig.url = this.mixinParam(options.url, options.params);
+                }
+
+                if (params.intercept) {
+                  this.config.intercept = params.intercept;
+                }
+                // params参数也带给拦截器
+                mergeConfig.params = params;
+                // 合并内外部参数
+                mergeConfig = uni.$u.deepMerge(this.config, mergeConfig);
+                // 判断用户是否定义了拦截器
+                if (!(typeof uni.$u.routeIntercept === 'function')) {_context.next = 14;break;}_context.next = 10;return (
+
+                  new Promise(function (resolve, reject) {
+                    uni.$u.routeIntercept(mergeConfig, resolve);
+                  }));case 10:isNext = _context.sent;
+                // 如果isNext为true，则执行路由跳转
+                isNext && this.openPage(mergeConfig);_context.next = 15;break;case 14:
+
+                this.openPage(mergeConfig);case 15:case "end":return _context.stop();}}}, _callee, this);}));function route() {return _route.apply(this, arguments);}return route;}()
+
+
+
+    // 执行路由跳转
+  }, { key: "openPage", value: function openPage(config) {
+      // 解构参数
+      var
+      url =
+
+
+
+
+      config.url,type = config.type,delta = config.delta,animationType = config.animationType,animationDuration = config.animationDuration;
+      if (config.type == 'navigateTo' || config.type == 'to') {
+        uni.navigateTo({
+          url: url,
+          animationType: animationType,
+          animationDuration: animationDuration });
+
+      }
+      if (config.type == 'redirectTo' || config.type == 'redirect') {
+        uni.redirectTo({
+          url: url });
+
+      }
+      if (config.type == 'switchTab' || config.type == 'tab') {
+        uni.switchTab({
+          url: url });
+
+      }
+      if (config.type == 'reLaunch' || config.type == 'launch') {
+        uni.reLaunch({
+          url: url });
+
+      }
+      if (config.type == 'navigateBack' || config.type == 'back') {
+        uni.navigateBack({
+          delta: delta });
+
+      }
+    } }]);return Router;}();var _default =
+
+
+new Router().route;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 365:
 /*!****************************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-file-picker/components/uni-file-picker/choose-and-upload-file.js ***!
   \****************************************************************************************************************/
@@ -10265,7 +10475,7 @@ function chooseAndUploadFile()
 
 /***/ }),
 
-/***/ 347:
+/***/ 366:
 /*!***********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-file-picker/components/uni-file-picker/utils.js ***!
   \***********************************************************************************************/
@@ -10381,209 +10591,6 @@ var get_file_data = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#_
             delete filedata.image;case 15:return _context.abrupt("return",
 
             filedata);case 16:case "end":return _context.stop();}}}, _callee);}));return function get_file_data(_x) {return _ref.apply(this, arguments);};}();exports.get_file_data = get_file_data;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 35:
-/*!**********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/queryParams.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      * 对象转url参数
-                                                                                                      * @param {*} data,对象
-                                                                                                      * @param {*} isPrefix,是否自动加上"?"
-                                                                                                      */
-function queryParams() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var isPrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var arrayFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'brackets';
-  var prefix = isPrefix ? '?' : '';
-  var _result = [];
-  if (['indices', 'brackets', 'repeat', 'comma'].indexOf(arrayFormat) == -1) arrayFormat = 'brackets';var _loop = function _loop(
-  key) {
-    var value = data[key];
-    // 去掉为空的参数
-    if (['', undefined, null].indexOf(value) >= 0) {
-      return "continue";
-    }
-    // 如果值为数组，另行处理
-    if (value.constructor === Array) {
-      // e.g. {ids: [1, 2, 3]}
-      switch (arrayFormat) {
-        case 'indices':
-          // 结果: ids[0]=1&ids[1]=2&ids[2]=3
-          for (var i = 0; i < value.length; i++) {
-            _result.push(key + '[' + i + ']=' + value[i]);
-          }
-          break;
-        case 'brackets':
-          // 结果: ids[]=1&ids[]=2&ids[]=3
-          value.forEach(function (_value) {
-            _result.push(key + '[]=' + _value);
-          });
-          break;
-        case 'repeat':
-          // 结果: ids=1&ids=2&ids=3
-          value.forEach(function (_value) {
-            _result.push(key + '=' + _value);
-          });
-          break;
-        case 'comma':
-          // 结果: ids=1,2,3
-          var commaStr = "";
-          value.forEach(function (_value) {
-            commaStr += (commaStr ? "," : "") + _value;
-          });
-          _result.push(key + '=' + commaStr);
-          break;
-        default:
-          value.forEach(function (_value) {
-            _result.push(key + '[]=' + _value);
-          });}
-
-    } else {
-      _result.push(key + '=' + value);
-    }};for (var key in data) {var _ret = _loop(key);if (_ret === "continue") continue;
-  }
-  return _result.length ? prefix + _result.join('&') : '';
-}var _default =
-
-queryParams;exports.default = _default;
-
-/***/ }),
-
-/***/ 36:
-/*!****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/route.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 并且带有路由拦截功能
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */var
-
-Router = /*#__PURE__*/function () {
-  function Router() {_classCallCheck(this, Router);
-    // 原始属性定义
-    this.config = {
-      type: 'navigateTo',
-      url: '',
-      delta: 1, // navigateBack页面后退时,回退的层数
-      params: {}, // 传递的参数
-      animationType: 'pop-in', // 窗口动画,只在APP有效
-      animationDuration: 300, // 窗口动画持续时间,单位毫秒,只在APP有效
-      intercept: false // 是否需要拦截
-    };
-    // 因为route方法是需要对外赋值给另外的对象使用，同时route内部有使用this，会导致route失去上下文
-    // 这里在构造函数中进行this绑定
-    this.route = this.route.bind(this);
-  }
-
-  // 判断url前面是否有"/"，如果没有则加上，否则无法跳转
-  _createClass(Router, [{ key: "addRootPath", value: function addRootPath(url) {
-      return url[0] === '/' ? url : "/".concat(url);
-    }
-
-    // 整合路由参数
-  }, { key: "mixinParam", value: function mixinParam(url, params) {
-      url = url && this.addRootPath(url);
-
-      // 使用正则匹配，主要依据是判断是否有"/","?","="等，如“/page/index/index?name=mary"
-      // 如果有url中有get参数，转换后无需带上"?"
-      var query = '';
-      if (/.*\/.*\?.*=.*/.test(url)) {
-        // object对象转为get类型的参数
-        query = uni.$u.queryParams(params, false);
-        // 因为已有get参数,所以后面拼接的参数需要带上"&"隔开
-        return url += "&" + query;
-      } else {
-        // 直接拼接参数，因为此处url中没有后面的query参数，也就没有"?/&"之类的符号
-        query = uni.$u.queryParams(params);
-        return url += query;
-      }
-    }
-
-    // 对外的方法名称
-  }, { key: "route", value: function () {var _route = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var options,params,mergeConfig,isNext,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:options = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};params = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
-                // 合并用户的配置和内部的默认配置
-                mergeConfig = {};
-
-                if (typeof options === 'string') {
-                  // 如果options为字符串，则为route(url, params)的形式
-                  mergeConfig.url = this.mixinParam(options, params);
-                  mergeConfig.type = 'navigateTo';
-                } else {
-                  mergeConfig = uni.$u.deepClone(options, this.config);
-                  // 否则正常使用mergeConfig中的url和params进行拼接
-                  mergeConfig.url = this.mixinParam(options.url, options.params);
-                }
-
-                if (params.intercept) {
-                  this.config.intercept = params.intercept;
-                }
-                // params参数也带给拦截器
-                mergeConfig.params = params;
-                // 合并内外部参数
-                mergeConfig = uni.$u.deepMerge(this.config, mergeConfig);
-                // 判断用户是否定义了拦截器
-                if (!(typeof uni.$u.routeIntercept === 'function')) {_context.next = 14;break;}_context.next = 10;return (
-
-                  new Promise(function (resolve, reject) {
-                    uni.$u.routeIntercept(mergeConfig, resolve);
-                  }));case 10:isNext = _context.sent;
-                // 如果isNext为true，则执行路由跳转
-                isNext && this.openPage(mergeConfig);_context.next = 15;break;case 14:
-
-                this.openPage(mergeConfig);case 15:case "end":return _context.stop();}}}, _callee, this);}));function route() {return _route.apply(this, arguments);}return route;}()
-
-
-
-    // 执行路由跳转
-  }, { key: "openPage", value: function openPage(config) {
-      // 解构参数
-      var
-      url =
-
-
-
-
-      config.url,type = config.type,delta = config.delta,animationType = config.animationType,animationDuration = config.animationDuration;
-      if (config.type == 'navigateTo' || config.type == 'to') {
-        uni.navigateTo({
-          url: url,
-          animationType: animationType,
-          animationDuration: animationDuration });
-
-      }
-      if (config.type == 'redirectTo' || config.type == 'redirect') {
-        uni.redirectTo({
-          url: url });
-
-      }
-      if (config.type == 'switchTab' || config.type == 'tab') {
-        uni.switchTab({
-          url: url });
-
-      }
-      if (config.type == 'reLaunch' || config.type == 'launch') {
-        uni.reLaunch({
-          url: url });
-
-      }
-      if (config.type == 'navigateBack' || config.type == 'back') {
-        uni.navigateBack({
-          delta: delta });
-
-      }
-    } }]);return Router;}();var _default =
-
-
-new Router().route;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -10708,93 +10715,30 @@ timeFrom;exports.default = _default;
 
 /***/ }),
 
-/***/ 383:
+/***/ 388:
 /*!************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/index.js ***!
   \************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 384);
-var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 384, 1);
-/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 385);
-var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 385, 1);
-/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 386);
-var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 386, 1);
-/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 387);
-var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 387, 1);
-/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 388);
-var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 388, 1);
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  en: _en_json__WEBPACK_IMPORTED_MODULE_0__,
-  es: _es_json__WEBPACK_IMPORTED_MODULE_1__,
-  fr: _fr_json__WEBPACK_IMPORTED_MODULE_2__,
-  'zh-Hans': _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__,
-  'zh-Hant': _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__
-});
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 389));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 390));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default };exports.default = _default;
 
 /***/ }),
 
-/***/ 384:
+/***/ 389:
 /*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/en.json ***!
   \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 385:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
-  \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 386:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
-  \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 387:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
-  \****************************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 388:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
-  \****************************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
+module.exports = JSON.parse("{\"accountLogin\":\"Account\",\"SMSLogin\":\"SMS\",\"wechatLogin\":\"wechat\",\"appleLogin\":\"Apple\",\"oneClickLogin\":\"One click login\",\"QQLogin\":\"QQ\",\"xiaomiLogin\":\"Xiaomi\",\"getProviderFail\":\"Failed to get service provider\",\"loginErr\":\"Login service initialization error\",\"chooseOtherLogin\":\"Click the third-party login\",\"weibo\":\"weibo\",\"noAgree\":\"You have not agreed to the privacy policy agreement\",\"gotIt\":\"got it\"}");
 
 /***/ }),
 
@@ -10939,6 +10883,46 @@ function colorToRgba(color) {var alpha = arguments.length > 1 && arguments[1] !=
   hexToRgb: hexToRgb,
   rgbToHex: rgbToHex,
   colorToRgba: colorToRgba };exports.default = _default;
+
+/***/ }),
+
+/***/ 390:
+/*!****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/zh-Hans.json ***!
+  \****************************************************************************/
+/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"accountLogin\":\"账号登录\",\"SMSLogin\":\"短信验证码\",\"wechatLogin\":\"微信登录\",\"appleLogin\":\"苹果登录\",\"oneClickLogin\":\"一键登录\",\"QQLogin\":\"QQ登录\",\"xiaomiLogin\":\"小米登录\",\"getProviderFail\":\"获取服务供应商失败\",\"loginErr\":\"登录服务初始化错误\",\"chooseOtherLogin\":\"点击了第三方登录\",\"weibo\":\"微博\",\"noAgree\":\"你未同意隐私政策协议\",\"gotIt\":\"知道了\"}");
+
+/***/ }),
+
+/***/ 398:
+/*!**************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 399));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 400));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 401));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 399:
+/*!*************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
+  \*************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
 
 /***/ }),
 
@@ -16468,7 +16452,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -16489,14 +16473,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -16582,7 +16566,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"校园生活助手","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -17044,205 +17028,7 @@ guid;exports.default = _default;
 
 /***/ }),
 
-/***/ 41:
-/*!****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/color.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 为了让用户能够自定义主题，会逐步弃用此文件，各颜色通过css提供
-// 为了给某些特殊场景使用和向后兼容，无需删除此文件(2020-06-20)
-var color = {
-  primary: "#2979ff",
-  primaryDark: "#2b85e4",
-  primaryDisabled: "#a0cfff",
-  primaryLight: "#ecf5ff",
-  bgColor: "#f3f4f6",
-
-  info: "#909399",
-  infoDark: "#82848a",
-  infoDisabled: "#c8c9cc",
-  infoLight: "#f4f4f5",
-
-  warning: "#ff9900",
-  warningDark: "#f29100",
-  warningDisabled: "#fcbd71",
-  warningLight: "#fdf6ec",
-
-  error: "#fa3534",
-  errorDark: "#dd6161",
-  errorDisabled: "#fab6b6",
-  errorLight: "#fef0f0",
-
-  success: "#19be6b",
-  successDark: "#18b566",
-  successDisabled: "#71d5a1",
-  successLight: "#dbf1e1",
-
-  mainColor: "#303133",
-  contentColor: "#606266",
-  tipsColor: "#909399",
-  lightColor: "#c0c4cc",
-  borderColor: "#e4e7ed" };var _default =
-
-
-color;exports.default = _default;
-
-/***/ }),
-
-/***/ 42:
-/*!********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/type2icon.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      * 根据主题type值,获取对应的图标
-                                                                                                      * @param String type 主题名称,primary|info|error|warning|success
-                                                                                                      * @param String fill 是否使用fill填充实体的图标  
-                                                                                                      */
-function type2icon() {var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'success';var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  // 如果非预置值,默认为success
-  if (['primary', 'info', 'error', 'warning', 'success'].indexOf(type) == -1) type = 'success';
-  var iconName = '';
-  // 目前(2019-12-12),info和primary使用同一个图标
-  switch (type) {
-    case 'primary':
-      iconName = 'info-circle';
-      break;
-    case 'info':
-      iconName = 'info-circle';
-      break;
-    case 'error':
-      iconName = 'close-circle';
-      break;
-    case 'warning':
-      iconName = 'error-circle';
-      break;
-    case 'success':
-      iconName = 'checkmark-circle';
-      break;
-    default:
-      iconName = 'checkmark-circle';}
-
-  // 是否是实体类型,加上-fill,在icon组件库中,实体的类名是后面加-fill的
-  if (fill) iconName += '-fill';
-  return iconName;
-}var _default =
-
-type2icon;exports.default = _default;
-
-/***/ }),
-
-/***/ 43:
-/*!**********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/randomArray.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
-function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
-  return array.sort(function () {return Math.random() - 0.5;});
-}var _default =
-
-randomArray;exports.default = _default;
-
-/***/ }),
-
-/***/ 436:
-/*!************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/index.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 437));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 438));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 437:
-/*!***********************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/en.json ***!
-  \***********************************************************************/
-/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"accountLogin\":\"Account\",\"SMSLogin\":\"SMS\",\"wechatLogin\":\"wechat\",\"appleLogin\":\"Apple\",\"oneClickLogin\":\"One click login\",\"QQLogin\":\"QQ\",\"xiaomiLogin\":\"Xiaomi\",\"getProviderFail\":\"Failed to get service provider\",\"loginErr\":\"Login service initialization error\",\"chooseOtherLogin\":\"Click the third-party login\",\"weibo\":\"weibo\",\"noAgree\":\"You have not agreed to the privacy policy agreement\",\"gotIt\":\"got it\"}");
-
-/***/ }),
-
-/***/ 438:
-/*!****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/zh-Hans.json ***!
-  \****************************************************************************/
-/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"accountLogin\":\"账号登录\",\"SMSLogin\":\"短信验证码\",\"wechatLogin\":\"微信登录\",\"appleLogin\":\"苹果登录\",\"oneClickLogin\":\"一键登录\",\"QQLogin\":\"QQ登录\",\"xiaomiLogin\":\"小米登录\",\"getProviderFail\":\"获取服务供应商失败\",\"loginErr\":\"登录服务初始化错误\",\"chooseOtherLogin\":\"点击了第三方登录\",\"weibo\":\"微博\",\"noAgree\":\"你未同意隐私政策协议\",\"gotIt\":\"知道了\"}");
-
-/***/ }),
-
-/***/ 44:
-/*!******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/addUnit.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = addUnit;var _test = _interopRequireDefault(__webpack_require__(/*! ./test.js */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
-function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'auto';var unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'rpx';
-  value = String(value);
-  // 用uView内置验证规则中的number判断是否为数值
-  return _test.default.number(value) ? "".concat(value).concat(unit) : value;
-}
-
-/***/ }),
-
-/***/ 446:
-/*!**************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 447));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 448));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 449));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 447:
-/*!*************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
-  \*************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
-
-/***/ }),
-
-/***/ 448:
+/***/ 400:
 /*!******************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
   \******************************************************************************************************/
@@ -17253,7 +17039,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 449:
+/***/ 401:
 /*!******************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
   \******************************************************************************************************/
@@ -17264,28 +17050,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 45:
-/*!*****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/random.js ***!
-  \*****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function random(min, max) {
-  if (min >= 0 && max > 0 && max >= min) {
-    var gab = max - min + 1;
-    return Math.floor(Math.random() * gab + min);
-  } else {
-    return 0;
-  }
-}var _default =
-
-random;exports.default = _default;
-
-/***/ }),
-
-/***/ 457:
+/***/ 409:
 /*!***********************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***********************************************************************************/
@@ -18462,6 +18227,248 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
+/***/ 41:
+/*!****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/color.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 为了让用户能够自定义主题，会逐步弃用此文件，各颜色通过css提供
+// 为了给某些特殊场景使用和向后兼容，无需删除此文件(2020-06-20)
+var color = {
+  primary: "#2979ff",
+  primaryDark: "#2b85e4",
+  primaryDisabled: "#a0cfff",
+  primaryLight: "#ecf5ff",
+  bgColor: "#f3f4f6",
+
+  info: "#909399",
+  infoDark: "#82848a",
+  infoDisabled: "#c8c9cc",
+  infoLight: "#f4f4f5",
+
+  warning: "#ff9900",
+  warningDark: "#f29100",
+  warningDisabled: "#fcbd71",
+  warningLight: "#fdf6ec",
+
+  error: "#fa3534",
+  errorDark: "#dd6161",
+  errorDisabled: "#fab6b6",
+  errorLight: "#fef0f0",
+
+  success: "#19be6b",
+  successDark: "#18b566",
+  successDisabled: "#71d5a1",
+  successLight: "#dbf1e1",
+
+  mainColor: "#303133",
+  contentColor: "#606266",
+  tipsColor: "#909399",
+  lightColor: "#c0c4cc",
+  borderColor: "#e4e7ed" };var _default =
+
+
+color;exports.default = _default;
+
+/***/ }),
+
+/***/ 417:
+/*!************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 418);
+var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 418, 1);
+/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 419);
+var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 419, 1);
+/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 420);
+var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 420, 1);
+/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 421);
+var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 421, 1);
+/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 422);
+var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 422, 1);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  en: _en_json__WEBPACK_IMPORTED_MODULE_0__,
+  es: _es_json__WEBPACK_IMPORTED_MODULE_1__,
+  fr: _fr_json__WEBPACK_IMPORTED_MODULE_2__,
+  'zh-Hans': _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__,
+  'zh-Hant': _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__
+});
+
+
+/***/ }),
+
+/***/ 418:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 419:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 42:
+/*!********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/type2icon.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      * 根据主题type值,获取对应的图标
+                                                                                                      * @param String type 主题名称,primary|info|error|warning|success
+                                                                                                      * @param String fill 是否使用fill填充实体的图标  
+                                                                                                      */
+function type2icon() {var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'success';var fill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  // 如果非预置值,默认为success
+  if (['primary', 'info', 'error', 'warning', 'success'].indexOf(type) == -1) type = 'success';
+  var iconName = '';
+  // 目前(2019-12-12),info和primary使用同一个图标
+  switch (type) {
+    case 'primary':
+      iconName = 'info-circle';
+      break;
+    case 'info':
+      iconName = 'info-circle';
+      break;
+    case 'error':
+      iconName = 'close-circle';
+      break;
+    case 'warning':
+      iconName = 'error-circle';
+      break;
+    case 'success':
+      iconName = 'checkmark-circle';
+      break;
+    default:
+      iconName = 'checkmark-circle';}
+
+  // 是否是实体类型,加上-fill,在icon组件库中,实体的类名是后面加-fill的
+  if (fill) iconName += '-fill';
+  return iconName;
+}var _default =
+
+type2icon;exports.default = _default;
+
+/***/ }),
+
+/***/ 420:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 421:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
+  \****************************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 422:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
+  \****************************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
+
+/***/ }),
+
+/***/ 43:
+/*!**********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/randomArray.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
+function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
+  return array.sort(function () {return Math.random() - 0.5;});
+}var _default =
+
+randomArray;exports.default = _default;
+
+/***/ }),
+
+/***/ 44:
+/*!******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/addUnit.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = addUnit;var _test = _interopRequireDefault(__webpack_require__(/*! ./test.js */ 34));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
+function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'auto';var unit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'rpx';
+  value = String(value);
+  // 用uView内置验证规则中的number判断是否为数值
+  return _test.default.number(value) ? "".concat(value).concat(unit) : value;
+}
+
+/***/ }),
+
+/***/ 45:
+/*!*****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/random.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function random(min, max) {
+  if (min >= 0 && max > 0 && max >= min) {
+    var gab = max - min + 1;
+    return Math.floor(Math.random() * gab + min);
+  } else {
+    return 0;
+  }
+}var _default =
+
+random;exports.default = _default;
+
+/***/ }),
+
 /***/ 46:
 /*!***************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/trim.js ***!
@@ -18488,356 +18495,7 @@ trim;exports.default = _default;
 
 /***/ }),
 
-/***/ 47:
-/*!****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/toast.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function toast(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;
-  uni.showToast({
-    title: title,
-    icon: 'none',
-    duration: duration });
-
-}var _default =
-
-toast;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 479:
-/*!***************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-dateformat/components/uni-dateformat/date-format.js ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.formatDate = formatDate;exports.friendlyDate = friendlyDate; // yyyy-MM-dd hh:mm:ss.SSS 所有支持的类型
-function pad(str) {var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
-  str += '';
-  while (str.length < length) {
-    str = '0' + str;
-  }
-  return str.slice(-length);
-}
-
-var parser = {
-  yyyy: function yyyy(dateObj) {
-    return pad(dateObj.year, 4);
-  },
-  yy: function yy(dateObj) {
-    return pad(dateObj.year);
-  },
-  MM: function MM(dateObj) {
-    return pad(dateObj.month);
-  },
-  M: function M(dateObj) {
-    return dateObj.month;
-  },
-  dd: function dd(dateObj) {
-    return pad(dateObj.day);
-  },
-  d: function d(dateObj) {
-    return dateObj.day;
-  },
-  hh: function hh(dateObj) {
-    return pad(dateObj.hour);
-  },
-  h: function h(dateObj) {
-    return dateObj.hour;
-  },
-  mm: function mm(dateObj) {
-    return pad(dateObj.minute);
-  },
-  m: function m(dateObj) {
-    return dateObj.minute;
-  },
-  ss: function ss(dateObj) {
-    return pad(dateObj.second);
-  },
-  s: function s(dateObj) {
-    return dateObj.second;
-  },
-  SSS: function SSS(dateObj) {
-    return pad(dateObj.millisecond, 3);
-  },
-  S: function S(dateObj) {
-    return dateObj.millisecond;
-  } };
-
-
-// 这都n年了iOS依然不认识2020-12-12，需要转换为2020/12/12
-function getDate(time) {
-  if (time instanceof Date) {
-    return time;
-  }
-  switch (typeof time) {
-    case 'string':
-      {
-        // 2020-12-12T12:12:12.000Z、2020-12-12T12:12:12.000
-        if (time.indexOf('T') > -1) {
-          return new Date(time);
-        }
-        return new Date(time.replace(/-/g, '/'));
-      }
-    default:
-      return new Date(time);}
-
-}
-
-function formatDate(date) {var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'yyyy/MM/dd hh:mm:ss';
-  if (!date && date !== 0) {
-    return '';
-  }
-  date = getDate(date);
-  var dateObj = {
-    year: date.getFullYear(),
-    month: date.getMonth() + 1,
-    day: date.getDate(),
-    hour: date.getHours(),
-    minute: date.getMinutes(),
-    second: date.getSeconds(),
-    millisecond: date.getMilliseconds() };
-
-  var tokenRegExp = /yyyy|yy|MM|M|dd|d|hh|h|mm|m|ss|s|SSS|SS|S/;
-  var flag = true;
-  var result = format;
-  while (flag) {
-    flag = false;
-    result = result.replace(tokenRegExp, function (matched) {
-      flag = true;
-      return parser[matched](dateObj);
-    });
-  }
-  return result;
-}
-
-function friendlyDate(time, _ref)
-
-
-
-{var _ref$locale = _ref.locale,locale = _ref$locale === void 0 ? 'zh' : _ref$locale,_ref$threshold = _ref.threshold,threshold = _ref$threshold === void 0 ? [60000, 3600000] : _ref$threshold,_ref$format = _ref.format,format = _ref$format === void 0 ? 'yyyy/MM/dd hh:mm:ss' : _ref$format;
-  if (time === '-') {
-    return time;
-  }
-  if (!time && time !== 0) {
-    return '';
-  }
-  var localeText = {
-    zh: {
-      year: '年',
-      month: '月',
-      day: '天',
-      hour: '小时',
-      minute: '分钟',
-      second: '秒',
-      ago: '前',
-      later: '后',
-      justNow: '刚刚',
-      soon: '马上',
-      template: '{num}{unit}{suffix}' },
-
-    en: {
-      year: 'year',
-      month: 'month',
-      day: 'day',
-      hour: 'hour',
-      minute: 'minute',
-      second: 'second',
-      ago: 'ago',
-      later: 'later',
-      justNow: 'just now',
-      soon: 'soon',
-      template: '{num} {unit} {suffix}' } };
-
-
-  var text = localeText[locale] || localeText.zh;
-  var date = getDate(time);
-  var ms = date.getTime() - Date.now();
-  var absMs = Math.abs(ms);
-  if (absMs < threshold[0]) {
-    return ms < 0 ? text.justNow : text.soon;
-  }
-  if (absMs >= threshold[1]) {
-    return formatDate(date, format);
-  }
-  var num;
-  var unit;
-  var suffix = text.later;
-  if (ms < 0) {
-    suffix = text.ago;
-    ms = -ms;
-  }
-  var seconds = Math.floor(ms / 1000);
-  var minutes = Math.floor(seconds / 60);
-  var hours = Math.floor(minutes / 60);
-  var days = Math.floor(hours / 24);
-  var months = Math.floor(days / 30);
-  var years = Math.floor(months / 12);
-  switch (true) {
-    case years > 0:
-      num = years;
-      unit = text.year;
-      break;
-    case months > 0:
-      num = months;
-      unit = text.month;
-      break;
-    case days > 0:
-      num = days;
-      unit = text.day;
-      break;
-    case hours > 0:
-      num = hours;
-      unit = text.hour;
-      break;
-    case minutes > 0:
-      num = minutes;
-      unit = text.minute;
-      break;
-    default:
-      num = seconds;
-      unit = text.second;
-      break;}
-
-
-  if (locale === 'en') {
-    if (num === 1) {
-      num = 'a';
-    } else {
-      unit += 's';
-    }
-  }
-
-  return text.template.replace(/{\s*num\s*}/g, num + '').replace(/{\s*unit\s*}/g, unit).replace(/{\s*suffix\s*}/g,
-  suffix);
-}
-
-/***/ }),
-
-/***/ 48:
-/*!********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/getParent.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-function getParent(name, keys) {
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {var _ret = function () {
-        var data = {};
-        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
-        if (Array.isArray(keys)) {
-          keys.map(function (val) {
-            data[val] = parent[val] ? parent[val] : '';
-          });
-        } else {
-          // 历遍传过来的对象参数
-          for (var i in keys) {
-            // 如果子组件有此值则用，无此值则用父组件的值
-            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
-            if (Array.isArray(keys[i])) {
-              if (keys[i].length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else if (keys[i].constructor === Object) {
-              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
-              if (Object.keys(keys[i]).length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else {
-              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
-              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
-            }
-          }
-        }
-        return { v: data };}();if (typeof _ret === "object") return _ret.v;
-    }
-  }
-
-  return {};
-}
-
-/***/ }),
-
-/***/ 49:
-/*!******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/$parent.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
-// 值(默认为undefined)，就是查找最顶层的$parent
-function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options && parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {
-      return parent;
-    }
-  }
-  return false;
-}
-
-/***/ }),
-
-/***/ 5:
-/*!******************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/pages.json ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 50:
-/*!**************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/sys.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.os = os;exports.sys = sys;function os() {
-  return uni.getSystemInfoSync().platform;
-};
-
-function sys() {
-  return uni.getSystemInfoSync();
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 506:
+/***/ 463:
 /*!*******************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-sign-in/utils/ad.js ***!
   \*******************************************************************/
@@ -19102,1564 +18760,86 @@ new AdHelper();exports.default = _default;
 
 /***/ }),
 
-/***/ 51:
-/*!*******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/debounce.js ***!
-  \*******************************************************************************/
+/***/ 47:
+/*!****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/toast.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeout = null;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function toast(title) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1500;
+  uni.showToast({
+    title: title,
+    icon: 'none',
+    duration: duration });
 
-/**
-                                                                                                                         * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
-                                                                                                                         * 
-                                                                                                                         * @param {Function} func 要执行的回调函数 
-                                                                                                                         * @param {Number} wait 延时的时间
-                                                                                                                         * @param {Boolean} immediate 是否立即执行 
-                                                                                                                         * @return null
-                                                                                                                         */
-function debounce(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-  // 清除定时器
-  if (timeout !== null) clearTimeout(timeout);
-  // 立即执行，此类情况一般用不到
-  if (immediate) {
-    var callNow = !timeout;
-    timeout = setTimeout(function () {
-      timeout = null;
-    }, wait);
-    if (callNow) typeof func === 'function' && func();
-  } else {
-    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
-    timeout = setTimeout(function () {
-      typeof func === 'function' && func();
-    }, wait);
-  }
 }var _default =
 
-debounce;exports.default = _default;
-
-/***/ }),
-
-/***/ 514:
-/*!********************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/Sansnn-uQRCode/uqrcode.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //---------------------------------------------------------------------
-// github https://github.com/Sansnn/uQRCode
-//---------------------------------------------------------------------
-
-var uQRCode = {};
-
-(function () {
-  //---------------------------------------------------------------------
-  // QRCode for JavaScript
-  //
-  // Copyright (c) 2009 Kazuhiko Arase
-  //
-  // URL: http://www.d-project.com/
-  //
-  // Licensed under the MIT license:
-  //   http://www.opensource.org/licenses/mit-license.php
-  //
-  // The word "QR Code" is registered trademark of 
-  // DENSO WAVE INCORPORATED
-  //   http://www.denso-wave.com/qrcode/faqpatent-e.html
-  //
-  //---------------------------------------------------------------------
-
-  //---------------------------------------------------------------------
-  // QR8bitByte
-  //---------------------------------------------------------------------
-
-  function QR8bitByte(data) {
-    this.mode = QRMode.MODE_8BIT_BYTE;
-    this.data = data;
-  }
-
-  QR8bitByte.prototype = {
-
-    getLength: function getLength(buffer) {
-      return this.data.length;
-    },
-
-    write: function write(buffer) {
-      for (var i = 0; i < this.data.length; i++) {
-        // not JIS ...
-        buffer.put(this.data.charCodeAt(i), 8);
-      }
-    } };
-
-
-  //---------------------------------------------------------------------
-  // QRCode
-  //---------------------------------------------------------------------
-
-  function QRCode(typeNumber, errorCorrectLevel) {
-    this.typeNumber = typeNumber;
-    this.errorCorrectLevel = errorCorrectLevel;
-    this.modules = null;
-    this.moduleCount = 0;
-    this.dataCache = null;
-    this.dataList = new Array();
-  }
-
-  QRCode.prototype = {
-
-    addData: function addData(data) {
-      var newData = new QR8bitByte(data);
-      this.dataList.push(newData);
-      this.dataCache = null;
-    },
-
-    isDark: function isDark(row, col) {
-      if (row < 0 || this.moduleCount <= row || col < 0 || this.moduleCount <= col) {
-        throw new Error(row + "," + col);
-      }
-      return this.modules[row][col];
-    },
-
-    getModuleCount: function getModuleCount() {
-      return this.moduleCount;
-    },
-
-    make: function make() {
-      // Calculate automatically typeNumber if provided is < 1
-      if (this.typeNumber < 1) {
-        var typeNumber = 1;
-        for (typeNumber = 1; typeNumber < 40; typeNumber++) {
-          var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, this.errorCorrectLevel);
-
-          var buffer = new QRBitBuffer();
-          var totalDataCount = 0;
-          for (var i = 0; i < rsBlocks.length; i++) {
-            totalDataCount += rsBlocks[i].dataCount;
-          }
-
-          for (var i = 0; i < this.dataList.length; i++) {
-            var data = this.dataList[i];
-            buffer.put(data.mode, 4);
-            buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber));
-            data.write(buffer);
-          }
-          if (buffer.getLengthInBits() <= totalDataCount * 8)
-          break;
-        }
-        this.typeNumber = typeNumber;
-      }
-      this.makeImpl(false, this.getBestMaskPattern());
-    },
-
-    makeImpl: function makeImpl(test, maskPattern) {
-
-      this.moduleCount = this.typeNumber * 4 + 17;
-      this.modules = new Array(this.moduleCount);
-
-      for (var row = 0; row < this.moduleCount; row++) {
-
-        this.modules[row] = new Array(this.moduleCount);
-
-        for (var col = 0; col < this.moduleCount; col++) {
-          this.modules[row][col] = null; //(col + row) % 3;
-        }
-      }
-
-      this.setupPositionProbePattern(0, 0);
-      this.setupPositionProbePattern(this.moduleCount - 7, 0);
-      this.setupPositionProbePattern(0, this.moduleCount - 7);
-      this.setupPositionAdjustPattern();
-      this.setupTimingPattern();
-      this.setupTypeInfo(test, maskPattern);
-
-      if (this.typeNumber >= 7) {
-        this.setupTypeNumber(test);
-      }
-
-      if (this.dataCache == null) {
-        this.dataCache = QRCode.createData(this.typeNumber, this.errorCorrectLevel, this.dataList);
-      }
-
-      this.mapData(this.dataCache, maskPattern);
-    },
-
-    setupPositionProbePattern: function setupPositionProbePattern(row, col) {
-
-      for (var r = -1; r <= 7; r++) {
-
-        if (row + r <= -1 || this.moduleCount <= row + r) continue;
-
-        for (var c = -1; c <= 7; c++) {
-
-          if (col + c <= -1 || this.moduleCount <= col + c) continue;
-
-          if (0 <= r && r <= 6 && (c == 0 || c == 6) ||
-          0 <= c && c <= 6 && (r == 0 || r == 6) ||
-          2 <= r && r <= 4 && 2 <= c && c <= 4) {
-            this.modules[row + r][col + c] = true;
-          } else {
-            this.modules[row + r][col + c] = false;
-          }
-        }
-      }
-    },
-
-    getBestMaskPattern: function getBestMaskPattern() {
-
-      var minLostPoint = 0;
-      var pattern = 0;
-
-      for (var i = 0; i < 8; i++) {
-
-        this.makeImpl(true, i);
-
-        var lostPoint = QRUtil.getLostPoint(this);
-
-        if (i == 0 || minLostPoint > lostPoint) {
-          minLostPoint = lostPoint;
-          pattern = i;
-        }
-      }
-
-      return pattern;
-    },
-
-    createMovieClip: function createMovieClip(target_mc, instance_name, depth) {
-
-      var qr_mc = target_mc.createEmptyMovieClip(instance_name, depth);
-      var cs = 1;
-
-      this.make();
-
-      for (var row = 0; row < this.modules.length; row++) {
-
-        var y = row * cs;
-
-        for (var col = 0; col < this.modules[row].length; col++) {
-
-          var x = col * cs;
-          var dark = this.modules[row][col];
-
-          if (dark) {
-            qr_mc.beginFill(0, 100);
-            qr_mc.moveTo(x, y);
-            qr_mc.lineTo(x + cs, y);
-            qr_mc.lineTo(x + cs, y + cs);
-            qr_mc.lineTo(x, y + cs);
-            qr_mc.endFill();
-          }
-        }
-      }
-
-      return qr_mc;
-    },
-
-    setupTimingPattern: function setupTimingPattern() {
-
-      for (var r = 8; r < this.moduleCount - 8; r++) {
-        if (this.modules[r][6] != null) {
-          continue;
-        }
-        this.modules[r][6] = r % 2 == 0;
-      }
-
-      for (var c = 8; c < this.moduleCount - 8; c++) {
-        if (this.modules[6][c] != null) {
-          continue;
-        }
-        this.modules[6][c] = c % 2 == 0;
-      }
-    },
-
-    setupPositionAdjustPattern: function setupPositionAdjustPattern() {
-
-      var pos = QRUtil.getPatternPosition(this.typeNumber);
-
-      for (var i = 0; i < pos.length; i++) {
-
-        for (var j = 0; j < pos.length; j++) {
-
-          var row = pos[i];
-          var col = pos[j];
-
-          if (this.modules[row][col] != null) {
-            continue;
-          }
-
-          for (var r = -2; r <= 2; r++) {
-
-            for (var c = -2; c <= 2; c++) {
-
-              if (r == -2 || r == 2 || c == -2 || c == 2 ||
-              r == 0 && c == 0) {
-                this.modules[row + r][col + c] = true;
-              } else {
-                this.modules[row + r][col + c] = false;
-              }
-            }
-          }
-        }
-      }
-    },
-
-    setupTypeNumber: function setupTypeNumber(test) {
-
-      var bits = QRUtil.getBCHTypeNumber(this.typeNumber);
-
-      for (var i = 0; i < 18; i++) {
-        var mod = !test && (bits >> i & 1) == 1;
-        this.modules[Math.floor(i / 3)][i % 3 + this.moduleCount - 8 - 3] = mod;
-      }
-
-      for (var i = 0; i < 18; i++) {
-        var mod = !test && (bits >> i & 1) == 1;
-        this.modules[i % 3 + this.moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
-      }
-    },
-
-    setupTypeInfo: function setupTypeInfo(test, maskPattern) {
-
-      var data = this.errorCorrectLevel << 3 | maskPattern;
-      var bits = QRUtil.getBCHTypeInfo(data);
-
-      // vertical		
-      for (var i = 0; i < 15; i++) {
-
-        var mod = !test && (bits >> i & 1) == 1;
-
-        if (i < 6) {
-          this.modules[i][8] = mod;
-        } else if (i < 8) {
-          this.modules[i + 1][8] = mod;
-        } else {
-          this.modules[this.moduleCount - 15 + i][8] = mod;
-        }
-      }
-
-      // horizontal
-      for (var i = 0; i < 15; i++) {
-
-        var mod = !test && (bits >> i & 1) == 1;
-
-        if (i < 8) {
-          this.modules[8][this.moduleCount - i - 1] = mod;
-        } else if (i < 9) {
-          this.modules[8][15 - i - 1 + 1] = mod;
-        } else {
-          this.modules[8][15 - i - 1] = mod;
-        }
-      }
-
-      // fixed module
-      this.modules[this.moduleCount - 8][8] = !test;
-
-    },
-
-    mapData: function mapData(data, maskPattern) {
-
-      var inc = -1;
-      var row = this.moduleCount - 1;
-      var bitIndex = 7;
-      var byteIndex = 0;
-
-      for (var col = this.moduleCount - 1; col > 0; col -= 2) {
-
-        if (col == 6) col--;
-
-        while (true) {
-
-          for (var c = 0; c < 2; c++) {
-
-            if (this.modules[row][col - c] == null) {
-
-              var dark = false;
-
-              if (byteIndex < data.length) {
-                dark = (data[byteIndex] >>> bitIndex & 1) == 1;
-              }
-
-              var mask = QRUtil.getMask(maskPattern, row, col - c);
-
-              if (mask) {
-                dark = !dark;
-              }
-
-              this.modules[row][col - c] = dark;
-              bitIndex--;
-
-              if (bitIndex == -1) {
-                byteIndex++;
-                bitIndex = 7;
-              }
-            }
-          }
-
-          row += inc;
-
-          if (row < 0 || this.moduleCount <= row) {
-            row -= inc;
-            inc = -inc;
-            break;
-          }
-        }
-      }
-
-    } };
-
-
-
-  QRCode.PAD0 = 0xEC;
-  QRCode.PAD1 = 0x11;
-
-  QRCode.createData = function (typeNumber, errorCorrectLevel, dataList) {
-
-    var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectLevel);
-
-    var buffer = new QRBitBuffer();
-
-    for (var i = 0; i < dataList.length; i++) {
-      var data = dataList[i];
-      buffer.put(data.mode, 4);
-      buffer.put(data.getLength(), QRUtil.getLengthInBits(data.mode, typeNumber));
-      data.write(buffer);
-    }
-
-    // calc num max data.
-    var totalDataCount = 0;
-    for (var i = 0; i < rsBlocks.length; i++) {
-      totalDataCount += rsBlocks[i].dataCount;
-    }
-
-    if (buffer.getLengthInBits() > totalDataCount * 8) {
-      throw new Error("code length overflow. (" +
-      buffer.getLengthInBits() +
-      ">" +
-      totalDataCount * 8 +
-      ")");
-    }
-
-    // end code
-    if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
-      buffer.put(0, 4);
-    }
-
-    // padding
-    while (buffer.getLengthInBits() % 8 != 0) {
-      buffer.putBit(false);
-    }
-
-    // padding
-    while (true) {
-
-      if (buffer.getLengthInBits() >= totalDataCount * 8) {
-        break;
-      }
-      buffer.put(QRCode.PAD0, 8);
-
-      if (buffer.getLengthInBits() >= totalDataCount * 8) {
-        break;
-      }
-      buffer.put(QRCode.PAD1, 8);
-    }
-
-    return QRCode.createBytes(buffer, rsBlocks);
-  };
-
-  QRCode.createBytes = function (buffer, rsBlocks) {
-
-    var offset = 0;
-
-    var maxDcCount = 0;
-    var maxEcCount = 0;
-
-    var dcdata = new Array(rsBlocks.length);
-    var ecdata = new Array(rsBlocks.length);
-
-    for (var r = 0; r < rsBlocks.length; r++) {
-
-      var dcCount = rsBlocks[r].dataCount;
-      var ecCount = rsBlocks[r].totalCount - dcCount;
-
-      maxDcCount = Math.max(maxDcCount, dcCount);
-      maxEcCount = Math.max(maxEcCount, ecCount);
-
-      dcdata[r] = new Array(dcCount);
-
-      for (var i = 0; i < dcdata[r].length; i++) {
-        dcdata[r][i] = 0xff & buffer.buffer[i + offset];
-      }
-      offset += dcCount;
-
-      var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
-      var rawPoly = new QRPolynomial(dcdata[r], rsPoly.getLength() - 1);
-
-      var modPoly = rawPoly.mod(rsPoly);
-      ecdata[r] = new Array(rsPoly.getLength() - 1);
-      for (var i = 0; i < ecdata[r].length; i++) {
-        var modIndex = i + modPoly.getLength() - ecdata[r].length;
-        ecdata[r][i] = modIndex >= 0 ? modPoly.get(modIndex) : 0;
-      }
-
-    }
-
-    var totalCodeCount = 0;
-    for (var i = 0; i < rsBlocks.length; i++) {
-      totalCodeCount += rsBlocks[i].totalCount;
-    }
-
-    var data = new Array(totalCodeCount);
-    var index = 0;
-
-    for (var i = 0; i < maxDcCount; i++) {
-      for (var r = 0; r < rsBlocks.length; r++) {
-        if (i < dcdata[r].length) {
-          data[index++] = dcdata[r][i];
-        }
-      }
-    }
-
-    for (var i = 0; i < maxEcCount; i++) {
-      for (var r = 0; r < rsBlocks.length; r++) {
-        if (i < ecdata[r].length) {
-          data[index++] = ecdata[r][i];
-        }
-      }
-    }
-
-    return data;
-
-  };
-
-  //---------------------------------------------------------------------
-  // QRMode
-  //---------------------------------------------------------------------
-
-  var QRMode = {
-    MODE_NUMBER: 1 << 0,
-    MODE_ALPHA_NUM: 1 << 1,
-    MODE_8BIT_BYTE: 1 << 2,
-    MODE_KANJI: 1 << 3 };
-
-
-  //---------------------------------------------------------------------
-  // QRErrorCorrectLevel
-  //---------------------------------------------------------------------
-
-  var QRErrorCorrectLevel = {
-    L: 1,
-    M: 0,
-    Q: 3,
-    H: 2 };
-
-
-  //---------------------------------------------------------------------
-  // QRMaskPattern
-  //---------------------------------------------------------------------
-
-  var QRMaskPattern = {
-    PATTERN000: 0,
-    PATTERN001: 1,
-    PATTERN010: 2,
-    PATTERN011: 3,
-    PATTERN100: 4,
-    PATTERN101: 5,
-    PATTERN110: 6,
-    PATTERN111: 7 };
-
-
-  //---------------------------------------------------------------------
-  // QRUtil
-  //---------------------------------------------------------------------
-
-  var QRUtil = {
-
-    PATTERN_POSITION_TABLE: [
-    [],
-    [6, 18],
-    [6, 22],
-    [6, 26],
-    [6, 30],
-    [6, 34],
-    [6, 22, 38],
-    [6, 24, 42],
-    [6, 26, 46],
-    [6, 28, 50],
-    [6, 30, 54],
-    [6, 32, 58],
-    [6, 34, 62],
-    [6, 26, 46, 66],
-    [6, 26, 48, 70],
-    [6, 26, 50, 74],
-    [6, 30, 54, 78],
-    [6, 30, 56, 82],
-    [6, 30, 58, 86],
-    [6, 34, 62, 90],
-    [6, 28, 50, 72, 94],
-    [6, 26, 50, 74, 98],
-    [6, 30, 54, 78, 102],
-    [6, 28, 54, 80, 106],
-    [6, 32, 58, 84, 110],
-    [6, 30, 58, 86, 114],
-    [6, 34, 62, 90, 118],
-    [6, 26, 50, 74, 98, 122],
-    [6, 30, 54, 78, 102, 126],
-    [6, 26, 52, 78, 104, 130],
-    [6, 30, 56, 82, 108, 134],
-    [6, 34, 60, 86, 112, 138],
-    [6, 30, 58, 86, 114, 142],
-    [6, 34, 62, 90, 118, 146],
-    [6, 30, 54, 78, 102, 126, 150],
-    [6, 24, 50, 76, 102, 128, 154],
-    [6, 28, 54, 80, 106, 132, 158],
-    [6, 32, 58, 84, 110, 136, 162],
-    [6, 26, 54, 82, 110, 138, 166],
-    [6, 30, 58, 86, 114, 142, 170]],
-
-
-    G15: 1 << 10 | 1 << 8 | 1 << 5 | 1 << 4 | 1 << 2 | 1 << 1 | 1 << 0,
-    G18: 1 << 12 | 1 << 11 | 1 << 10 | 1 << 9 | 1 << 8 | 1 << 5 | 1 << 2 | 1 << 0,
-    G15_MASK: 1 << 14 | 1 << 12 | 1 << 10 | 1 << 4 | 1 << 1,
-
-    getBCHTypeInfo: function getBCHTypeInfo(data) {
-      var d = data << 10;
-      while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15) >= 0) {
-        d ^= QRUtil.G15 << QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G15);
-      }
-      return (data << 10 | d) ^ QRUtil.G15_MASK;
-    },
-
-    getBCHTypeNumber: function getBCHTypeNumber(data) {
-      var d = data << 12;
-      while (QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18) >= 0) {
-        d ^= QRUtil.G18 << QRUtil.getBCHDigit(d) - QRUtil.getBCHDigit(QRUtil.G18);
-      }
-      return data << 12 | d;
-    },
-
-    getBCHDigit: function getBCHDigit(data) {
-
-      var digit = 0;
-
-      while (data != 0) {
-        digit++;
-        data >>>= 1;
-      }
-
-      return digit;
-    },
-
-    getPatternPosition: function getPatternPosition(typeNumber) {
-      return QRUtil.PATTERN_POSITION_TABLE[typeNumber - 1];
-    },
-
-    getMask: function getMask(maskPattern, i, j) {
-
-      switch (maskPattern) {
-
-        case QRMaskPattern.PATTERN000:
-          return (i + j) % 2 == 0;
-        case QRMaskPattern.PATTERN001:
-          return i % 2 == 0;
-        case QRMaskPattern.PATTERN010:
-          return j % 3 == 0;
-        case QRMaskPattern.PATTERN011:
-          return (i + j) % 3 == 0;
-        case QRMaskPattern.PATTERN100:
-          return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;
-        case QRMaskPattern.PATTERN101:
-          return i * j % 2 + i * j % 3 == 0;
-        case QRMaskPattern.PATTERN110:
-          return (i * j % 2 + i * j % 3) % 2 == 0;
-        case QRMaskPattern.PATTERN111:
-          return (i * j % 3 + (i + j) % 2) % 2 == 0;
-
-        default:
-          throw new Error("bad maskPattern:" + maskPattern);}
-
-    },
-
-    getErrorCorrectPolynomial: function getErrorCorrectPolynomial(errorCorrectLength) {
-
-      var a = new QRPolynomial([1], 0);
-
-      for (var i = 0; i < errorCorrectLength; i++) {
-        a = a.multiply(new QRPolynomial([1, QRMath.gexp(i)], 0));
-      }
-
-      return a;
-    },
-
-    getLengthInBits: function getLengthInBits(mode, type) {
-
-      if (1 <= type && type < 10) {
-
-        // 1 - 9
-
-        switch (mode) {
-          case QRMode.MODE_NUMBER:
-            return 10;
-          case QRMode.MODE_ALPHA_NUM:
-            return 9;
-          case QRMode.MODE_8BIT_BYTE:
-            return 8;
-          case QRMode.MODE_KANJI:
-            return 8;
-          default:
-            throw new Error("mode:" + mode);}
-
-
-      } else if (type < 27) {
-
-        // 10 - 26
-
-        switch (mode) {
-          case QRMode.MODE_NUMBER:
-            return 12;
-          case QRMode.MODE_ALPHA_NUM:
-            return 11;
-          case QRMode.MODE_8BIT_BYTE:
-            return 16;
-          case QRMode.MODE_KANJI:
-            return 10;
-          default:
-            throw new Error("mode:" + mode);}
-
-
-      } else if (type < 41) {
-
-        // 27 - 40
-
-        switch (mode) {
-          case QRMode.MODE_NUMBER:
-            return 14;
-          case QRMode.MODE_ALPHA_NUM:
-            return 13;
-          case QRMode.MODE_8BIT_BYTE:
-            return 16;
-          case QRMode.MODE_KANJI:
-            return 12;
-          default:
-            throw new Error("mode:" + mode);}
-
-
-      } else {
-        throw new Error("type:" + type);
-      }
-    },
-
-    getLostPoint: function getLostPoint(qrCode) {
-
-      var moduleCount = qrCode.getModuleCount();
-
-      var lostPoint = 0;
-
-      // LEVEL1
-
-      for (var row = 0; row < moduleCount; row++) {
-
-        for (var col = 0; col < moduleCount; col++) {
-
-          var sameCount = 0;
-          var dark = qrCode.isDark(row, col);
-
-          for (var r = -1; r <= 1; r++) {
-
-            if (row + r < 0 || moduleCount <= row + r) {
-              continue;
-            }
-
-            for (var c = -1; c <= 1; c++) {
-
-              if (col + c < 0 || moduleCount <= col + c) {
-                continue;
-              }
-
-              if (r == 0 && c == 0) {
-                continue;
-              }
-
-              if (dark == qrCode.isDark(row + r, col + c)) {
-                sameCount++;
-              }
-            }
-          }
-
-          if (sameCount > 5) {
-            lostPoint += 3 + sameCount - 5;
-          }
-        }
-      }
-
-      // LEVEL2
-
-      for (var row = 0; row < moduleCount - 1; row++) {
-        for (var col = 0; col < moduleCount - 1; col++) {
-          var count = 0;
-          if (qrCode.isDark(row, col)) count++;
-          if (qrCode.isDark(row + 1, col)) count++;
-          if (qrCode.isDark(row, col + 1)) count++;
-          if (qrCode.isDark(row + 1, col + 1)) count++;
-          if (count == 0 || count == 4) {
-            lostPoint += 3;
-          }
-        }
-      }
-
-      // LEVEL3
-
-      for (var row = 0; row < moduleCount; row++) {
-        for (var col = 0; col < moduleCount - 6; col++) {
-          if (qrCode.isDark(row, col) &&
-          !qrCode.isDark(row, col + 1) &&
-          qrCode.isDark(row, col + 2) &&
-          qrCode.isDark(row, col + 3) &&
-          qrCode.isDark(row, col + 4) &&
-          !qrCode.isDark(row, col + 5) &&
-          qrCode.isDark(row, col + 6)) {
-            lostPoint += 40;
-          }
-        }
-      }
-
-      for (var col = 0; col < moduleCount; col++) {
-        for (var row = 0; row < moduleCount - 6; row++) {
-          if (qrCode.isDark(row, col) &&
-          !qrCode.isDark(row + 1, col) &&
-          qrCode.isDark(row + 2, col) &&
-          qrCode.isDark(row + 3, col) &&
-          qrCode.isDark(row + 4, col) &&
-          !qrCode.isDark(row + 5, col) &&
-          qrCode.isDark(row + 6, col)) {
-            lostPoint += 40;
-          }
-        }
-      }
-
-      // LEVEL4
-
-      var darkCount = 0;
-
-      for (var col = 0; col < moduleCount; col++) {
-        for (var row = 0; row < moduleCount; row++) {
-          if (qrCode.isDark(row, col)) {
-            darkCount++;
-          }
-        }
-      }
-
-      var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
-      lostPoint += ratio * 10;
-
-      return lostPoint;
-    } };
-
-
-
-
-  //---------------------------------------------------------------------
-  // QRMath
-  //---------------------------------------------------------------------
-
-  var QRMath = {
-
-    glog: function glog(n) {
-
-      if (n < 1) {
-        throw new Error("glog(" + n + ")");
-      }
-
-      return QRMath.LOG_TABLE[n];
-    },
-
-    gexp: function gexp(n) {
-
-      while (n < 0) {
-        n += 255;
-      }
-
-      while (n >= 256) {
-        n -= 255;
-      }
-
-      return QRMath.EXP_TABLE[n];
-    },
-
-    EXP_TABLE: new Array(256),
-
-    LOG_TABLE: new Array(256) };
-
-
-
-  for (var i = 0; i < 8; i++) {
-    QRMath.EXP_TABLE[i] = 1 << i;
-  }
-  for (var i = 8; i < 256; i++) {
-    QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4] ^
-    QRMath.EXP_TABLE[i - 5] ^
-    QRMath.EXP_TABLE[i - 6] ^
-    QRMath.EXP_TABLE[i - 8];
-  }
-  for (var i = 0; i < 255; i++) {
-    QRMath.LOG_TABLE[QRMath.EXP_TABLE[i]] = i;
-  }
-
-  //---------------------------------------------------------------------
-  // QRPolynomial
-  //---------------------------------------------------------------------
-
-  function QRPolynomial(num, shift) {
-
-    if (num.length == undefined) {
-      throw new Error(num.length + "/" + shift);
-    }
-
-    var offset = 0;
-
-    while (offset < num.length && num[offset] == 0) {
-      offset++;
-    }
-
-    this.num = new Array(num.length - offset + shift);
-    for (var i = 0; i < num.length - offset; i++) {
-      this.num[i] = num[i + offset];
-    }
-  }
-
-  QRPolynomial.prototype = {
-
-    get: function get(index) {
-      return this.num[index];
-    },
-
-    getLength: function getLength() {
-      return this.num.length;
-    },
-
-    multiply: function multiply(e) {
-
-      var num = new Array(this.getLength() + e.getLength() - 1);
-
-      for (var i = 0; i < this.getLength(); i++) {
-        for (var j = 0; j < e.getLength(); j++) {
-          num[i + j] ^= QRMath.gexp(QRMath.glog(this.get(i)) + QRMath.glog(e.get(j)));
-        }
-      }
-
-      return new QRPolynomial(num, 0);
-    },
-
-    mod: function mod(e) {
-
-      if (this.getLength() - e.getLength() < 0) {
-        return this;
-      }
-
-      var ratio = QRMath.glog(this.get(0)) - QRMath.glog(e.get(0));
-
-      var num = new Array(this.getLength());
-
-      for (var i = 0; i < this.getLength(); i++) {
-        num[i] = this.get(i);
-      }
-
-      for (var i = 0; i < e.getLength(); i++) {
-        num[i] ^= QRMath.gexp(QRMath.glog(e.get(i)) + ratio);
-      }
-
-      // recursive call
-      return new QRPolynomial(num, 0).mod(e);
-    } };
-
-
-  //---------------------------------------------------------------------
-  // QRRSBlock
-  //---------------------------------------------------------------------
-
-  function QRRSBlock(totalCount, dataCount) {
-    this.totalCount = totalCount;
-    this.dataCount = dataCount;
-  }
-
-  QRRSBlock.RS_BLOCK_TABLE = [
-
-  // L
-  // M
-  // Q
-  // H
-
-  // 1
-  [1, 26, 19],
-  [1, 26, 16],
-  [1, 26, 13],
-  [1, 26, 9],
-
-  // 2
-  [1, 44, 34],
-  [1, 44, 28],
-  [1, 44, 22],
-  [1, 44, 16],
-
-  // 3
-  [1, 70, 55],
-  [1, 70, 44],
-  [2, 35, 17],
-  [2, 35, 13],
-
-  // 4		
-  [1, 100, 80],
-  [2, 50, 32],
-  [2, 50, 24],
-  [4, 25, 9],
-
-  // 5
-  [1, 134, 108],
-  [2, 67, 43],
-  [2, 33, 15, 2, 34, 16],
-  [2, 33, 11, 2, 34, 12],
-
-  // 6
-  [2, 86, 68],
-  [4, 43, 27],
-  [4, 43, 19],
-  [4, 43, 15],
-
-  // 7		
-  [2, 98, 78],
-  [4, 49, 31],
-  [2, 32, 14, 4, 33, 15],
-  [4, 39, 13, 1, 40, 14],
-
-  // 8
-  [2, 121, 97],
-  [2, 60, 38, 2, 61, 39],
-  [4, 40, 18, 2, 41, 19],
-  [4, 40, 14, 2, 41, 15],
-
-  // 9
-  [2, 146, 116],
-  [3, 58, 36, 2, 59, 37],
-  [4, 36, 16, 4, 37, 17],
-  [4, 36, 12, 4, 37, 13],
-
-  // 10		
-  [2, 86, 68, 2, 87, 69],
-  [4, 69, 43, 1, 70, 44],
-  [6, 43, 19, 2, 44, 20],
-  [6, 43, 15, 2, 44, 16],
-
-  // 11
-  [4, 101, 81],
-  [1, 80, 50, 4, 81, 51],
-  [4, 50, 22, 4, 51, 23],
-  [3, 36, 12, 8, 37, 13],
-
-  // 12
-  [2, 116, 92, 2, 117, 93],
-  [6, 58, 36, 2, 59, 37],
-  [4, 46, 20, 6, 47, 21],
-  [7, 42, 14, 4, 43, 15],
-
-  // 13
-  [4, 133, 107],
-  [8, 59, 37, 1, 60, 38],
-  [8, 44, 20, 4, 45, 21],
-  [12, 33, 11, 4, 34, 12],
-
-  // 14
-  [3, 145, 115, 1, 146, 116],
-  [4, 64, 40, 5, 65, 41],
-  [11, 36, 16, 5, 37, 17],
-  [11, 36, 12, 5, 37, 13],
-
-  // 15
-  [5, 109, 87, 1, 110, 88],
-  [5, 65, 41, 5, 66, 42],
-  [5, 54, 24, 7, 55, 25],
-  [11, 36, 12],
-
-  // 16
-  [5, 122, 98, 1, 123, 99],
-  [7, 73, 45, 3, 74, 46],
-  [15, 43, 19, 2, 44, 20],
-  [3, 45, 15, 13, 46, 16],
-
-  // 17
-  [1, 135, 107, 5, 136, 108],
-  [10, 74, 46, 1, 75, 47],
-  [1, 50, 22, 15, 51, 23],
-  [2, 42, 14, 17, 43, 15],
-
-  // 18
-  [5, 150, 120, 1, 151, 121],
-  [9, 69, 43, 4, 70, 44],
-  [17, 50, 22, 1, 51, 23],
-  [2, 42, 14, 19, 43, 15],
-
-  // 19
-  [3, 141, 113, 4, 142, 114],
-  [3, 70, 44, 11, 71, 45],
-  [17, 47, 21, 4, 48, 22],
-  [9, 39, 13, 16, 40, 14],
-
-  // 20
-  [3, 135, 107, 5, 136, 108],
-  [3, 67, 41, 13, 68, 42],
-  [15, 54, 24, 5, 55, 25],
-  [15, 43, 15, 10, 44, 16],
-
-  // 21
-  [4, 144, 116, 4, 145, 117],
-  [17, 68, 42],
-  [17, 50, 22, 6, 51, 23],
-  [19, 46, 16, 6, 47, 17],
-
-  // 22
-  [2, 139, 111, 7, 140, 112],
-  [17, 74, 46],
-  [7, 54, 24, 16, 55, 25],
-  [34, 37, 13],
-
-  // 23
-  [4, 151, 121, 5, 152, 122],
-  [4, 75, 47, 14, 76, 48],
-  [11, 54, 24, 14, 55, 25],
-  [16, 45, 15, 14, 46, 16],
-
-  // 24
-  [6, 147, 117, 4, 148, 118],
-  [6, 73, 45, 14, 74, 46],
-  [11, 54, 24, 16, 55, 25],
-  [30, 46, 16, 2, 47, 17],
-
-  // 25
-  [8, 132, 106, 4, 133, 107],
-  [8, 75, 47, 13, 76, 48],
-  [7, 54, 24, 22, 55, 25],
-  [22, 45, 15, 13, 46, 16],
-
-  // 26
-  [10, 142, 114, 2, 143, 115],
-  [19, 74, 46, 4, 75, 47],
-  [28, 50, 22, 6, 51, 23],
-  [33, 46, 16, 4, 47, 17],
-
-  // 27
-  [8, 152, 122, 4, 153, 123],
-  [22, 73, 45, 3, 74, 46],
-  [8, 53, 23, 26, 54, 24],
-  [12, 45, 15, 28, 46, 16],
-
-  // 28
-  [3, 147, 117, 10, 148, 118],
-  [3, 73, 45, 23, 74, 46],
-  [4, 54, 24, 31, 55, 25],
-  [11, 45, 15, 31, 46, 16],
-
-  // 29
-  [7, 146, 116, 7, 147, 117],
-  [21, 73, 45, 7, 74, 46],
-  [1, 53, 23, 37, 54, 24],
-  [19, 45, 15, 26, 46, 16],
-
-  // 30
-  [5, 145, 115, 10, 146, 116],
-  [19, 75, 47, 10, 76, 48],
-  [15, 54, 24, 25, 55, 25],
-  [23, 45, 15, 25, 46, 16],
-
-  // 31
-  [13, 145, 115, 3, 146, 116],
-  [2, 74, 46, 29, 75, 47],
-  [42, 54, 24, 1, 55, 25],
-  [23, 45, 15, 28, 46, 16],
-
-  // 32
-  [17, 145, 115],
-  [10, 74, 46, 23, 75, 47],
-  [10, 54, 24, 35, 55, 25],
-  [19, 45, 15, 35, 46, 16],
-
-  // 33
-  [17, 145, 115, 1, 146, 116],
-  [14, 74, 46, 21, 75, 47],
-  [29, 54, 24, 19, 55, 25],
-  [11, 45, 15, 46, 46, 16],
-
-  // 34
-  [13, 145, 115, 6, 146, 116],
-  [14, 74, 46, 23, 75, 47],
-  [44, 54, 24, 7, 55, 25],
-  [59, 46, 16, 1, 47, 17],
-
-  // 35
-  [12, 151, 121, 7, 152, 122],
-  [12, 75, 47, 26, 76, 48],
-  [39, 54, 24, 14, 55, 25],
-  [22, 45, 15, 41, 46, 16],
-
-  // 36
-  [6, 151, 121, 14, 152, 122],
-  [6, 75, 47, 34, 76, 48],
-  [46, 54, 24, 10, 55, 25],
-  [2, 45, 15, 64, 46, 16],
-
-  // 37
-  [17, 152, 122, 4, 153, 123],
-  [29, 74, 46, 14, 75, 47],
-  [49, 54, 24, 10, 55, 25],
-  [24, 45, 15, 46, 46, 16],
-
-  // 38
-  [4, 152, 122, 18, 153, 123],
-  [13, 74, 46, 32, 75, 47],
-  [48, 54, 24, 14, 55, 25],
-  [42, 45, 15, 32, 46, 16],
-
-  // 39
-  [20, 147, 117, 4, 148, 118],
-  [40, 75, 47, 7, 76, 48],
-  [43, 54, 24, 22, 55, 25],
-  [10, 45, 15, 67, 46, 16],
-
-  // 40
-  [19, 148, 118, 6, 149, 119],
-  [18, 75, 47, 31, 76, 48],
-  [34, 54, 24, 34, 55, 25],
-  [20, 45, 15, 61, 46, 16]];
-
-
-  QRRSBlock.getRSBlocks = function (typeNumber, errorCorrectLevel) {
-
-    var rsBlock = QRRSBlock.getRsBlockTable(typeNumber, errorCorrectLevel);
-
-    if (rsBlock == undefined) {
-      throw new Error("bad rs block @ typeNumber:" + typeNumber + "/errorCorrectLevel:" + errorCorrectLevel);
-    }
-
-    var length = rsBlock.length / 3;
-
-    var list = new Array();
-
-    for (var i = 0; i < length; i++) {
-
-      var count = rsBlock[i * 3 + 0];
-      var totalCount = rsBlock[i * 3 + 1];
-      var dataCount = rsBlock[i * 3 + 2];
-
-      for (var j = 0; j < count; j++) {
-        list.push(new QRRSBlock(totalCount, dataCount));
-      }
-    }
-
-    return list;
-  };
-
-  QRRSBlock.getRsBlockTable = function (typeNumber, errorCorrectLevel) {
-
-    switch (errorCorrectLevel) {
-      case QRErrorCorrectLevel.L:
-        return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
-      case QRErrorCorrectLevel.M:
-        return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
-      case QRErrorCorrectLevel.Q:
-        return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
-      case QRErrorCorrectLevel.H:
-        return QRRSBlock.RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
-      default:
-        return undefined;}
-
-  };
-
-  //---------------------------------------------------------------------
-  // QRBitBuffer
-  //---------------------------------------------------------------------
-
-  function QRBitBuffer() {
-    this.buffer = new Array();
-    this.length = 0;
-  }
-
-  QRBitBuffer.prototype = {
-
-    get: function get(index) {
-      var bufIndex = Math.floor(index / 8);
-      return (this.buffer[bufIndex] >>> 7 - index % 8 & 1) == 1;
-    },
-
-    put: function put(num, length) {
-      for (var i = 0; i < length; i++) {
-        this.putBit((num >>> length - i - 1 & 1) == 1);
-      }
-    },
-
-    getLengthInBits: function getLengthInBits() {
-      return this.length;
-    },
-
-    putBit: function putBit(bit) {
-
-      var bufIndex = Math.floor(this.length / 8);
-      if (this.buffer.length <= bufIndex) {
-        this.buffer.push(0);
-      }
-
-      if (bit) {
-        this.buffer[bufIndex] |= 0x80 >>> this.length % 8;
-      }
-
-      this.length++;
-    } };
-
-
-  //---------------------------------------------------------------------
-  // Support Chinese
-  //---------------------------------------------------------------------
-  function utf16To8(text) {
-    var result = '';
-    var c;
-    for (var i = 0; i < text.length; i++) {
-      c = text.charCodeAt(i);
-      if (c >= 0x0001 && c <= 0x007F) {
-        result += text.charAt(i);
-      } else if (c > 0x07FF) {
-        result += String.fromCharCode(0xE0 | c >> 12 & 0x0F);
-        result += String.fromCharCode(0x80 | c >> 6 & 0x3F);
-        result += String.fromCharCode(0x80 | c >> 0 & 0x3F);
-      } else {
-        result += String.fromCharCode(0xC0 | c >> 6 & 0x1F);
-        result += String.fromCharCode(0x80 | c >> 0 & 0x3F);
-      }
-    }
-    return result;
-  }
-
-  uQRCode = {
-
-    errorCorrectLevel: QRErrorCorrectLevel,
-
-    defaults: {
-      size: 354,
-      margin: 0,
-      backgroundColor: '#ffffff',
-      foregroundColor: '#000000',
-      fileType: 'png', // 'jpg', 'png'
-      errorCorrectLevel: QRErrorCorrectLevel.H,
-      typeNumber: -1 },
-
-
-    make: function make(options) {var _this = this;
-      return new Promise(function (reslove, reject) {
-        var defaultOptions = {
-          canvasId: options.canvasId,
-          componentInstance: options.componentInstance,
-          text: options.text,
-          size: _this.defaults.size,
-          margin: _this.defaults.margin,
-          backgroundColor: _this.defaults.backgroundColor,
-          foregroundColor: _this.defaults.foregroundColor,
-          fileType: _this.defaults.fileType,
-          errorCorrectLevel: _this.defaults.errorCorrectLevel,
-          typeNumber: _this.defaults.typeNumber };
-
-        if (options) {
-          for (var i in options) {
-            defaultOptions[i] = options[i];
-          }
-        }
-        options = defaultOptions;
-        if (!options.canvasId) {
-          console.error('uQRCode: Please set canvasId!');
-          return;
-        }
-
-        function createCanvas() {
-          var qrcode = new QRCode(options.typeNumber, options.errorCorrectLevel);
-          qrcode.addData(utf16To8(options.text));
-          qrcode.make();
-
-          var ctx = uni.createCanvasContext(options.canvasId, options.componentInstance);
-          ctx.setFillStyle(options.backgroundColor);
-          ctx.fillRect(0, 0, options.size, options.size);
-
-          var tileW = (options.size - options.margin * 2) / qrcode.getModuleCount();
-          var tileH = tileW;
-
-          for (var row = 0; row < qrcode.getModuleCount(); row++) {
-            for (var col = 0; col < qrcode.getModuleCount(); col++) {
-              var style = qrcode.isDark(row, col) ? options.foregroundColor : options.backgroundColor;
-              ctx.setFillStyle(style);
-              var x = Math.round(col * tileW) + options.margin;
-              var y = Math.round(row * tileH) + options.margin;
-              var w = Math.ceil((col + 1) * tileW) - Math.floor(col * tileW);
-              var h = Math.ceil((row + 1) * tileW) - Math.floor(row * tileW);
-              ctx.fillRect(x, y, w, h);
-            }
-          }
-
-          setTimeout(function () {
-            ctx.draw(false, function () {
-              setTimeout(function () {
-                uni.canvasToTempFilePath({
-                  canvasId: options.canvasId,
-                  fileType: options.fileType,
-                  width: options.size,
-                  height: options.size,
-                  destWidth: options.size,
-                  destHeight: options.size,
-                  success: function success(res) {
-                    var resData; // 将统一为base64格式
-                    var tempFilePath = res.tempFilePath; // H5为base64，其他为相对路径
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    uni.getFileSystemManager().readFile({
-                      filePath: tempFilePath,
-                      encoding: 'base64',
-                      success: function success(res) {
-                        resData = 'data:image/png;base64,' + res.data;
-                        options.success && options.success(resData);
-                        reslove(resData);
-                      } });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  },
-                  fail: function fail(error) {
-                    options.fail && options.fail(error);
-                    reject(error);
-                  },
-                  complete: function complete(res) {
-                    options.complete && options.complete(res);
-                  } },
-                options.componentInstance);
-              }, options.text.length + 100);
-            }());
-          }, 150);
-        }
-
-        createCanvas();
-      });
-    } };
-
-
-})();var _default =
-
-uQRCode;exports.default = _default;
+toast;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
-/***/ 52:
-/*!*******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/throttle.js ***!
-  \*******************************************************************************/
+/***/ 48:
+/*!********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/getParent.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
-/**
-                                                                                                                      * 节流原理：在一定时间内，只能触发一次
-                                                                                                                      * 
-                                                                                                                      * @param {Function} func 要执行的回调函数 
-                                                                                                                      * @param {Number} wait 延时的时间
-                                                                                                                      * @param {Boolean} immediate 是否立即执行
-                                                                                                                      * @return null
-                                                                                                                      */
-function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-  if (immediate) {
-    if (!flag) {
-      flag = true;
-      // 如果是立即执行，则在wait毫秒内开始时执行
-      typeof func === 'function' && func();
-      timer = setTimeout(function () {
-        flag = false;
-      }, wait);
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+function getParent(name, keys) {
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {var _ret = function () {
+        var data = {};
+        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
+        if (Array.isArray(keys)) {
+          keys.map(function (val) {
+            data[val] = parent[val] ? parent[val] : '';
+          });
+        } else {
+          // 历遍传过来的对象参数
+          for (var i in keys) {
+            // 如果子组件有此值则用，无此值则用父组件的值
+            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
+            if (Array.isArray(keys[i])) {
+              if (keys[i].length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else if (keys[i].constructor === Object) {
+              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
+              if (Object.keys(keys[i]).length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else {
+              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
+              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
+            }
+          }
+        }
+        return { v: data };}();if (typeof _ret === "object") return _ret.v;
     }
-  } else {
-    if (!flag) {
-      flag = true;
-      // 如果是非立即执行，则在wait毫秒内的结束处执行
-      timer = setTimeout(function () {
-        flag = false;
-        typeof func === 'function' && func();
-      }, wait);
-    }
-
   }
-};var _default =
-throttle;exports.default = _default;
+
+  return {};
+}
 
 /***/ }),
 
-/***/ 53:
-/*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/config.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-12-17
-var version = '1.8.3';var _default =
-
-{
-  v: version,
-  version: version,
-  // 主题名称
-  type: [
-  'primary',
-  'success',
-  'info',
-  'error',
-  'warning'] };exports.default = _default;
-
-/***/ }),
-
-/***/ 532:
+/***/ 483:
 /*!***********************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \***********************************************************************************/
@@ -20694,7 +18874,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 533:
+/***/ 484:
 /*!****************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
   \****************************************************************************************/
@@ -20702,9 +18882,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 534));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 535));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 536));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 485));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 486));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 487));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -20712,7 +18892,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 5
 
 /***/ }),
 
-/***/ 534:
+/***/ 485:
 /*!***************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
   \***************************************************************************************/
@@ -20723,7 +18903,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 535:
+/***/ 486:
 /*!********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
   \********************************************************************************************/
@@ -20734,7 +18914,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 536:
+/***/ 487:
 /*!********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
   \********************************************************************************************/
@@ -20745,37 +18925,66 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 54:
-/*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/zIndex.js ***!
-  \***************************************************************************/
+/***/ 49:
+/*!******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/$parent.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
-/**
- * actionsheet: 999
- * modal: 999
- * navigate: 998
- * tabbar: 998
- * toast: 999
- */var _default =
-
-{
-  toast: 10090,
-  noNetwork: 10080,
-  // popup包含popup，actionsheet，keyboard，picker的值
-  popup: 10075,
-  mask: 10070,
-  navbar: 980,
-  topTips: 975,
-  sticky: 970,
-  indexListSticky: 965 };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
+// 值(默认为undefined)，就是查找最顶层的$parent
+function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options && parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {
+      return parent;
+    }
+  }
+  return false;
+}
 
 /***/ }),
 
-/***/ 551:
+/***/ 5:
+/*!******************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/pages.json ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 50:
+/*!**************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/sys.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.os = os;exports.sys = sys;function os() {
+  return uni.getSystemInfoSync().platform;
+};
+
+function sys() {
+  return uni.getSystemInfoSync();
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 502:
 /*!***************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/userinfo/limeClipper/utils.js ***!
   \***************************************************************************/
@@ -21031,7 +19240,47 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 
 /***/ }),
 
-/***/ 566:
+/***/ 51:
+/*!*******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/debounce.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timeout = null;
+
+/**
+                                                                                                                         * 防抖原理：一定时间内，只有最后一次操作，再过wait毫秒后才执行函数
+                                                                                                                         * 
+                                                                                                                         * @param {Function} func 要执行的回调函数 
+                                                                                                                         * @param {Number} wait 延时的时间
+                                                                                                                         * @param {Boolean} immediate 是否立即执行 
+                                                                                                                         * @return null
+                                                                                                                         */
+function debounce(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  // 清除定时器
+  if (timeout !== null) clearTimeout(timeout);
+  // 立即执行，此类情况一般用不到
+  if (immediate) {
+    var callNow = !timeout;
+    timeout = setTimeout(function () {
+      timeout = null;
+    }, wait);
+    if (callNow) typeof func === 'function' && func();
+  } else {
+    // 设置定时器，当最后一次操作后，timeout不会再被清除，所以在延时wait毫秒后执行func回调方法
+    timeout = setTimeout(function () {
+      typeof func === 'function' && func();
+    }, wait);
+  }
+}var _default =
+
+debounce;exports.default = _default;
+
+/***/ }),
+
+/***/ 517:
 /*!**************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \**************************************************************************************/
@@ -21528,41 +19777,100 @@ SchemaValidator;exports.default = _default;
 
 /***/ }),
 
-/***/ 581:
-/*!***********************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-load-state/i18n/index.js ***!
-  \***********************************************************************/
+/***/ 52:
+/*!*******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/throttle.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 582));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 583));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
+/**
+                                                                                                                      * 节流原理：在一定时间内，只能触发一次
+                                                                                                                      * 
+                                                                                                                      * @param {Function} func 要执行的回调函数 
+                                                                                                                      * @param {Number} wait 延时的时间
+                                                                                                                      * @param {Boolean} immediate 是否立即执行
+                                                                                                                      * @return null
+                                                                                                                      */
+function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  if (immediate) {
+    if (!flag) {
+      flag = true;
+      // 如果是立即执行，则在wait毫秒内开始时执行
+      typeof func === 'function' && func();
+      timer = setTimeout(function () {
+        flag = false;
+      }, wait);
+    }
+  } else {
+    if (!flag) {
+      flag = true;
+      // 如果是非立即执行，则在wait毫秒内的结束处执行
+      timer = setTimeout(function () {
+        flag = false;
+        typeof func === 'function' && func();
+      }, wait);
+    }
+
+  }
+};var _default =
+throttle;exports.default = _default;
 
 /***/ }),
 
-/***/ 582:
-/*!**********************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-load-state/i18n/en.json ***!
-  \**********************************************************************/
-/*! exports provided: noData, noNetwork, toSet, error, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"noData\":\"No Data\",\"noNetwork\":\"Network error\",\"toSet\":\"Go to settings\",\"error\":\"error\"}");
-
-/***/ }),
-
-/***/ 583:
+/***/ 53:
 /*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-load-state/i18n/zh-Hans.json ***!
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/config.js ***!
   \***************************************************************************/
-/*! exports provided: noData, noNetwork, toSet, error, default */
-/***/ (function(module) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络异常\",\"toSet\":\"前往设置\",\"error\":\"错误\"}");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-12-17
+var version = '1.8.3';var _default =
+
+{
+  v: version,
+  version: version,
+  // 主题名称
+  type: [
+  'primary',
+  'success',
+  'info',
+  'error',
+  'warning'] };exports.default = _default;
+
+/***/ }),
+
+/***/ 54:
+/*!***************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/zIndex.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
+/**
+ * actionsheet: 999
+ * modal: 999
+ * navigate: 998
+ * tabbar: 998
+ * toast: 999
+ */var _default =
+
+{
+  toast: 10090,
+  noNetwork: 10080,
+  // popup包含popup，actionsheet，keyboard，picker的值
+  popup: 10075,
+  mask: 10070,
+  navbar: 980,
+  topTips: 975,
+  sticky: 970,
+  indexListSticky: 965 };exports.default = _default;
 
 /***/ }),
 
@@ -21581,9 +19889,9 @@ module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络
         "192.168.44.1",
         "192.168.159.33"
     ],
-    "debugPort": 61549,
+    "debugPort": 58622,
     "initialLaunchType": "local",
-    "servePort": 61550,
+    "servePort": 58623,
     "skipFiles": [
         "<node_internals>/**/*.js",
         "D:/HBuilderX/plugins/unicloud/**/*.js"
@@ -21594,7 +19902,7 @@ module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络
 
 /***/ }),
 
-/***/ 656:
+/***/ 632:
 /*!*******************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \*******************************************************************************************************/
@@ -21731,57 +20039,6 @@ function createAnimation(option, _this) {
   return new MPAnimation(option, _this);
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 662:
-/*!************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 663));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 664));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 665));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 663:
-/*!***********************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
-  \***********************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
-
-/***/ }),
-
-/***/ 664:
-/*!****************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
-  \****************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
-
-/***/ }),
-
-/***/ 665:
-/*!****************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
-  \****************************************************************************************************/
-/*! exports provided: uni-load-more.contentdown, uni-load-more.contentrefresh, uni-load-more.contentnomore, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
 

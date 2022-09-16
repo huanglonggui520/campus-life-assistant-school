@@ -22,10 +22,13 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;_vue.default.use(_uvi
 _vue.default.config.productionTip = false;
 _vue.default.prototype.$store = _store.default;
 _App.default.mpType = 'app';
-var app = new _vue.default(_objectSpread({
+var app = new _vue.default(_objectSpread(_objectSpread({
   i18n: _i18n.default,
   store: _store.default },
-_App.default));
+_App.default), {}, {
+  beforeCreate: function beforeCreate() {
+    _vue.default.prototype.$bus = this; //安装全局事件总线，$bus就是当前应用的vm
+  } }));
 
 createApp(app).$mount();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))

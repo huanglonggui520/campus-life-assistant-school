@@ -1,6 +1,7 @@
 <template>
 	<view style="padding-bottom: 35rpx;">
 		<!-- 头像部分 -->
+		
 		<view class="top">
 			<view class="textitem">
 				<view class="content" >

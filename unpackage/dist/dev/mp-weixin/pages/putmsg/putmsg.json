@@ -1,8 +1,12 @@
 {
   "navigationBarTitleText": "发布信息",
   "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
   "usingComponents": {
+    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
     "uni-file-picker": "/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker",
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-image": "/node-modules/uview-ui/components/u-image/u-image"
   }
 }
