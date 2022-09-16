@@ -97,11 +97,17 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uNavbar: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 266))
+    },
     uniFilePicker: function() {
-      return Promise.all(/*! import() | uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue */ 341))
+      return Promise.all(/*! import() | uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker.vue */ 360))
     },
     uButton: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 350))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 369))
+    },
+    uImage: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 308))
     }
   }
 } catch (e) {
@@ -177,14 +183,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      timestamp: '1662037897813',
+      src: "https://res.wx.qq.com/mpres/htmledition/images/icon/emotion/",
       contentVal: '', //内容（带html）
       contentText: '', //内容（纯文本）
-      src: '',
+      changetext: '',
+      emoji: ['微笑', '撇嘴', '色', '发呆', '得意', '流泪', '害羞', '闭嘴', '睡', '大哭', '尴尬', '发怒', '调皮', '呲牙', '惊讶', '难过', '酷',
+      '冷汗', '抓狂', '吐', '偷笑', '可爱', '白眼', '傲慢', '饥饿', '困', '惊恐', '流汗', '憨笑', '大兵', '奋斗', '咒骂', '疑问', '嘘',
+      '晕', '折磨', '衰', '骷髅', '敲打', '再见', '擦汗', '抠鼻', '鼓掌', '糗大了', '坏笑', '左哼哼', '右哼哼', '哈欠', '鄙视', '委屈',
+      '快哭了', '阴险', '亲亲', '吓', '可怜', '菜刀', '西瓜', '啤酒', '篮球', '乒乓', '咖啡', '饭', '猪头', '玫瑰', '凋谢', '示爱',
+      '爱心', '心碎', '蛋糕', '闪电', '炸弹', '刀', '足球', '瓢虫', '便便', '月亮', '太阳', '礼物', '拥抱', '强', '弱', '握手', '胜利',
+      '抱拳', '勾引', '拳头', '差劲', '爱你', 'NO', 'OK', '爱情', '飞吻', '跳跳', '发抖', '怄火', '转圈', '磕头', '回头', '跳绳',
+      '挥手', '激动', '街舞', '献吻', '左太极', '右太极'],
+
       imageValue: [],
       imageStyles: {
         width: 70,
@@ -192,11 +217,18 @@ var _default =
 
 
       id: 1,
-      statetext: '' };
+      statetext: '',
+
+      cursorIP: -1,
+      toptitle: '发布',
+      end: -1,
+      start: -1,
+      focus: false,
+      wz: -1 };
+
 
   },
   onLoad: function onLoad(e) {
-
     this.id = e.id;
     if (e.id == 1) {
       this.statetext = '表白墙';
@@ -207,28 +239,57 @@ var _default =
     } else if (e.id == 4) {
       this.statetext = '失物招领';
     }
-    uni.setNavigationBarTitle({
-      title: '发布' + this.statetext + '信息' });
+
+    this.toptitle = '发布' + this.statetext + '信息';
 
     console.log('iouyg', this.statetext);
   },
   methods: {
-    submit: function submit() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var myDate, nowtime, data, db, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                myDate = new Date();
-                nowtime = myDate.toLocaleString();if (!(
-                _this.contentText || _this.imageValue.length)) {_context.next = 13;break;}
+    cursor: function cursor(e) {
+      console.log('IP', e.detail.cursor);
+      this.cursorIP = e.detail.cursor;
+    },
+    insertAtCursor: function insertAtCursor(index) {var _this = this;
+      uni.hideKeyboard();
+      this.focus = false;
+      if (this.cursorIP >= 0) {
+        setTimeout(function () {
+          var myValue = _this.contentVal;
+          _this.contentVal = _this.contentVal.substring(0, _this.cursorIP) + '[' + _this.emoji[index] + ']' + myValue.substring(_this.cursorIP, myValue.length);
+          _this.focus = true;
+        }, 100);
+      }
+      // myField.focus();
+      // this.end=this.contentVal.length
+    },
+    // 提交发布
+    submit: function submit() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var val, data, db, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (!(
+
+                _this2.contentVal || _this2.imageValue.length)) {_context.next = 14;break;}
+                // 将[xxx]转换为图片
+                _this2.changetext = _this2.contentVal;
+                val = _this2.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g);
+                // console.log(this.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g))
+                val.forEach(function (item) {
+                  var index = _this2.emoji.indexOf(item.replace(/\[|\]/g, ''));
+                  var src = "<img style=\"position: relative;top:10rpx;width:42rpx;height:42rpx;\" src=\"https://res.wx.qq.com/mpres/htmledition/images/icon/emotion/".concat(
+                  index, ".gif\"></img>");
+                  _this2.changetext = _this2.changetext.replace(/\[[\u4E00-\u9FA5]{1,3}\]/, src);
+
+                });
                 data = {
-                  img_url: _this.imageValue,
-                  text: _this.contentVal,
+                  img_url: _this2.imageValue,
+                  text: _this2.changetext,
                   collection: 0,
+                  school: _this2.$store.state.user.school,
                   fabulous: 0,
                   // time:nowtime,
-                  textwb: _this.contentText,
-                  state: parseInt(_this.id),
-                  statetext: _this.statetext };
+                  textwb: _this2.contentVal,
+                  state: parseInt(_this2.id),
+                  statetext: _this2.statetext };
 
-                db = uniCloud.database();_context.next = 7;return (
-                  db.collection('love').add(data));case 7:res = _context.sent;
+                db = uniCloud.database();_context.next = 8;return (
+                  db.collection('love').add(data));case 8:res = _context.sent;
                 uni.showToast({
                   title: "发布成功",
                   icon: "success" });
@@ -238,47 +299,21 @@ var _default =
                     url: '/pages/index/index' });
 
                 }, 1000);
-                console.log(res);_context.next = 14;break;case 13:
+                console.log(res);_context.next = 15;break;case 14:
 
-                _this.$u.toast("文件和描述不能同时为空");case 14:case "end":return _context.stop();}}}, _callee);}))();
+                _this2.$u.toast("文件和描述不能同时为空");case 15:case "end":return _context.stop();}}}, _callee);}))();
 
     },
     // 获取上传状态
     select: function select(e) {
-      // this.imageValue[0].width=e.tempFiles[0].image.width
-      // console.log('选择文件：', e)
-      // console.log(this.imageValue[0].width)
-    },
-    // 获取上传进度
-    progress: function progress(e) {
-      console.log('上传进度：', e);
-    },
 
-    // 上传成功
-    success: function success(e) {
-      console.log('上传成功');
-      console.log(this.imageValue);
+      console.log('选择文件：', e);
+      console.log(e);
     },
-
-    // 上传失败
-    fail: function fail(e) {
-      console.log('上传失败：', e);
-    },
-    onEditorReady: function onEditorReady() {var _this2 = this; /////////////////////////初始化
-      uni.createSelectorQuery().select('#editor').context(function (res) {
-        var contentVal_1 = _this2.contentVal;
-        //将内容写入编辑器
-        _this2.editorCtx = res.context;
-        var EContent = {
-          html: contentVal_1 };
-
-        _this2.editorCtx.setContents(EContent); //设置富文本编辑器的内容
-      }).exec();
-    },
-    getEditorContent: function getEditorContent(e) {/////////////////////////获取编辑器内容，当前页面都能获取到
-      this.contentVal = e.detail.html;
-      this.contentText = e.detail.text;
-      console.log(this.contentText);
+    isfull: function isfull() {
+      if (this.imageValue.length >= 6) {
+        this.$u.toast('最多只能选择6张照片');
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
 

@@ -86,7 +86,8 @@
 				</view>
 				<view class="text">
 					<view style="color: #606266;" @tap='goxiangq(item)'>
-						<u-parse :html="item.text.replaceAll('\n','<br>')"></u-parse>
+						<u-parse :html="item.text.replace('\n','<br>')"></u-parse>
+						<!-- <rich-text :nodes="item.text.replace('\n','<br>')"></rich-text> -->
 					</view>
 					<!-- 适配图片排列问题 -->
 					<view style="margin-top: 20rpx;">

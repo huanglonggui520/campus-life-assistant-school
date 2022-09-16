@@ -26,6 +26,7 @@
 /* 文章场景相关 */
 .u-image.data-v-57280228 {
   max-width: 80vw;
+  max-height: 800rpx;
   border-radius: 15rpx;
 }
 .image1.data-v-57280228 {

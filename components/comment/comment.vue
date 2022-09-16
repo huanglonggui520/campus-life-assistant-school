@@ -7,7 +7,7 @@
 					<view class="left"><image :src="item.avatar" class="img"></image></view>
 					<view class="content">
 						<view class="title-name">{{ item.nickname }}</view>
-						<view class="content-text" @longpress="show(item.nickname, item.id, 1, index,item)" @tap="replyComment(item.nickname, item.id, 2, index,item)">
+						<view class="content-text" @longpress="show(item.nickname, item.id, 1, index,item,item.content)" @tap="replyComment(item.nickname, item.id, 2, index,item)">
 							<text>{{ item.content }}</text>
 						</view>
 						<view class="content-btm" @tap="replyComment(item.nickname, item.id, 2, index,item)">
@@ -27,7 +27,7 @@
 								<view v-if="reply.superNickname && reply.layer==3"><u-icon name="play-right-fill" size='10'></u-icon></view>
 								<view v-if="reply.superNickname && reply.layer==3">{{ reply.superNickname }}</view>
 							</view>
-							<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,reply)" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
+							<view class="content-text" @longpress="show(item.nickname, item.id, 2, index,reply,reply.content)" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
 								<text>{{ reply.content }}</text>
 							</view>
 							<view class="content-btm" @click="replyComment(reply.nickname, reply.superCommentId, 3, index,reply)">
@@ -45,14 +45,18 @@
 				</view>
 			</view>
 		</scroll-view>
-		<u-popup v-model="isshow" mode="bottom" length="30%" border-radius='25'>
-					<view >
-						<u-cell-group>
-								<u-cell-item @tap='deletecomment' v-if="isshowdeleteid==deleteuser_id" :border='true' :arrow="false" icon="setting-fill" title="删除"></u-cell-item>
-								<u-cell-item  icon="setting-fill" title="回复"></u-cell-item>
-							</u-cell-group>
+		<u-popup v-model="isshow" mode="bottom"  >
+					<view>
+						
+						<view class="item isboder" @tap="deletecomment" v-if="isshowdeleteid==deleteuser_id">删除</view>
+						<view class="item isboder">举报</view>
+						<view class="item" @tap='copy'>复制</view>
+						<view style="width: 100vw;height: 12rpx;background-color: #EAEAEC;"></view>
+						<view class="item" @tap='isshow=false'>取消</view>
 					</view>
-				</u-popup>
+		</u-popup>
+		
+		
 	</view>
 </template>
 
@@ -68,9 +72,11 @@ export default {
 		},
 		value: ''
 	},
+	
 	data() {
 		return {
 			showReplyList: [],
+			copytext:'',
 			isshowdeleteid:this.$store.state.user.info._id,
 			placeholderComment: '发条评论吧~',
 			iptFocus: false,
@@ -78,10 +84,29 @@ export default {
 			deleteuser_id:'',//删除评论作者ID,用来展示是否有删除按钮
 			deleteid:'',
 			isshow:false,
-			superCommentId: null
+			
+			superCommentId: null,
+			
+							
 		};
 	},
+	computed:{
+			isdisabled(){
+				return this.isshowdeleteid!=this.deleteuser_id
+			}
+	},
 	methods: {
+		// 复制
+		copy(){
+			
+			this.isshow=false
+			uni.setClipboardData({
+				data: this.copytext,
+				success: function () {
+					console.log('success');
+				}
+			});
+		},
 		// 展开、收起
 		isShowReply(id, index) {
 			if (this.showReplyList.indexOf(id) == -1) {
@@ -92,13 +117,18 @@ export default {
 				this.showReplyList.splice(index, 1);
 			}
 		},
+		click(index){
+			console.log(this.list[index].text)
+			if(this.list[index].text==='删除'){
+				this.deletecomment()
+			}
+		},
 		// 点赞
 		commentLike(item) {
 			this.$emit('comment-like', item);
 		},
 		// 回复评论
 		replyComment(userNickName, id, tier, index, reply) {
-			console.log('commment',this.comments)
 			this.$bus.$emit('comment') //调起评论输入框
 			console.log('index', index);
 			this.iptFocus = true;
@@ -109,18 +139,19 @@ export default {
 			this.CommentIndex = index;
 			this.$emit('reply',this.placeholderComment,index,id,userNickName,tier,reply)
 		},
-		show(userNickName, id, tier, index, reply){
+		show(userNickName, id, tier, index, reply,copy){
 			this.isshow=true
+			this.copytext=copy
 			this.deleteuser_id=reply.user_id
 			this.deleteid=reply.id
 			this.superCommentId = id;
 			this.layer = tier
 			console.log('长按',this.layer)
-			console.log(this.superCommentId)
+			console.log(copy)
 		},
 		// 删除评论
 		async deletecomment(){
-			
+			this.isshow=false
 			const db = uniCloud.database();
 			await db.collection("comments").where({_id:this.deleteid,user_id:this.$store.state.user.info._id}).remove()
 			if(this.layer==1){
@@ -143,9 +174,9 @@ export default {
 				})
 				
 			}
-			
 			uni.showToast({
-				title:'删除成功'
+				title:'删除成功',
+				icon:"none"
 			})
 			this.isshow=false
 			
@@ -167,6 +198,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	
+	.item{
+		display: flex;
+		color: #303133;
+		justify-content: center;
+		font-size: 36rpx;
+		padding: 34rpx 0;
+		line-height: 1;
+		
+		
+	}
+	.isboder{
+		border-bottom: 1rpx solid #F4F6F8;
+	}
 .zwz-comment {
 	// height: 1000rpx;
 	width: 100vw;
@@ -176,7 +221,7 @@ export default {
 .zwz-comment .comment-num {
 	text-align: center;
 	color: #c1c6cc;
-	height: 40rpx;
+	height: 38rpx;
 	margin-top: 10rpx;
 }
 .comment-item-main {
@@ -201,7 +246,7 @@ export default {
 				color: #bbbbbb;
 				/* display: inline-block; */
 				view {
-					max-width: 150rpx;
+					max-width: 250rpx;
 					display: inline-block;
 					margin-right: 10rpx;
 					overflow: hidden;

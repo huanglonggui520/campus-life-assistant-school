@@ -10,7 +10,7 @@
   "forceInviteCode": false,
   "preferedAppPlatform": "app",
   "app": {
-    "tokenExpiresIn": 259200,
+    "tokenExpiresIn": 2592000,
     "oauth": {
       "weixin": {
         "appid": "wxcd81719fcf7f8fd3",

@@ -3,9 +3,10 @@
 		/* margin-top: 20rpx; */
 		width: 80%;
 		margin: 20rpx auto;
+		/* position: relative; */
 }
 .container {
-		/* padding: 10px; */
+		padding: 10px;
 }
 
 	/* #editor {

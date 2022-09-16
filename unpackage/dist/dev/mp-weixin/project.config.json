@@ -1,54 +1,53 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "",
-	"appid": "wxcd81719fcf7f8fd3",
-	"projectname": "校园生活助手",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"list": [
-				{
-					"id": 0,
-					"pathName": "pages/list/detail"
-				},
-				{
-					"id": 1,
-					"pathName": "pages/list/list"
-				},
-				{
-					"id": 2,
-					"pathName": "pages/ucenter/login-page/index/index"
-				},
-				{
-					"id": 3,
-					"pathName": "pages/ucenter/userinfo/userinfo"
-				},
-				{
-					"id": 4,
-					"pathName": "pages/ucenter/settings/settings"
-				}
-			],
-			"current": 1
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wxcd81719fcf7f8fd3",
+  "projectname": "校园生活助手",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "pathName": "pages/list/detail"
+        },
+        {
+          "id": 1,
+          "pathName": "pages/list/list"
+        },
+        {
+          "id": 2,
+          "pathName": "pages/ucenter/login-page/index/index"
+        },
+        {
+          "id": 3,
+          "pathName": "pages/ucenter/userinfo/userinfo"
+        },
+        {
+          "id": 4,
+          "pathName": "pages/ucenter/settings/settings"
+        }
+      ],
+      "current": 1
+    }
+  }
 }
