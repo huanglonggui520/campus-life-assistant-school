@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "文章详情",
-  "usingComponents": {
-    "detail-unicloud-db-default": "/pages/list/detail-unicloud-db-default"
-  }
+  "usingComponents": {}
 }
