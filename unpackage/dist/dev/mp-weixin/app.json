@@ -25,7 +25,8 @@
     "pages/ucenter/settings/deactivate/deactivate",
     "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
     "pages/release/release",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/map/map"
   ],
   "subPackages": [],
   "window": {
@@ -62,6 +63,11 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取用户位置"
+    }
   },
   "usingComponents": {}
 }
