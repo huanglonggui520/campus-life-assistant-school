@@ -34,8 +34,7 @@
 			"forceDefaultValue":{
 				"$env":"now"
 			}
-<<<<<<< HEAD
-=======
+
 		},
 		"numsc":{
 			"bsonType": "int",
@@ -44,7 +43,6 @@
 		"numdz":{
 			"bsonType": "int",
 			"defaultValue":0
->>>>>>> school
 		}
 		
 	}

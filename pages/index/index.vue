@@ -5,7 +5,7 @@
 			<view class="slot-wrap">
 				<view class="map-wrap" v-if="true" @tap="show = true">
 					<u-icon name="map" color="#ffffff" size="24"></u-icon>
-					<text class="map-wrap-text">{{SCHOOL}}</text>
+					<text class="map-wrap-text">{{$store.state.user.school}}</text>
 					<u-icon name="arrow-down-fill" color="#ffffff" size="22"></u-icon>
 				</view>
 			</view>
@@ -63,13 +63,13 @@
 		</view>
 		<!-- 表白墙 -->
 		<view v-for="item in databbai">
-			<view class="textitem" >
+			<view class="textitem">
 				<view class="content" @tap='goxiangq(item)'>
 					<view>
 						<u-avatar  size='large'
 							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg'"></u-avatar>
 					</view>
-					<view class="name" >
+					<view class="name">
 						<view style='display: flex; align-items: center;'>
 							<u-tag style='margin-right: 15rpx;height: 35rpx;' :text="item.statetext" :bg-color='color[item.state-1]' size='mini' mode="dark" />
 							<view style="">
@@ -86,31 +86,28 @@
 				</view>
 				<view class="text">
 					<view style="color: #606266;" @tap='goxiangq(item)'>
-						<u-parse :html="item.text.replace('\n','<br>')"></u-parse>
-						<!-- <rich-text :nodes="item.text.replace('\n','<br>')"></rich-text> -->
+						<u-parse :html="item.text"></u-parse>
 					</view>
 					<!-- 适配图片排列问题 -->
 					<view style="margin-top: 20rpx;">
-						<view @tap='goxiangq(item)'>
-							<image
-									:lazy-load='true' 
-									class='u-image' 
-									@tap.stop='look(item.img_url[0].url)' 
-									:style="{'width':item.img_url[0].image.width*9/35+'rpx'}" 
-									mode='widthFix' 
-									:src="item.img_url[0].url "
-									v-if="item.img_url.length==1 && item.img_url[0].image.width>900"
-								>
-							</image>
-							<image 
-								:lazy-load='true' class='u-image'  
-								@tap.stop='look(item.img_url[0].url)'
-								:style="{'width':item.img_url[0].image.width*9/12+'rpx'}" 
+						<image   
+								:lazy-load='true' 
+								class='u-image' 
+								@tap='look(item.img_url[0].url)' 
+								:style="{'width':item.img_url[0].image.width*9/35+'rpx'}" 
 								mode='widthFix' 
 								:src="item.img_url[0].url "
-								v-if="item.img_url.length==1 && item.img_url[0].image.width<=900">
-							</image>
-						</view>
+								v-if="item.img_url.length==1 && item.img_url[0].image.width>900"
+							>
+						</image>
+						<image 
+							:lazy-load='true' class='u-image'  
+							@tap='look(item.img_url[0].url)'
+							:style="{'width':item.img_url[0].image.width*9/12+'rpx'}" 
+							mode='widthFix' 
+							:src="item.img_url[0].url "
+							v-if="item.img_url.length==1 && item.img_url[0].image.width<=900">
+						</image>
 						<view>
 							<view v-if="item.img_url.length>=2 && item.img_url.length<=5 && item.img_url.length%2==0" class="image1">
 							
@@ -145,33 +142,17 @@
 				</view>
 				<view class="bot">
 					<view>
-<<<<<<< HEAD
-						
-<<<<<<< HEAD
-						<u-icon name="star-fill" color="#F3295C" :label="item._id.like.length" v-if='item.color' size='40' @tap='fabulous(item)'></u-icon>
-						<u-icon name="star" color="#909399" :label="item._id.like.length" v-else  size='40' @tap='fabulous(item)'></u-icon>
-							
-						
-=======
-=======
 						<!-- 点赞评论收藏 -->
-<<<<<<< HEAD
->>>>>>> school
 						<u-icon name="star-fill" color="#F3295C" :label='item.numsc'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
 						<u-icon name="star" color="#909399"  :label='item.numsc' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
->>>>>>> school
-=======
-						<u-icon name="star-fill" color="#F3295C" :label='item.numsc?item.numsc:"收藏"'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
-						<u-icon name="star" color="#909399"  :label='item.numsc?item.numsc:"收藏"' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
->>>>>>> school
 					</view>
 					<view>
 						<u-icon name="chat" size='40' label="0" color='#909399' ></u-icon>
 						
 					</view>
 					<view>
-						<u-icon name="thumb-up-fill" :label='item.numdz?item.numdz:"点赞"' size='40' v-if='item.colordz'  color='#F3295C' @tap='fabulous(item,1)'></u-icon>
-						<u-icon name="thumb-up" size='40' :label='item.numdz?item.numdz:"点赞"' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon>
+						<u-icon name="thumb-up-fill" :label='item.numdz' size='40' v-if='item.colordz'  color='#F3295C' @tap='fabulous(item,1)'></u-icon>
+						<u-icon name="thumb-up" size='40' :label='item.numdz' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon>
 					</view>
 				</view>
 			</view>
@@ -218,7 +199,6 @@
 						],
 				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				keyword: '',
-				SCHOOL:'贵州师范大学',
 				list: [],
 				list1: [{
 						image: 'https://cdn.uviewui.com/uview/swiper/1.jpg',
@@ -257,19 +237,21 @@
 				databbai: [],
 				textid:'',
 				type:1,
+				
+				
 			}
 		},
+		
 		async onLoad() {
 			// const comments=uniCloud.importObject('comments')
 			// const a=await comments.comment()
 			// console.log('a',a)
-			console.log(this.$store.state.user.school)
 			const arr=await this.get()
 			this.databbai=arr
 			console.log(this.databbai)
 		},
 		async onPullDownRefresh() {
-			this.pages=1
+			this.pages=this.pages+1
 			const arr =await this.get()
 			if(arr.length!=0){
 				this.databbai=arr
@@ -283,7 +265,7 @@
 		},
 		async onReachBottom() {
 			this.isshow=true
-			this.buttomtitle='玩命加载中...'
+			this.buttomtitle='加载中...'
 			this.pages=this.pages+1
 			const arr=await this.get()
 			this.databbai=[...this.databbai,...arr]
@@ -294,12 +276,6 @@
 				return this.slotRight ? 0 : 1;
 			},
 			
-<<<<<<< HEAD
-		},
-		methods: {
-			// 收藏
-			async fabulous(e){ //e为每篇文章的对象
-=======
 			
 		},
 		methods: {
@@ -312,54 +288,39 @@
 			},
 			// 收藏
 			async fabulous(e,val){ //e为每篇文章的对象,val为点赞还是收藏
->>>>>>> school
 				const db = uniCloud.database()
 				// 添加收藏数据
 				const params={
 					like_id:e._id._value,
 					state_type:0
 				}
-<<<<<<< HEAD
-				// 收藏成功添加到本地收藏数据
-=======
 				// 添加点赞数据
 				const paramsdz={
 					like_id:e._id._value,
 					state_type:1
 				}
 				// 更新到本地收藏数据
->>>>>>> school
 				const pushdata={
 					like_id:e._id._value,
 					state_type:0,
 					user_id:this.$store.state.user.info._id
 				}
-<<<<<<< HEAD
-=======
 				const pushdatadz={
 					like_id:e._id._value,
 					state_type:1,
 					user_id:this.$store.state.user.info._id
 				}
->>>>>>> school
 				let count=0
 				// console.log('77',e)
 				if(e._id.like.length){ //e._id.like为文章收藏人的数组
 					e._id.like.forEach(async (item,index)=>{
 						// 查看本人是否已经点赞，如果已经点赞则取消点赞
-<<<<<<< HEAD
-						if(item.user_id==this.$store.state.user.info._id && !item.state_type){
-=======
 						if(!val && item.user_id==this.$store.state.user.info._id && !item.state_type){
->>>>>>> school
 							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
 							uni.showToast({
-								title:"取消收藏",
-								icon:"none"
+								title:"取消收藏"
 							})
 							e.color=0
-<<<<<<< HEAD
-=======
 							e.numsc-=1
 							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
 							return
@@ -369,17 +330,12 @@
 							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
 							
 							uni.showToast({
-								title:"取消点赞",
-								icon:"none"
+								title:"取消点赞"
 							})
 							e.colordz=0
 							e.numdz-=1 //每篇文章点赞数
 							// e.color
-<<<<<<< HEAD
->>>>>>> school
-=======
 							console.log(e)
->>>>>>> school
 							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
 							let collection = db.collection("love")
 							let res = await collection.where({_id:e._id._value})
@@ -391,27 +347,12 @@
 						}
 						count+=1
 					})
-<<<<<<< HEAD
-				}else{
-=======
 				}else if(!val){
-<<<<<<< HEAD
->>>>>>> school
-=======
 					
->>>>>>> school
 					await db.collection('like').add(params)
 					uni.showToast({
-						title:"收藏成功",
-						icon:"none"
+						title:"收藏成功"
 					})
-<<<<<<< HEAD
-					e._id.like.push(pushdata)  //添加到本地数组
-					e.color=1 //设置文章收藏按钮
-				}
-				
-				if(count>e._id.like.length){
-=======
 					e.color=1 //设置文章收藏按钮
 					e.numsc+=1
 					e._id.like.push(pushdata)  //添加到本地数组
@@ -420,8 +361,7 @@
 					await db.collection('like').add(paramsdz)
 					
 					uni.showToast({
-						title:"点赞成功",
-						icon:"none"
+						title:"点赞成功"
 					})
 					e.numdz+=1
 					
@@ -436,18 +376,10 @@
 				}
 				
 				if(count>=e._id.like.length && !val){
->>>>>>> school
 					await db.collection('like').add(params)
 					uni.showToast({
-						title:"收藏成功",
-						icon:"none"
+						title:"收藏成功"
 					})
-<<<<<<< HEAD
-					e._id.like.push(pushdata)
-					e.color=1
-				}
-				console.log(e)
-=======
 					e.color=1
 					e.numsc+=1
 					e._id.like.push(pushdata)
@@ -455,8 +387,7 @@
 				if(count>=e._id.like.length && val){
 					await db.collection('like').add(paramsdz)
 					uni.showToast({
-						title:"点赞成功",
-						icon:"none"
+						title:"点赞成功"
 					})
 					e.colordz=1
 					e.numdz+=1
@@ -470,12 +401,7 @@
 					  });
 					
 				}
-<<<<<<< HEAD
-				console.log('77',e)
->>>>>>> school
-=======
 				// console.log('77',e)
->>>>>>> school
 				
 			},
 			// 获取收藏信息
@@ -488,8 +414,6 @@
 				// console.log(res)
 			},
 			// 发布评论
-			
-			
 			//图片预览
 			look(url) {
 				var urlList = []
@@ -505,8 +429,8 @@
 			async school(e){
 					
 					this.$store.commit('user/SCHOOL',e[0].label)
-					this.SCHOOL=this.$store.state.user.school
-					const arr=await this.get()
+					
+					const arr=await this.get(0)
 					this.databbai=arr
 					console.log(arr)
 			},
@@ -539,14 +463,6 @@
 								.get()
 				}
 				let data = restext.result.data
-<<<<<<< HEAD
-				// 将已经点赞的按钮颜色改为红色
-				data.forEach((item)=>{
-					item._id.like.forEach((itemchildren)=>{
-						if(itemchildren.user_id==this.$store.state.user.info._id && !itemchildren.state_type){
-							item.color=1 //将收藏按钮变为实心
-							return
-=======
 				
 				// 将已经点赞的按钮颜色改为红色
 				data.forEach((item)=>{
@@ -568,7 +484,6 @@
 							item.numsc+=1 //计算收藏人数
 						}else if(itemchildren.state_type){
 							item.numdz+=1//计算点赞人数
->>>>>>> school
 						}
 					})
 				})
