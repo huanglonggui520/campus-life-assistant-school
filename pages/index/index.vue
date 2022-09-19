@@ -58,8 +58,6 @@
 			<u-tabs :list="listtab" :is-scroll="true  " :current="current" @change="change"></u-tabs>
 			<!-- </view> -->
 			<!-- </u-sticky> -->
-
-
 		</view>
 		<!-- 表白墙 -->
 		<view v-for="item in databbai">
