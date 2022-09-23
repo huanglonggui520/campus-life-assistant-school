@@ -98,43 +98,40 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 273))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 279))
     },
     uIcon: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 280))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 286))
     },
     uSelect: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 287))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 293))
     },
     uSearch: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-search/u-search */ "node-modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 294))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-search/u-search */ "node-modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 300))
     },
     uNoticeBar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 301))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 307))
     },
     uSwiper: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 308))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 314))
     },
     uImage: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 315))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 321))
     },
     uTabs: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */ "node-modules/uview-ui/components/u-tabs/u-tabs").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 322))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */ "node-modules/uview-ui/components/u-tabs/u-tabs").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 328))
     },
-    uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 329))
-    },
-    uTag: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 336))
+    name: function() {
+      return __webpack_require__.e(/*! import() | components/name/name */ "components/name/name").then(__webpack_require__.bind(null, /*! @/components/name/name.vue */ 335))
     },
     uParse: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 343))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 342))
     },
     uDivider: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 353))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 352))
     },
     uBackTop: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 360))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 359))
     }
   }
 } catch (e) {
@@ -161,12 +158,10 @@ var render = function() {
   var l0 = _vm.__map(_vm.databbai, function(item, __i0__) {
     var $orig = _vm.__get_orig(item)
 
-    var g0 = _vm.$u.timeFrom(item.time, "yyyy-mm-dd hh:MM:ss")
-    var g1 = item.text.replace("\n", "<br>")
+    var g0 = item.text.replace(/\n/g, "<br>")
     return {
       $orig: $orig,
-      g0: g0,
-      g1: g1
+      g0: g0
     }
   })
 
@@ -217,180 +212,166 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var name = function name() {__webpack_require__.e(/*! require.ensure | components/name/name */ "components/name/name").then((function () {return resolve(__webpack_require__(/*! @/components/name/name.vue */ 335));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {
   data: function data() {
@@ -419,10 +400,10 @@ var _default =
         value: 4 }],
 
 
-      color: ['#F0C461', '#AF58F2', '#F270D0', '#4FDC46'],
       keyword: '',
       SCHOOL: '贵州师范大学',
       list: [],
+      isShow_id: this.$store.state.user.info._id,
       list1: [{
         image: 'https://cdn.uviewui.com/uview/swiper/1.jpg',
         title: '昨夜星辰昨夜风，画楼西畔桂堂东' },
@@ -461,15 +442,22 @@ var _default =
       textid: '',
       type: 1 };
 
+
   },
+  components: {
+    name: name },
+
   onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var arr;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
               // const comments=uniCloud.importObject('comments')
               // const a=await comments.comment()
               // console.log('a',a)
-              console.log(_this.$store.state.user.school);_context.next = 3;return (
+              // const db = uniCloud.database();
+              // const res=await db.collection("love").remove()
+              console.log(_this.$store.state.user);_context.next = 3;return (
                 _this.get());case 3:arr = _context.sent;
               _this.databbai = arr;
-              console.log(_this.databbai);case 6:case "end":return _context.stop();}}}, _callee);}))();
+              console.log(_this.databbai);
+              console.log(_this.isShow_id);case 7:case "end":return _context.stop();}}}, _callee);}))();
   },
   onPullDownRefresh: function onPullDownRefresh() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var arr;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
               _this2.pages = 1;_context2.next = 3;return (
@@ -557,7 +545,6 @@ var _default =
 
                             e.colordz = 0;
                             e.numdz -= 1; //每篇文章点赞数
-                            // e.color
                             console.log(e);
                             e._id.like.splice(index, 1); //取消收藏后删除该人在文章点赞人的数据
                             collection = db.collection("love");_context4.next = 19;return (
@@ -663,39 +650,57 @@ var _default =
                 _this5.databbai = arr;
                 console.log(arr);case 7:case "end":return _context7.stop();}}}, _callee7);}))();
     },
-    get: function get() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8() {var db, res, SCHOOL, restext, data;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:
+    get: function get() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8() {var db, dbCmd, res, SCHOOL, restext, data;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:
                 //获取notice滚动通知
-                db = uniCloud.database();_context8.next = 3;return (
-                  db.collection('nocite').get());case 3:res = _context8.sent;
+                db = uniCloud.database();
+                dbCmd = db.command;_context8.next = 4;return (
+                  db.collection('nocite').get());case 4:res = _context8.sent;
                 _this6.list = res.result.data[0].text;
                 // console.log(this.$store.state.user.school)
                 SCHOOL = _this6.$store.state.user.school;
                 // this.isshow=false
                 // 获取表白墙动态
-                if (!(_this6.current == 0)) {_context8.next = 12;break;}_context8.next = 9;return (
+                if (!(_this6.current == 0)) {_context8.next = 13;break;}_context8.next = 10;return (
 
-                  db.collection("love,like,uni-id-users").
-                  where({ school: SCHOOL }).
-                  field('_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
+                  db.collection("love,like,comments,uni-id-users").
+                  where(dbCmd.or({
+                    school: SCHOOL,
+                    isShow: 1 },
+                  {
+                    'user_id._id': _this6.$store.state.user.info._id ? _this6.$store.state.user.info._id : '',
+                    school: SCHOOL })).
+
+
+                  field('_id,time,school,address,isShow,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
                   orderBy('time desc').
                   skip((_this6.pages - 1) * 8).
                   limit(8).
-                  get());case 9:restext = _context8.sent;_context8.next = 15;break;case 12:_context8.next = 14;return (
+                  get());case 10:restext = _context8.sent;_context8.next = 16;break;case 13:_context8.next = 15;return (
 
-                  db.collection("love,uni-id-users,like").
-                  where({ state: _this6.current, school: SCHOOL }).
+                  db.collection("love,comments,uni-id-users,like").
+                  where(dbCmd.or({
+                    school: SCHOOL,
+                    isShow: 1,
+                    state: _this6.current },
+                  {
+                    'user_id._id': _this6.$store.state.user.info._id,
+                    school: SCHOOL,
+                    state: _this6.current })).
+
+
                   field(
-                  '_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
+                  '_id,time,school,statetext,address,isShow,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
                   orderBy('time desc').
                   skip((_this6.pages - 1) * 8).
                   limit(8).
-                  get());case 14:restext = _context8.sent;case 15:
+                  get());case 15:restext = _context8.sent;case 16:
 
                 data = restext.result.data;
-
+                console.log(data);
                 // 将已经点赞的按钮颜色改为红色
                 data.forEach(function (item) {
                   // 初始化点赞收藏按钮
+                  item.comments = 0;
                   item.color = 0; //收藏是否为实心
                   item.colordz = 0; //点赞按钮是否为实心
                   item.numsc = 0; //初始化收藏人数
@@ -715,15 +720,16 @@ var _default =
                       item.numdz += 1; //计算点赞人数
                     }
                   });
+                  item.comments = item._id.comments.length;
                 });
                 console.log('bbq', data);if (!(
-                data.length == 0)) {_context8.next = 24;break;}
+                data.length == 0)) {_context8.next = 26;break;}
                 _this6.buttomtitle = '我也是有底线的';
                 _this6.isshow = true;return _context8.abrupt("return",
-                []);case 24:
+                []);case 26:
 
                 _this6.isshow = false;return _context8.abrupt("return",
-                data);case 26:case "end":return _context8.stop();}}}, _callee8);}))();
+                data);case 28:case "end":return _context8.stop();}}}, _callee8);}))();
 
     },
     onPageScroll: function onPageScroll(e) {

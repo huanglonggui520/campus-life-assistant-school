@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uniForms: function() {
-      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 526))
+      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 546))
     },
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 451))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 464))
     },
     uniSendSmsCode: function() {
-      return __webpack_require__.e(/*! import() | components/uni-send-sms-code/uni-send-sms-code */ "components/uni-send-sms-code/uni-send-sms-code").then(__webpack_require__.bind(null, /*! @/components/uni-send-sms-code/uni-send-sms-code.vue */ 458))
+      return __webpack_require__.e(/*! import() | components/uni-send-sms-code/uni-send-sms-code */ "components/uni-send-sms-code/uni-send-sms-code").then(__webpack_require__.bind(null, /*! @/components/uni-send-sms-code/uni-send-sms-code.vue */ 471))
     },
     uniQuickLogin: function() {
-      return Promise.all(/*! import() | components/uni-quick-login/uni-quick-login */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-quick-login/uni-quick-login")]).then(__webpack_require__.bind(null, /*! @/components/uni-quick-login/uni-quick-login.vue */ 397))
+      return Promise.all(/*! import() | components/uni-quick-login/uni-quick-login */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-quick-login/uni-quick-login")]).then(__webpack_require__.bind(null, /*! @/components/uni-quick-login/uni-quick-login.vue */ 410))
     },
     uniPopupCaptcha: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha */ "uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue */ 465))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha */ "uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue */ 478))
     }
   }
 } catch (e) {

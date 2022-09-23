@@ -26,7 +26,8 @@
     "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
     "pages/release/release",
     "pages/details/details",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/myRelease/myRelease"
   ],
   "subPackages": [],
   "window": {

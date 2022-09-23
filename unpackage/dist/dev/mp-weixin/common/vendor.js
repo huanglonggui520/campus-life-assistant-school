@@ -2508,7 +2508,7 @@ uni$1;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" }, "usingComponents": { "mp-sticky": "@miniprogram-component-plus/sticky" }, "pages": [{ "path": "pages/index/index", "style": { "enablePullDownRefresh": true, "navigationStyle": "custom" } }, { "path": "pages/putmsg/putmsg", "style": { "navigationBarTitleText": "发布信息", "enablePullDownRefresh": false, "navigationStyle": "custom", "navigationBarTextStyle": "black" } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/ucenter/login-page/index/index", "style": { "navigationBarTitleText": "", "app-plus": { "animationType": "none", "popGesture": "none" } } }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/ucenter/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "pages/ucenter/userinfo/cropImage", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/login-page/pwd-login/pwd-login", "style": { "navigationBarTitleText": "" } }, { "path": "pages/ucenter/login-page/pwd-retrieve/pwd-retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "pages/ucenter/login-page/phone-code/phone-code", "style": { "navigationBarTitleText": "" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/login-page/register/register", "style": { "navigationBarTitleText": "注册", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/settings/deactivate/deactivate", "style": { "navigationBarTitleText": "注销提醒", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "pages/release/release", "style": { "navigationBarTitleText": "选择发布", "enablePullDownRefresh": false } }, { "path": "pages/details/details", "style": { "navigationBarTitleText": "详情", "enablePullDownRefresh": false } }, { "path": "pages/map/map", "style": { "navigationBarTitleText": "选择位置", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "校园生活助手", "navigationBarBackgroundColor": "#1CBBB4", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/login-page/index/index" }, { "path": "pages/ucenter/userinfo/userinfo" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#1CBBB4", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/index/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/indexxz.png", "text": "首页" }, { "pagePath": "pages/release/release", "iconPath": "static/tabbar/add.png", "selectedIconPath": "static/tabbar/addxz.png", "text": "发布" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/home.png", "selectedIconPath": "static/tabbar/homexz.png", "text": "我的" }] } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" }, "usingComponents": { "mp-sticky": "@miniprogram-component-plus/sticky" }, "pages": [{ "path": "pages/index/index", "style": { "enablePullDownRefresh": true, "navigationStyle": "custom" } }, { "path": "pages/putmsg/putmsg", "style": { "navigationBarTitleText": "发布信息", "enablePullDownRefresh": false, "navigationStyle": "custom", "navigationBarTextStyle": "black" } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": false, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/ucenter/login-page/index/index", "style": { "navigationBarTitleText": "", "app-plus": { "animationType": "none", "popGesture": "none" } } }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/ucenter/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "pages/ucenter/userinfo/cropImage", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/login-page/pwd-login/pwd-login", "style": { "navigationBarTitleText": "" } }, { "path": "pages/ucenter/login-page/pwd-retrieve/pwd-retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "pages/ucenter/login-page/phone-code/phone-code", "style": { "navigationBarTitleText": "" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/login-page/register/register", "style": { "navigationBarTitleText": "注册", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/settings/deactivate/deactivate", "style": { "navigationBarTitleText": "注销提醒", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "pages/release/release", "style": { "navigationBarTitleText": "选择发布", "enablePullDownRefresh": false } }, { "path": "pages/details/details", "style": { "navigationBarTitleText": "详情", "enablePullDownRefresh": false } }, { "path": "pages/map/map", "style": { "navigationBarTitleText": "选择位置", "enablePullDownRefresh": false } }, { "path": "pages/myRelease/myRelease", "style": { "navigationBarTitleText": "我的发布", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "校园生活助手", "navigationBarBackgroundColor": "#1CBBB4", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/login-page/index/index" }, { "path": "pages/ucenter/userinfo/userinfo" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#1CBBB4", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/index/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/indexxz.png", "text": "首页" }, { "pagePath": "pages/release/release", "iconPath": "static/tabbar/add.png", "selectedIconPath": "static/tabbar/addxz.png", "text": "发布" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/home.png", "selectedIconPath": "static/tabbar/homexz.png", "text": "我的" }] } };exports.default = _default;
 
 /***/ }),
 
@@ -9250,7 +9250,7 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 
-/***/ 348:
+/***/ 347:
 /*!*********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
   \*********************************************************************************************/
@@ -9264,9 +9264,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 349),
+var cfg = __webpack_require__(/*! ./config.js */ 348),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 350),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 349),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -9841,7 +9841,7 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 349:
+/***/ 348:
 /*!***************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/config.js ***!
   \***************************************************************************************/
@@ -9931,83 +9931,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 35:
-/*!**********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/queryParams.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
-                                                                                                      * 对象转url参数
-                                                                                                      * @param {*} data,对象
-                                                                                                      * @param {*} isPrefix,是否自动加上"?"
-                                                                                                      */
-function queryParams() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var isPrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var arrayFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'brackets';
-  var prefix = isPrefix ? '?' : '';
-  var _result = [];
-  if (['indices', 'brackets', 'repeat', 'comma'].indexOf(arrayFormat) == -1) arrayFormat = 'brackets';var _loop = function _loop(
-  key) {
-    var value = data[key];
-    // 去掉为空的参数
-    if (['', undefined, null].indexOf(value) >= 0) {
-      return "continue";
-    }
-    // 如果值为数组，另行处理
-    if (value.constructor === Array) {
-      // e.g. {ids: [1, 2, 3]}
-      switch (arrayFormat) {
-        case 'indices':
-          // 结果: ids[0]=1&ids[1]=2&ids[2]=3
-          for (var i = 0; i < value.length; i++) {
-            _result.push(key + '[' + i + ']=' + value[i]);
-          }
-          break;
-        case 'brackets':
-          // 结果: ids[]=1&ids[]=2&ids[]=3
-          value.forEach(function (_value) {
-            _result.push(key + '[]=' + _value);
-          });
-          break;
-        case 'repeat':
-          // 结果: ids=1&ids=2&ids=3
-          value.forEach(function (_value) {
-            _result.push(key + '=' + _value);
-          });
-          break;
-        case 'comma':
-          // 结果: ids=1,2,3
-          var commaStr = "";
-          value.forEach(function (_value) {
-            commaStr += (commaStr ? "," : "") + _value;
-          });
-          _result.push(key + '=' + commaStr);
-          break;
-        default:
-          value.forEach(function (_value) {
-            _result.push(key + '[]=' + _value);
-          });}
-
-    } else {
-      _result.push(key + '=' + value);
-    }};for (var key in data) {var _ret = _loop(key);if (_ret === "continue") continue;
-  }
-  return _result.length ? prefix + _result.join('&') : '';
-}var _default =
-
-queryParams;exports.default = _default;
-
-/***/ }),
-
-/***/ 350:
+/***/ 349:
 /*!*******************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/components/u-parse/libs/CssHandler.js ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 349),
+var cfg = __webpack_require__(/*! ./config.js */ 348),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {
@@ -10107,6 +10038,75 @@ parser.prototype.Content = function () {
   this.list = [];
   this.state = this.Space;
 };
+
+/***/ }),
+
+/***/ 35:
+/*!**********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/queryParams.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /**
+                                                                                                      * 对象转url参数
+                                                                                                      * @param {*} data,对象
+                                                                                                      * @param {*} isPrefix,是否自动加上"?"
+                                                                                                      */
+function queryParams() {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var isPrefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var arrayFormat = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'brackets';
+  var prefix = isPrefix ? '?' : '';
+  var _result = [];
+  if (['indices', 'brackets', 'repeat', 'comma'].indexOf(arrayFormat) == -1) arrayFormat = 'brackets';var _loop = function _loop(
+  key) {
+    var value = data[key];
+    // 去掉为空的参数
+    if (['', undefined, null].indexOf(value) >= 0) {
+      return "continue";
+    }
+    // 如果值为数组，另行处理
+    if (value.constructor === Array) {
+      // e.g. {ids: [1, 2, 3]}
+      switch (arrayFormat) {
+        case 'indices':
+          // 结果: ids[0]=1&ids[1]=2&ids[2]=3
+          for (var i = 0; i < value.length; i++) {
+            _result.push(key + '[' + i + ']=' + value[i]);
+          }
+          break;
+        case 'brackets':
+          // 结果: ids[]=1&ids[]=2&ids[]=3
+          value.forEach(function (_value) {
+            _result.push(key + '[]=' + _value);
+          });
+          break;
+        case 'repeat':
+          // 结果: ids=1&ids=2&ids=3
+          value.forEach(function (_value) {
+            _result.push(key + '=' + _value);
+          });
+          break;
+        case 'comma':
+          // 结果: ids=1,2,3
+          var commaStr = "";
+          value.forEach(function (_value) {
+            commaStr += (commaStr ? "," : "") + _value;
+          });
+          _result.push(key + '=' + commaStr);
+          break;
+        default:
+          value.forEach(function (_value) {
+            _result.push(key + '[]=' + _value);
+          });}
+
+    } else {
+      _result.push(key + '=' + value);
+    }};for (var key in data) {var _ret = _loop(key);if (_ret === "continue") continue;
+  }
+  return _result.length ? prefix + _result.join('&') : '';
+}var _default =
+
+queryParams;exports.default = _default;
 
 /***/ }),
 
@@ -10306,7 +10306,7 @@ timeFormat;exports.default = _default;
 
 /***/ }),
 
-/***/ 372:
+/***/ 371:
 /*!****************************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-file-picker/components/uni-file-picker/choose-and-upload-file.js ***!
   \****************************************************************************************************************/
@@ -10537,7 +10537,7 @@ function chooseAndUploadFile()
 
 /***/ }),
 
-/***/ 373:
+/***/ 372:
 /*!***********************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-file-picker/components/uni-file-picker/utils.js ***!
   \***********************************************************************************************/
@@ -16961,44 +16961,6 @@ guid;exports.default = _default;
 
 /***/ }),
 
-/***/ 402:
-/*!************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/index.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 403));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 404));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 403:
-/*!***********************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/en.json ***!
-  \***********************************************************************/
-/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"accountLogin\":\"Account\",\"SMSLogin\":\"SMS\",\"wechatLogin\":\"wechat\",\"appleLogin\":\"Apple\",\"oneClickLogin\":\"One click login\",\"QQLogin\":\"QQ\",\"xiaomiLogin\":\"Xiaomi\",\"getProviderFail\":\"Failed to get service provider\",\"loginErr\":\"Login service initialization error\",\"chooseOtherLogin\":\"Click the third-party login\",\"weibo\":\"weibo\",\"noAgree\":\"You have not agreed to the privacy policy agreement\",\"gotIt\":\"got it\"}");
-
-/***/ }),
-
-/***/ 404:
-/*!****************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/zh-Hans.json ***!
-  \****************************************************************************/
-/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"accountLogin\":\"账号登录\",\"SMSLogin\":\"短信验证码\",\"wechatLogin\":\"微信登录\",\"appleLogin\":\"苹果登录\",\"oneClickLogin\":\"一键登录\",\"QQLogin\":\"QQ登录\",\"xiaomiLogin\":\"小米登录\",\"getProviderFail\":\"获取服务供应商失败\",\"loginErr\":\"登录服务初始化错误\",\"chooseOtherLogin\":\"点击了第三方登录\",\"weibo\":\"微博\",\"noAgree\":\"你未同意隐私政策协议\",\"gotIt\":\"知道了\"}");
-
-/***/ }),
-
 /***/ 41:
 /*!****************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/color.js ***!
@@ -17047,54 +17009,41 @@ color;exports.default = _default;
 
 /***/ }),
 
-/***/ 412:
-/*!**************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
-  \**************************************************************************************************/
+/***/ 415:
+/*!************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/index.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 413));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 414));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 415));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 416));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 417));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
+  'zh-Hans': _zhHans.default };exports.default = _default;
 
 /***/ }),
 
-/***/ 413:
-/*!*************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
-  \*************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ 416:
+/*!***********************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/en.json ***!
+  \***********************************************************************/
+/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
+module.exports = JSON.parse("{\"accountLogin\":\"Account\",\"SMSLogin\":\"SMS\",\"wechatLogin\":\"wechat\",\"appleLogin\":\"Apple\",\"oneClickLogin\":\"One click login\",\"QQLogin\":\"QQ\",\"xiaomiLogin\":\"Xiaomi\",\"getProviderFail\":\"Failed to get service provider\",\"loginErr\":\"Login service initialization error\",\"chooseOtherLogin\":\"Click the third-party login\",\"weibo\":\"weibo\",\"noAgree\":\"You have not agreed to the privacy policy agreement\",\"gotIt\":\"got it\"}");
 
 /***/ }),
 
-/***/ 414:
-/*!******************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
-  \******************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ 417:
+/*!****************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/components/uni-quick-login/i18n/zh-Hans.json ***!
+  \****************************************************************************/
+/*! exports provided: accountLogin, SMSLogin, wechatLogin, appleLogin, oneClickLogin, QQLogin, xiaomiLogin, getProviderFail, loginErr, chooseOtherLogin, weibo, noAgree, gotIt, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
-
-/***/ }),
-
-/***/ 415:
-/*!******************************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
-  \******************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
+module.exports = JSON.parse("{\"accountLogin\":\"账号登录\",\"SMSLogin\":\"短信验证码\",\"wechatLogin\":\"微信登录\",\"appleLogin\":\"苹果登录\",\"oneClickLogin\":\"一键登录\",\"QQLogin\":\"QQ登录\",\"xiaomiLogin\":\"小米登录\",\"getProviderFail\":\"获取服务供应商失败\",\"loginErr\":\"登录服务初始化错误\",\"chooseOtherLogin\":\"点击了第三方登录\",\"weibo\":\"微博\",\"noAgree\":\"你未同意隐私政策协议\",\"gotIt\":\"知道了\"}");
 
 /***/ }),
 
@@ -17144,7 +17093,76 @@ type2icon;exports.default = _default;
 
 /***/ }),
 
-/***/ 423:
+/***/ 425:
+/*!**************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 426));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 427));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 428));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 426:
+/*!*************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
+  \*************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
+
+/***/ }),
+
+/***/ 427:
+/*!******************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
+  \******************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
+
+/***/ }),
+
+/***/ 428:
+/*!******************************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
+  \******************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
+
+/***/ }),
+
+/***/ 43:
+/*!**********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/randomArray.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
+function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
+  return array.sort(function () {return Math.random() - 0.5;});
+}var _default =
+
+randomArray;exports.default = _default;
+
+/***/ }),
+
+/***/ 436:
 /*!***********************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***********************************************************************************/
@@ -18321,114 +18339,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 43:
-/*!**********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/randomArray.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
-function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
-  return array.sort(function () {return Math.random() - 0.5;});
-}var _default =
-
-randomArray;exports.default = _default;
-
-/***/ }),
-
-/***/ 431:
-/*!************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
-  \************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 432);
-var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 432, 1);
-/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 433);
-var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 433, 1);
-/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 434);
-var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 434, 1);
-/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 435);
-var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 435, 1);
-/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 436);
-var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 436, 1);
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  en: _en_json__WEBPACK_IMPORTED_MODULE_0__,
-  es: _es_json__WEBPACK_IMPORTED_MODULE_1__,
-  fr: _fr_json__WEBPACK_IMPORTED_MODULE_2__,
-  'zh-Hans': _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__,
-  'zh-Hant': _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__
-});
-
-
-/***/ }),
-
-/***/ 432:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
-  \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 433:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
-  \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 434:
-/*!***********************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
-  \***********************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 435:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
-  \****************************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
-
-/***/ }),
-
-/***/ 436:
-/*!****************************************************************************!*\
-  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
-  \****************************************************************************/
-/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
-
-/***/ }),
-
 /***/ 44:
 /*!******************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/addUnit.js ***!
@@ -18445,6 +18355,96 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
   // 用uView内置验证规则中的number判断是否为数值
   return _test.default.number(value) ? "".concat(value).concat(unit) : value;
 }
+
+/***/ }),
+
+/***/ 444:
+/*!************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 445);
+var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 445, 1);
+/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 446);
+var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 446, 1);
+/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 447);
+var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 447, 1);
+/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 448);
+var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 448, 1);
+/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 449);
+var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 449, 1);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  en: _en_json__WEBPACK_IMPORTED_MODULE_0__,
+  es: _es_json__WEBPACK_IMPORTED_MODULE_1__,
+  fr: _fr_json__WEBPACK_IMPORTED_MODULE_2__,
+  'zh-Hans': _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__,
+  'zh-Hant': _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__
+});
+
+
+/***/ }),
+
+/***/ 445:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 446:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 447:
+/*!***********************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
+  \***********************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 448:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
+  \****************************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
+
+/***/ }),
+
+/***/ 449:
+/*!****************************************************************************!*\
+  !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
+  \****************************************************************************/
+/*! exports provided: uniCloud.component.add.success, uniCloud.component.update.success, uniCloud.component.remove.showModal.title, uniCloud.component.remove.showModal.content, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
 
 /***/ }),
 
@@ -18516,7 +18516,94 @@ toast;exports.default = _default;
 
 /***/ }),
 
-/***/ 477:
+/***/ 48:
+/*!********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/getParent.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+function getParent(name, keys) {
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {var _ret = function () {
+        var data = {};
+        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
+        if (Array.isArray(keys)) {
+          keys.map(function (val) {
+            data[val] = parent[val] ? parent[val] : '';
+          });
+        } else {
+          // 历遍传过来的对象参数
+          for (var i in keys) {
+            // 如果子组件有此值则用，无此值则用父组件的值
+            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
+            if (Array.isArray(keys[i])) {
+              if (keys[i].length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else if (keys[i].constructor === Object) {
+              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
+              if (Object.keys(keys[i]).length) {
+                data[i] = keys[i];
+              } else {
+                data[i] = parent[i];
+              }
+            } else {
+              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
+              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
+            }
+          }
+        }
+        return { v: data };}();if (typeof _ret === "object") return _ret.v;
+    }
+  }
+
+  return {};
+}
+
+/***/ }),
+
+/***/ 49:
+/*!******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/$parent.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
+// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
+// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
+// 值(默认为undefined)，就是查找最顶层的$parent
+function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+  var parent = this.$parent;
+  // 通过while历遍，这里主要是为了H5需要多层解析的问题
+  while (parent) {
+    // 父组件
+    if (parent.$options && parent.$options.name !== name) {
+      // 如果组件的name不相等，继续上一级寻找
+      parent = parent.$parent;
+    } else {
+      return parent;
+    }
+  }
+  return false;
+}
+
+/***/ }),
+
+/***/ 490:
 /*!*******************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-sign-in/utils/ad.js ***!
   \*******************************************************************/
@@ -18781,157 +18868,6 @@ new AdHelper();exports.default = _default;
 
 /***/ }),
 
-/***/ 48:
-/*!********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/getParent.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = getParent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-function getParent(name, keys) {
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {var _ret = function () {
-        var data = {};
-        // 判断keys是否数组，如果传过来的是一个数组，那么直接使用数组元素值当做键值去父组件寻找
-        if (Array.isArray(keys)) {
-          keys.map(function (val) {
-            data[val] = parent[val] ? parent[val] : '';
-          });
-        } else {
-          // 历遍传过来的对象参数
-          for (var i in keys) {
-            // 如果子组件有此值则用，无此值则用父组件的值
-            // 判断是否空数组，如果是，则用父组件的值，否则用子组件的值
-            if (Array.isArray(keys[i])) {
-              if (keys[i].length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else if (keys[i].constructor === Object) {
-              // 判断是否对象，如果是对象，且有属性，那么使用子组件的值，否则使用父组件的值
-              if (Object.keys(keys[i]).length) {
-                data[i] = keys[i];
-              } else {
-                data[i] = parent[i];
-              }
-            } else {
-              // 只要子组件有传值，即使是false值，也是“传值”了，也需要覆盖父组件的同名参数
-              data[i] = keys[i] || keys[i] === false ? keys[i] : parent[i];
-            }
-          }
-        }
-        return { v: data };}();if (typeof _ret === "object") return _ret.v;
-    }
-  }
-
-  return {};
-}
-
-/***/ }),
-
-/***/ 49:
-/*!******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/$parent.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = $parent; // 获取父组件的参数，因为支付宝小程序不支持provide/inject的写法
-// this.$parent在非H5中，可以准确获取到父组件，但是在H5中，需要多次this.$parent.$parent.xxx
-// 这里默认值等于undefined有它的含义，因为最顶层元素(组件)的$parent就是undefined，意味着不传name
-// 值(默认为undefined)，就是查找最顶层的$parent
-function $parent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
-  var parent = this.$parent;
-  // 通过while历遍，这里主要是为了H5需要多层解析的问题
-  while (parent) {
-    // 父组件
-    if (parent.$options && parent.$options.name !== name) {
-      // 如果组件的name不相等，继续上一级寻找
-      parent = parent.$parent;
-    } else {
-      return parent;
-    }
-  }
-  return false;
-}
-
-/***/ }),
-
-/***/ 497:
-/*!***********************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/popup.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
-{
-  data: function data() {
-    return {};
-
-
-  },
-  created: function created() {
-    this.popup = this.getParent();
-  },
-  methods: {
-    /**
-              * 获取父元素实例
-              */
-    getParent: function getParent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'uniPopup';
-      var parent = this.$parent;
-      var parentName = parent.$options.name;
-      while (parentName !== name) {
-        parent = parent.$parent;
-        if (!parent) return false;
-        parentName = parent.$options.name;
-      }
-      return parent;
-    } } };exports.default = _default;
-
-/***/ }),
-
-/***/ 498:
-/*!****************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 499));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 500));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 501));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 499:
-/*!***************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
-  \***************************************************************************************/
-/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
-
-/***/ }),
-
 /***/ 5:
 /*!******************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/pages.json ***!
@@ -18959,28 +18895,6 @@ function sys() {
   return uni.getSystemInfoSync();
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 500:
-/*!********************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
-  \********************************************************************************************/
-/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
-
-/***/ }),
-
-/***/ 501:
-/*!********************************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
-  \********************************************************************************************/
-/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
 
@@ -19024,7 +18938,160 @@ debounce;exports.default = _default;
 
 /***/ }),
 
-/***/ 516:
+/***/ 517:
+/*!***********************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/popup.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+{
+  data: function data() {
+    return {};
+
+
+  },
+  created: function created() {
+    this.popup = this.getParent();
+  },
+  methods: {
+    /**
+              * 获取父元素实例
+              */
+    getParent: function getParent() {var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'uniPopup';
+      var parent = this.$parent;
+      var parentName = parent.$options.name;
+      while (parentName !== name) {
+        parent = parent.$parent;
+        if (!parent) return false;
+        parentName = parent.$options.name;
+      }
+      return parent;
+    } } };exports.default = _default;
+
+/***/ }),
+
+/***/ 518:
+/*!****************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 519));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 520));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 521));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 519:
+/*!***************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
+  \***************************************************************************************/
+/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
+
+/***/ }),
+
+/***/ 52:
+/*!*******************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/throttle.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
+/**
+                                                                                                                      * 节流原理：在一定时间内，只能触发一次
+                                                                                                                      * 
+                                                                                                                      * @param {Function} func 要执行的回调函数 
+                                                                                                                      * @param {Number} wait 延时的时间
+                                                                                                                      * @param {Boolean} immediate 是否立即执行
+                                                                                                                      * @return null
+                                                                                                                      */
+function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+  if (immediate) {
+    if (!flag) {
+      flag = true;
+      // 如果是立即执行，则在wait毫秒内开始时执行
+      typeof func === 'function' && func();
+      timer = setTimeout(function () {
+        flag = false;
+      }, wait);
+    }
+  } else {
+    if (!flag) {
+      flag = true;
+      // 如果是非立即执行，则在wait毫秒内的结束处执行
+      timer = setTimeout(function () {
+        flag = false;
+        typeof func === 'function' && func();
+      }, wait);
+    }
+
+  }
+};var _default =
+throttle;exports.default = _default;
+
+/***/ }),
+
+/***/ 520:
+/*!********************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
+  \********************************************************************************************/
+/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
+
+/***/ }),
+
+/***/ 521:
+/*!********************************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
+  \********************************************************************************************/
+/*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
+
+/***/ }),
+
+/***/ 53:
+/*!***************************************************************************!*\
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/config.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-12-17
+var version = '1.8.3';var _default =
+
+{
+  v: version,
+  version: version,
+  // 主题名称
+  type: [
+  'primary',
+  'success',
+  'info',
+  'error',
+  'warning'] };exports.default = _default;
+
+/***/ }),
+
+/***/ 536:
 /*!***************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/pages/ucenter/userinfo/limeClipper/utils.js ***!
   \***************************************************************************/
@@ -19280,74 +19347,37 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 
 /***/ }),
 
-/***/ 52:
-/*!*******************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/function/throttle.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var timer, flag;
-/**
-                                                                                                                      * 节流原理：在一定时间内，只能触发一次
-                                                                                                                      * 
-                                                                                                                      * @param {Function} func 要执行的回调函数 
-                                                                                                                      * @param {Number} wait 延时的时间
-                                                                                                                      * @param {Boolean} immediate 是否立即执行
-                                                                                                                      * @return null
-                                                                                                                      */
-function throttle(func) {var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-  if (immediate) {
-    if (!flag) {
-      flag = true;
-      // 如果是立即执行，则在wait毫秒内开始时执行
-      typeof func === 'function' && func();
-      timer = setTimeout(function () {
-        flag = false;
-      }, wait);
-    }
-  } else {
-    if (!flag) {
-      flag = true;
-      // 如果是非立即执行，则在wait毫秒内的结束处执行
-      timer = setTimeout(function () {
-        flag = false;
-        typeof func === 'function' && func();
-      }, wait);
-    }
-
-  }
-};var _default =
-throttle;exports.default = _default;
-
-/***/ }),
-
-/***/ 53:
+/***/ 54:
 /*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/config.js ***!
+  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/zIndex.js ***!
   \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 此版本发布于2020-12-17
-var version = '1.8.3';var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
+/**
+ * actionsheet: 999
+ * modal: 999
+ * navigate: 998
+ * tabbar: 998
+ * toast: 999
+ */var _default =
 
 {
-  v: version,
-  version: version,
-  // 主题名称
-  type: [
-  'primary',
-  'success',
-  'info',
-  'error',
-  'warning'] };exports.default = _default;
+  toast: 10090,
+  noNetwork: 10080,
+  // popup包含popup，actionsheet，keyboard，picker的值
+  popup: 10075,
+  mask: 10070,
+  navbar: 980,
+  topTips: 975,
+  sticky: 970,
+  indexListSticky: 965 };exports.default = _default;
 
 /***/ }),
 
-/***/ 531:
+/***/ 551:
 /*!**************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \**************************************************************************************/
@@ -19844,36 +19874,6 @@ SchemaValidator;exports.default = _default;
 
 /***/ }),
 
-/***/ 54:
-/*!***************************************************************************!*\
-  !*** D:/uniappprojrcy/校园生活助手/node_modules/uview-ui/libs/config/zIndex.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // uniapp在H5中各API的z-index值如下：
-/**
- * actionsheet: 999
- * modal: 999
- * navigate: 998
- * tabbar: 998
- * toast: 999
- */var _default =
-
-{
-  toast: 10090,
-  noNetwork: 10080,
-  // popup包含popup，actionsheet，keyboard，picker的值
-  popup: 10075,
-  mask: 10070,
-  navbar: 980,
-  topTips: 975,
-  sticky: 970,
-  indexListSticky: 965 };exports.default = _default;
-
-/***/ }),
-
 /***/ 6:
 /*!************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js ***!
@@ -19889,9 +19889,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
         "192.168.44.1",
         "192.168.159.33"
     ],
-    "debugPort": 49728,
+    "debugPort": 61310,
     "initialLaunchType": "local",
-    "servePort": 49729,
+    "servePort": 61311,
     "skipFiles": [
         "<node_internals>/**/*.js",
         "D:/HBuilderX/plugins/unicloud/**/*.js"
@@ -19902,7 +19902,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 646:
+/***/ 687:
 /*!*******************************************************************************************************!*\
   !*** D:/uniappprojrcy/校园生活助手/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \*******************************************************************************************************/

@@ -24,20 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.choice {
+.choice.data-v-733c14f4 {
   color: #16CC2E !important;
 }
-.quanxin {
+.quanxin.data-v-733c14f4 {
   margin-top: 30rpx;
 }
-.addresstitle {
+.addresstitle.data-v-733c14f4 {
   margin-right: 5rpx;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 68vw;
 }
-.inputMenu {
+.inputMenu.data-v-733c14f4 {
   width: 100vw;
   position: fixed;
   display: flex;
@@ -50,13 +50,13 @@
   border-top: 1px solid #D7D6D6;
   border-bottom: 1px solid #D7D6D6;
 }
-.submit {
+.submit.data-v-733c14f4 {
   /* margin-top: 20rpx; */
   width: 80%;
   margin: 20rpx auto;
   /* position: relative; */
 }
-.address {
+.address.data-v-733c14f4 {
   background-color: #AAEEB3;
   padding-left: 10rpx;
   padding-right: 10rpx;
@@ -65,19 +65,19 @@
   max-width: 70vw;
   font-size: 22rpx;
 }
-.emoji {
+.emoji.data-v-733c14f4 {
   display: flex;
   flex-wrap: wrap;
   padding-top: 20rpx;
 }
-.emojiitem {
+.emojiitem.data-v-733c14f4 {
   display: flex;
   width: 12.5vw;
   justify-content: center;
   margin-bottom: 35rpx;
   align-items: center;
 }
-.gprop {
+.gprop.data-v-733c14f4 {
   background-color: #F1F1F1;
   width: 100vw;
   /* height: 100rpx; */
@@ -89,7 +89,7 @@
   justify-content: center;
   left: 0rpx;
 }
-.content {
+.content.data-v-733c14f4 {
   margin-left: 20rpx;
   color: #fff;
 }

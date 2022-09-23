@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var limeClipper = function limeClipper() {Promise.all(/*! require.ensure | pages/ucenter/userinfo/limeClipper/limeClipper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/ucenter/userinfo/limeClipper/limeClipper")]).then((function () {return resolve(__webpack_require__(/*! ./limeClipper/limeClipper.vue */ 511));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var limeClipper = function limeClipper() {Promise.all(/*! require.ensure | pages/ucenter/userinfo/limeClipper/limeClipper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/ucenter/userinfo/limeClipper/limeClipper")]).then((function () {return resolve(__webpack_require__(/*! ./limeClipper/limeClipper.vue */ 531));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

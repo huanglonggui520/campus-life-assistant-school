@@ -98,16 +98,16 @@ var components
 try {
   components = {
     uniSignIn: function() {
-      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 472))
+      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 485))
     },
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 329))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 493))
     },
     uniList: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 437))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 450))
     },
     uniListItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 444))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 457))
     }
   }
 } catch (e) {
@@ -253,37 +253,13 @@ var db = uniCloud.database();var _default =
 
       ucenterList: [
       [
-        //
+
+      {
+        "title": '我的发布',
+        "to": '/pages/myRelease/myRelease',
+        "icon": "paperplane" }],
 
 
-
-
-
-
-        // {
-        // 	"title": this.$t('mine.signIn'),
-        // 	"event": 'signIn',
-        // 	"icon": "compose"
-        // },
-        //
-
-
-
-
-
-
-        // {
-        // 	"title":this.$t('mine.readArticles'),
-        // 	"to": '/pages/ucenter/read-news-log/read-news-log',
-        // 	"icon": "flag"
-        // },
-        // {
-        // 	"title": this.$t('mine.myScore'),
-        // 	"to": '',
-        // 	"event": 'getScore',
-        // 	"icon": "paperplane"
-        // }
-      ],
 
 
 
@@ -413,37 +389,8 @@ var db = uniCloud.database();var _default =
 
 
     },
-    /**
-        * 获取积分信息
-        */
-    getScore: function getScore() {var _this = this;
-      if (!this.userInfo) return uni.showToast({
-        title: this.$t('mine.checkScore'),
-        icon: 'none' });
 
-      uni.showLoading({
-        mask: true });
-
-      db.collection("uni-id-scores").
-      where('"user_id" == $env.uid').
-      field('score,balance').
-      orderBy("create_date", "desc").
-      limit(1).
-      get().
-      then(function (res) {
-        console.log(res);
-        var data = res.result.data[0];
-        var msg = '';
-        msg = data ? _this.$t('mine.currentScore') + data.balance : _this.$t('mine.noScore');
-        uni.showToast({
-          title: msg,
-          icon: 'none' });
-
-      }).finally(function () {
-        uni.hideLoading();
-      });
-    },
-    share: function share() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uniCloud$callF, result, myInviteCode, _this2$appConfig$abou, appName, logo, company, slogan;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+    share: function share() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$uniCloud$callF, result, myInviteCode, _this$appConfig$about, appName, logo, company, slogan;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
 
 
                   uniCloud.callFunction({
@@ -454,13 +401,13 @@ var db = uniCloud.database();var _default =
 
                 console.log(result);
                 myInviteCode = result.myInviteCode || result.userInfo.my_invite_code;
-                console.log(myInviteCode);_this2$appConfig$abou =
+                console.log(myInviteCode);_this$appConfig$about =
 
 
 
 
 
-                _this2.appConfig.about, appName = _this2$appConfig$abou.appName, logo = _this2$appConfig$abou.logo, company = _this2$appConfig$abou.company, slogan = _this2$appConfig$abou.slogan;case 8:case "end":return _context2.stop();}}}, _callee2);}))();
+                _this.appConfig.about, appName = _this$appConfig$about.appName, logo = _this$appConfig$about.logo, company = _this$appConfig$about.company, slogan = _this$appConfig$about.slogan;case 8:case "end":return _context2.stop();}}}, _callee2);}))();
 
 
 

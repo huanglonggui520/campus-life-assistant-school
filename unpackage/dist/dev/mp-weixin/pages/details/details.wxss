@@ -24,6 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.address.data-v-39cbb4e8 {
+  display: flex;
+  padding-left: 15rpx;
+}
 .bottom-input.data-v-39cbb4e8 {
   width: 100%;
   height: 80rpx;
@@ -63,6 +67,7 @@
 }
 .rich.data-v-39cbb4e8 {
   color: #5C5D61;
+  font-size: 34rpx;
   padding: 20rpx;
 }
 .u-image.data-v-39cbb4e8 {

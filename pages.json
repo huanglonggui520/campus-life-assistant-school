@@ -229,6 +229,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/myRelease/myRelease",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的发布",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

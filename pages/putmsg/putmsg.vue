@@ -6,7 +6,7 @@
 					取消
 			</view>
 			<!-- #ifdef H5 -->
-					<view style="color: #fff;margin-right: 20rpx;" slot="right">
+					<view style="color: #fff;margin-right: 20rpx;" slot="right" @tap="submit">
 						发布
 					</view>
 			 <!-- #endif -->
@@ -16,7 +16,7 @@
 					<textarea 
 					v-model="contentVal" 
 					:selection-end="end"
-					style='width: 100vw;height: 250rpx;'
+					style='width: 100%;height: 250rpx;'
 					:show-confirm-bar="false"
 					:cursor='wz'
 					:selection-start="start"
@@ -140,17 +140,12 @@
 				address:'',
 				ischoice:true,//是否公开
 				show: false,
-				content: '东临碣石，以观沧海'
+			
 			
 				
 			}
 		},
 		onLoad(e) {
-			// uni.onKeyboardHeightChange(res => {
-			//   console.log(res.height)
-			//   this.runheight=res.height
-			//   console.log('run',this.runheight)
-			// })
 			this.id = e.id
 			if (e.id == 1) {
 				this.statetext = '表白墙'
@@ -163,8 +158,6 @@
 			}
 
 			this.toptitle = '发布' + this.statetext + '信息'
-
-			console.log('iouyg', this.statetext)
 		},
 		methods: {
 			choiceQx(val){
@@ -242,12 +235,12 @@
 			},
 			// 提交发布
 			async submit() {
-
+			console.log('提交')
 				if (this.contentVal || this.imageValue.length) {
-					// 将[xxx]转换为图片
+					// 将[xxx]转换为表情包图片
 					this.changetext = this.contentVal
-					const val = this.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g)
-					// console.log(this.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g))
+					const val = this.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g)?this.contentVal.match(/\[[\u4E00-\u9FA5]{1,3}\]/g):[]
+					console.log(val)
 					val.forEach(item => {
 						this.EMOJI.forEach((itemchildren)=>{
 							if(item.replace(/\[|\]/g, '')==itemchildren.title){
@@ -268,8 +261,12 @@
 						// time:nowtime,
 						textwb: this.contentVal,
 						state: parseInt(this.id),
-						statetext: this.statetext
+						statetext: this.statetext,
+						address:this.address,
+						isShow:this.ischoice?1:0,
+						watch:0
 					}
+					// 上传到服务器
 					const db = uniCloud.database();
 					const res = await db.collection('love').add(data)
 					uni.showToast({
@@ -283,7 +280,7 @@
 					}, 1000)
 					console.log(res)
 				} else {
-					this.$u.toast("文件和描述不能同时为空")
+					this.$u.toast("你好像什么都没写哦~~")
 				}
 			},
 			// 获取上传状态
@@ -301,7 +298,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.choice{
 		color: #16CC2E !important;
 	}
@@ -376,6 +373,7 @@
 	}
 	.content{
 		margin-left: 20rpx;
+		// padding: 20rpx;
 		color: #fff;
 	}
 </style>

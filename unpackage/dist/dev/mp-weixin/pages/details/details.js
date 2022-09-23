@@ -98,31 +98,34 @@ var components
 try {
   components = {
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 329))
-    },
-    uTag: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */ "node-modules/uview-ui/components/u-tag/u-tag").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 336))
-    },
-    uParse: function() {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 343))
-    },
-    uImage: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 315))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 493))
     },
     uIcon: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 280))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 286))
+    },
+    uniIcons: function() {
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 431))
+    },
+    uParse: function() {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 342))
+    },
+    uImage: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 321))
     },
     comment: function() {
-      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 555))
+      return __webpack_require__.e(/*! import() | components/comment/comment */ "components/comment/comment").then(__webpack_require__.bind(null, /*! @/components/comment/comment.vue */ 575))
     },
     uEmpty: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */ "node-modules/uview-ui/components/u-empty/u-empty").then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 562))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */ "node-modules/uview-ui/components/u-empty/u-empty").then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 582))
     },
     ygcComment: function() {
-      return __webpack_require__.e(/*! import() | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then(__webpack_require__.bind(null, /*! @/components/ygc-comment/ygc-comment.vue */ 569))
+      return __webpack_require__.e(/*! import() | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then(__webpack_require__.bind(null, /*! @/components/ygc-comment/ygc-comment.vue */ 589))
     },
     uBackTop: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 360))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 359))
+    },
+    uModal: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-modal/u-modal */ "node-modules/uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! uview-ui/components/u-modal/u-modal.vue */ 389))
     }
   }
 } catch (e) {
@@ -147,7 +150,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   var g0 = _vm.$u.timeFrom(_vm.time, "yyyy-mm-dd hh:MM:ss")
-  var g1 = _vm.text.replaceAll("\n", "<br>")
+  var g1 = _vm.text.replace(/\n/g, "<br>")
+
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.showDelete = true
+    }
+  }
+
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -190,7 +200,19 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var ygcComment = function ygcComment() {__webpack_require__.e(/*! require.ensure | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then((function () {return resolve(__webpack_require__(/*! @/components/ygc-comment/ygc-comment.vue */ 569));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! @/components/comment/comment.vue */ 555));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var ygcComment = function ygcComment() {__webpack_require__.e(/*! require.ensure | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then((function () {return resolve(__webpack_require__(/*! @/components/ygc-comment/ygc-comment.vue */ 589));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var comment = function comment() {__webpack_require__.e(/*! require.ensure | components/comment/comment */ "components/comment/comment").then((function () {return resolve(__webpack_require__(/*! @/components/comment/comment.vue */ 575));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -325,6 +347,7 @@ __webpack_require__.r(__webpack_exports__);
       color: ['#F0C461', '#AF58F2', '#F270D0', '#4FDC46'],
       id: '',
       commentText: '',
+      showDelete: false,
       placeholderComment: '说点什么吧...',
       commentone_id: '',
       superNickname: '',
@@ -337,7 +360,12 @@ __webpack_require__.r(__webpack_exports__);
       commentscs: [], //初始评论数据
       type: 1,
       scrollTop: 0,
+      isShow_id: this.$store.state.user.info._id, //登录者的ip
+      isShow: true,
+      address: '',
+      _id: '', //文章id
       text: '',
+      watch: 0,
       user_id: {}, //作者信息
       img_url: [], //图片
       likedz: [], //点赞人的信息
@@ -352,14 +380,37 @@ __webpack_require__.r(__webpack_exports__);
               // const res=await db.collection("comments").remove()
               _this.$bus.$on('comment', _this.comment);
               _this.id = val.id;_context.next = 4;return (
-
                 _this.getdetails());case 4:_context.next = 6;return (
-                _this.getcomments());case 6:
+                _this.addWatch());case 6:_context.next = 8;return (
+                _this.getcomments());case 8:
               _this.lengths = _this.likedz.length; //点赞人数
               _this.setcomments();
-              console.log('user', _this.user_id);case 9:case "end":return _context.stop();}}}, _callee);}))();
+
+              console.log('user', _this._id);case 11:case "end":return _context.stop();}}}, _callee);}))();
   },
   methods: {
+    // 删除文章
+    Delete: function Delete() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var db, collection, collection2;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                db = uniCloud.database();
+                collection = db.collection("love");
+                collection2 = db.collection("comments");
+                // 删除这条动态
+                _context2.next = 5;return collection.where({ _id: _this2._id }).remove();case 5:_context2.next = 7;return (
+
+                  collection.where({ article_id: _this2._id }).remove());case 7:
+                _this2.$u.toast('删除成功');case 8:case "end":return _context2.stop();}}}, _callee2);}))();
+
+    },
+    // 添加浏览人数
+    addWatch: function addWatch() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var db, collection, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                db = uniCloud.database();
+                collection = db.collection("love");_context3.next = 4;return (
+                  collection.where({ _id: _this3._id }).
+                  update({
+                    watch: _this3.watch + 1 }));case 4:res = _context3.sent;case 5:case "end":return _context3.stop();}}}, _callee3);}))();
+
+    },
+    // 浏览图片
     look: function look(url) {
       var urlList = [];
       urlList.push(url); //push中的参数为 :src="item.img_url" 中的图片地址
@@ -383,46 +434,47 @@ __webpack_require__.r(__webpack_exports__);
       this.superNickname = userNickName;
       this.placeholderComment = placeholderComment;
       this.layer = layer;
+
       this.reply_user_id = _reply.super_user_id; //上一个评论人的id
       // this.pubComment(e)
       // console.log('00',this.etext)
     },
-    pubComment: function pubComment(e) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var params, e_id, db, resid, _resid, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+    pubComment: function pubComment(e) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var params, e_id, db, resid, _resid, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
                 params = {};
                 e_id = '';
                 db = uniCloud.database();
-
-                _this2.$refs.ygcComment.toggleMask('none');
-                console.log(_this2.layer);if (!(
-
-                _this2.layer == 2 || _this2.layer == 3)) {_context2.next = 12;break;}_context2.next = 8;return (
+                _this4.$refs.ygcComment.toggleMask('none');
+                console.log(_this4.layer);if (!(
+                _this4.layer == 2 || _this4.layer == 3)) {_context4.next = 12;break;}_context4.next = 8;return (
                   db.collection('comments').add({
                     comment_content: e,
-                    comment_type: _this2.layer,
-                    article_id: _this2.id,
-                    reply_id: _this2.commentone_id,
-                    reply_user_id: _this2.reply_user_id }));case 8:resid = _context2.sent;
+                    comment_type: _this4.layer,
+                    article_id: _this4.id,
+                    reply_id: _this4.commentone_id,
+                    reply_user_id: _this4.reply_user_id,
+                    article_user_id: _this4.user_id._id }));case 8:resid = _context4.sent;
 
                 e_id = resid.result.id;
                 // 找出刚刚的评论
-                _context2.next = 17;break;case 12:if (!(
-                _this2.layer == 1)) {_context2.next = 17;break;}_context2.next = 15;return (
+                _context4.next = 17;break;case 12:if (!(
+                _this4.layer == 1)) {_context4.next = 17;break;}_context4.next = 15;return (
 
                   db.collection('comments').add({
                     comment_content: e,
-                    comment_type: _this2.layer,
-                    article_id: _this2.id }));case 15:_resid = _context2.sent;
+                    comment_type: _this4.layer,
+                    article_id: _this4.id,
+                    article_user_id: _this4.user_id._id }));case 15:_resid = _context4.sent;
 
                 e_id = _resid.result.id;
                 // 找出刚刚的评论
 
                 // this.commentlist.unshift()
                 // console.log(res)
-              case 17:_context2.next = 19;return (
+              case 17:_context4.next = 19;return (
                   db.collection('comments,uni-id-users').
                   where({ _id: e_id }).
                   field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
-                  get());case 19:res = _context2.sent;
+                  get());case 19:res = _context4.sent;
                 params.id = res.result.data[0]._id;
                 params.avatar = res.result.data[0].user_id[0].avatar_file ? res.result.data[0].user_id[0].avatar_file.url : '/static/uni-center/tx.jpg';
                 params.nickname = res.result.data[0].user_id[0].nickname ? res.result.data[0].user_id[0].nickname : res.result.data[0].user_id[0].mobile;
@@ -430,22 +482,22 @@ __webpack_require__.r(__webpack_exports__);
                 params.addTime = res.result.data[0].time;
                 params.isLike = '0';
                 params.user_id = res.result.data[0].user_id[0]._id;
-                if (_this2.layer == 1) {
+                if (_this4.layer == 1) {
 
                   params.layer = 1;
                   params.superCommentId = null;
                   params.superNickname = null;
                   params.children = [];
-                  _this2.commentlist.unshift(params);
+                  _this4.commentlist.unshift(params);
                 } else
-                if (_this2.layer == 2 || _this2.layer == 3) {
+                if (_this4.layer == 2 || _this4.layer == 3) {
 
                   params.super_user_id = res.result.data[0].user_id[0]._id;
                   params.layer = res.result.data[0].comment_type;
                   params.superCommentId = res.result.data[0].reply_id;
                   params.superNickname = res.result.data[0].reply_user_id.length ? res.result.data[0].reply_user_id[0].nickname || res.result.data[0].reply_user_id[0].mobile : null;
                   // params.children=[]
-                  _this2.commentlist.forEach(function (item) {
+                  _this4.commentlist.forEach(function (item) {
                     if (item.layer == 1 && item.id == res.result.data[0].reply_id) {
                       item.children.push(params);
                       console.log('767', item);
@@ -456,7 +508,7 @@ __webpack_require__.r(__webpack_exports__);
                   title: '发表成功' });
 
                 console.log('单个评论', res.result.data[0]);
-                console.log('礼拜', _this2.commentlist);case 31:case "end":return _context2.stop();}}}, _callee2);}))();
+                console.log('礼拜', _this4.commentlist);case 31:case "end":return _context4.stop();}}}, _callee4);}))();
     },
     comment: function comment(val) {
       console.log(val);
@@ -465,18 +517,18 @@ __webpack_require__.r(__webpack_exports__);
       // this.$bus.$emit('toggleMask','show')
     },
     // 获取评论
-    getcomments: function getcomments() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var db, res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                db = uniCloud.database();_context3.next = 3;return (
+    getcomments: function getcomments() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var db, res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
+                db = uniCloud.database();_context5.next = 3;return (
                   db.collection('comments,uni-id-users').
-                  where({ article_id: _this3.id }).
+                  where({ article_id: _this5.id }).
                   field('_id,comment_content,reply_id,comment_type,reply_user_id._id,reply_user_id.mobile,reply_user_id.nickname,article_id,time,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
                   orderBy('time desc').
-                  get());case 3:res = _context3.sent;
-                _this3.commentscs = res.result.data;case 5:case "end":return _context3.stop();}}}, _callee3);}))();
+                  get());case 3:res = _context5.sent;
+                _this5.commentscs = res.result.data;case 5:case "end":return _context5.stop();}}}, _callee5);}))();
 
     },
     // 设置评论格式
-    setcomments: function setcomments() {var _this4 = this;
+    setcomments: function setcomments() {var _this6 = this;
 
       this.commentscs.forEach(function (item) {
         var commentlists = {};
@@ -493,7 +545,7 @@ __webpack_require__.r(__webpack_exports__);
           commentlists.superNickname = null;
           commentlists.superCommentId = null;
           commentlists.children = [];
-          _this4.commentlist.push(commentlists);
+          _this6.commentlist.push(commentlists);
         }
       });
 
@@ -501,7 +553,7 @@ __webpack_require__.r(__webpack_exports__);
         var commentlists = {};
         // 找出所有的2级评论
         if (item.comment_type == 2) {
-          _this4.commentlist.forEach(function (item2) {
+          _this6.commentlist.forEach(function (item2) {
             if (item2.id == item.reply_id) {
               commentlists.id = item._id;
               commentlists.avatar = item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg';
@@ -523,7 +575,7 @@ __webpack_require__.r(__webpack_exports__);
         var commentlists = {};
         // 找出所有的3级评论
         if (item.comment_type == 3) {
-          _this4.commentlist.forEach(function (item2) {
+          _this6.commentlist.forEach(function (item2) {
             if (item2.id == item.reply_id) {
               commentlists.id = item._id;
               commentlists.user_id = item.user_id[0]._id;
@@ -545,68 +597,73 @@ __webpack_require__.r(__webpack_exports__);
       console.log('评论列表', this.commentlist);
     },
     // 点赞
-    dz: function dz() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var db, paramsdz;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+    dz: function dz() {var _this7 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var db, paramsdz;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
                 db = uniCloud.database();
                 paramsdz = {
-                  like_id: _this5.id,
+                  like_id: _this7.id,
                   state_type: 1 };if (!
 
-                _this5.isdz) {_context4.next = 10;break;}_context4.next = 5;return (
-                  db.collection("like").where({ user_id: _this5.$store.state.user.info._id, like_id: _this5.id, state_type: 1 }).remove());case 5:
+                _this7.isdz) {_context6.next = 10;break;}_context6.next = 5;return (
+                  db.collection("like").where({ user_id: _this7.$store.state.user.info._id, like_id: _this7.id, state_type: 1 }).remove());case 5:
                 uni.showToast({
                   title: "取消点赞" });
 
-                _this5.isdz = false;
-                _this5.lengths -= 1;_context4.next = 15;break;case 10:_context4.next = 12;return (
+                _this7.isdz = false;
+                _this7.lengths -= 1;_context6.next = 15;break;case 10:_context6.next = 12;return (
 
                   db.collection('like').add(paramsdz));case 12:
 
                 uni.showToast({
                   title: "点赞成功" });
 
-                _this5.isdz = true;
-                _this5.lengths += 1;case 15:case "end":return _context4.stop();}}}, _callee4);}))();
+                _this7.isdz = true;
+                _this7.lengths += 1;case 15:case "end":return _context6.stop();}}}, _callee6);}))();
 
     },
-    getdetails: function getdetails() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var db, res, likedata, data, likedatas, _data$, statetext, time, img_url, user_id, text, state;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
+    getdetails: function getdetails() {var _this8 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7() {var db, res, likedata, data, likedatas, _data$, _id, watch, statetext, time, img_url, user_id, text, state, isShow, address;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
                 db = uniCloud.database();
                 // db.collection("comments").remove()
                 // 获取文章内容以及作者信息
-                _context5.next = 3;return db.collection('love,uni-id-users').
-                where({ _id: _this6.id }).
-                field('_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
-                get();case 3:res = _context5.sent;_context5.next = 6;return (
+                _context7.next = 3;return db.collection('love,uni-id-users').
+                where({ _id: _this8.id }).
+                field('_id,watch,time,school,isShow,address,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
+                get();case 3:res = _context7.sent;_context7.next = 6;return (
 
                   db.collection('like').
-                  where({ like_id: _this6.id }).
-                  get());case 6:likedata = _context5.sent;
+                  where({ like_id: _this8.id }).
+                  get());case 6:likedata = _context7.sent;
                 data = res.result.data;
-                likedatas = likedata.result.data;_data$ =
-                data[0], statetext = _data$.statetext, time = _data$.time, img_url = _data$.img_url, user_id = _data$.user_id, text = _data$.text, state = _data$.state;
-                _this6.statetext = statetext;
-                _this6.time = time;
-                _this6.img_url = img_url;
-                _this6.state = state;
-                _this6.user_id = user_id[0];
-                _this6.text = text;
+                likedatas = likedata.result.data;
+                console.log('data', data);_data$ =
+                data[0], _id = _data$._id, watch = _data$.watch, statetext = _data$.statetext, time = _data$.time, img_url = _data$.img_url, user_id = _data$.user_id, text = _data$.text, state = _data$.state, isShow = _data$.isShow, address = _data$.address;
+                _this8.statetext = statetext;
+                _this8.watch = watch;
+                _this8.time = time;
+                _this8._id = _id;
+                _this8.isShow = isShow;
+                _this8.address = address;
+                _this8.img_url = img_url;
+                _this8.state = state;
+                _this8.user_id = user_id[0];
+                _this8.text = text;
                 // 提取点赞收藏信息
                 likedatas.forEach(function (item) {
                   if (!item.state_type) {
-                    _this6.likesc = [].concat(_toConsumableArray(_this6.likesc), [item]);
+                    _this8.likesc = [].concat(_toConsumableArray(_this8.likesc), [item]);
                   } else {
-                    _this6.likedz = [].concat(_toConsumableArray(_this6.likedz), [item]);
+                    _this8.likedz = [].concat(_toConsumableArray(_this8.likedz), [item]);
                   }
                 });
                 // 查看本人是否点赞
-                _this6.likedz.forEach(function (item) {
-                  if (item.user_id == _this6.$store.state.user.info._id) {
-                    _this6.isdz = true;
+                _this8.likedz.forEach(function (item) {
+                  if (item.user_id == _this8.$store.state.user.info._id) {
+                    _this8.isdz = true;
                     return;
                   }
-                });case 18:case "end":return _context5.stop();}}}, _callee5);}))();
+                });case 23:case "end":return _context7.stop();}}}, _callee7);}))();
 
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

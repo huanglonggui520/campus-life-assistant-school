@@ -24,6 +24,9 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.address.data-v-57280228 {
+  display: flex;
+}
 .u-image.data-v-57280228 {
   max-width: 80vw;
   max-height: 800rpx;
@@ -45,15 +48,6 @@
 }
 .text.data-v-57280228 {
   margin-top: 20rpx;
-}
-.content.data-v-57280228 {
-  display: flex;
-}
-.content .name.data-v-57280228 {
-  display: flex;
-  margin-left: 20rpx;
-  flex-direction: column;
-  justify-content: space-around;
 }
 .search.data-v-57280228 {
   background-color: #1CBBB4;
