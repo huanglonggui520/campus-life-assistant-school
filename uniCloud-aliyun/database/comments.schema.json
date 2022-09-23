@@ -45,6 +45,9 @@
 			"forceDefaultValue":{
 				"$env":"now"
 			}
+		},
+		"article_user_id":{
+			"bsonType": "string"
 		}
 }
 }

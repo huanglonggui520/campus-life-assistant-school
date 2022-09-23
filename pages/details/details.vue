@@ -9,18 +9,26 @@
 						<u-avatar  size='large' :src="user_id.avatar_file ? user_id.avatar_file.url:'/static/uni-center/tx.jpg'"></u-avatar>
 					</view>
 					<view class="name">
-						<view style='display: flex; align-items: center;'>
-							<u-tag style='margin-right: 15rpx;height: 35rpx;' text="表白墙" :bg-color='color[0]' size='mini' mode="dark" />
-							<view style="">
+						<view style='display: flex; align-items: center;font-size: 30rpx;'>
+							<!-- <u-tag style='margin-right: 15rpx;height: 35rpx;' text="表白墙" :bg-color='color[0]' size='mini' mode="dark" /> -->
+						
+							<view>
 								{{user_id.nickname ? user_id.nickname:user_id.mobile}}
 							</view>
+							<view style='margin-left: 15rpx;color: #5A93F0;'>{{statetext}}</view>
 						</view>
 						
-						<view style="font-size: 28rpx;color: #C6C8CB;">
-							{{$u.timeFrom(time, "yyyy-mm-dd hh:MM:ss")}}
-							
+						<view style="display: flex;">
+							<view style="font-size: 28rpx;color: #C6C8CB;">
+								{{$u.timeFrom(time, "yyyy-mm-dd hh:MM:ss")}}
+							</view>
+							<view style="font-size: 26rpx;color: #C6C8CB;display: flex;margin-left: 20rpx;" v-show="!isShow && isShow_id==user_id._id ">
+								<u-icon name="lock" color="#C6C8CB" size="26"></u-icon>
+								<view>仅自己可见</view>
+							</view>
 						</view>
 					</view>
+					<view style='flex: 1;display:flex;justify-content: flex-end;margin-right: 5rpx;margin-top: 10rpx;' v-if="user_id._id==isShow_id"><uni-icons @tap="showDelete=true"  type="trash-filled" size="22"></uni-icons></view>
 				</view>
 			</view>
 		</view>
@@ -28,7 +36,7 @@
 		<view class="line"></view>
 		<!-- 富文本 -->
 		<view class="rich">
-			<u-parse :html="text.replaceAll('\n','<br>')"></u-parse>
+			<u-parse :html="text.replace(/\n/g,'<br>')"></u-parse>
 		</view>
 		<!-- 图片 -->
 			<view style="padding-left: 20rpx;display: flex;">
@@ -53,7 +61,6 @@
 							v-if="img_url.length==1 && img_url[0].image.width<900"
 						>
 					</image>
-					
 					<view>
 						<view v-if="img_url.length>=2 && img_url.length<=5 && img_url.length%2==0" class="image1">
 						
@@ -83,6 +90,10 @@
 					</view>
 				</view> 
 			</view>
+			<view class="address" v-if='address'>
+				<u-icon name="map" color="#A5ACBD" size="26"></u-icon>
+				<view style="color: #A5ACBD;font-size: 26rpx;">{{address}}</view>
+			</view>
 			<!-- 浏览多少次 -->
 			<view class="watch">
 				<view>
@@ -91,7 +102,7 @@
 					<!-- <u-icon name="thumb-up" size='40' :label='item.numdz' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon> -->
 				</view>
 				<view class="right">
-					<view style="margin-right: 15rpx;">123人浏览 </view>
+					<view style="margin-right: 15rpx;">{{watch}}次浏览 </view>
 					<view>{{lengths}}人点赞</view>
 				</view>
 			</view>
@@ -105,10 +116,10 @@
 			<!-- 分割线 -->
 			<view class="line" style="margin-bottom: 20rpx;"></view>
 			
-			<comment v-if="commentlist.length" :comments="commentlist" @comment-like="handLike" @send-comment="handSend" v-model="commentText" @lower="lower" @reply="reply"></comment>
+			<comment v-if="commentlist.length" :user="user_id" :comments="commentlist" @comment-like="handLike" @send-comment="handSend" v-model="commentText" @lower="lower" @reply="reply"></comment>
 			<!-- <u-divider v-else style='margin-top: 30rpx;'>还没有评论...</u-divider> -->
 			<view v-else @tap='comment(1)'>
-				<u-empty  text="还没有评论哦,赶快来评论吧..."  mode="message"></u-empty>
+				<u-empty  text="还没有评论哦,赶快来评论吧..."  mode="message" icon-size='200' :mask-close-able="true"></u-empty>
 			</view>
 			<ygc-comment ref="ygcComment"
 					:placeholder="placeholderComment" 
@@ -116,6 +127,7 @@
 			</ygc-comment>
 			<!-- <view class="bottom-input"><u-input v-model="value" :type="type" :border="border" /></view> -->
 			<u-back-top :scroll-top="scrollTop"></u-back-top>
+			<u-modal @confirm='Delete' title='删除提醒' :show-cancel-button='true' v-model="showDelete" content="是否删除该这条动态吗？"></u-modal>
 		</view>
 		
 	
@@ -133,6 +145,7 @@
 				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				id:'',
 				commentText: '',
+				showDelete:false,
 				placeholderComment:'说点什么吧...',
 				commentone_id:'',
 				superNickname:'',
@@ -145,7 +158,12 @@
 				commentscs:[],//初始评论数据
 				type:1,
 				scrollTop: 0,
+				isShow_id:this.$store.state.user.info._id,//登录者的ip
+				isShow:true,
+				address:'',
+				_id:'',//文章id
 				text:'',
+				watch:0,
 				user_id:{},//作者信息
 				img_url:[],//图片
 				likedz:[],//点赞人的信息
@@ -160,14 +178,37 @@
 			// const res=await db.collection("comments").remove()
 			this.$bus.$on('comment',this.comment)
 			this.id=val.id
-			
 			await this.getdetails()
+			await this.addWatch()
 			await this.getcomments()
 			this.lengths=this.likedz.length //点赞人数
 			this.setcomments()
-			console.log('user',this.user_id)
+			
+			console.log('user',this._id)
 		},
 		methods:{
+			// 删除文章
+			async Delete(){
+				const db = uniCloud.database();
+				let collection = db.collection("love")
+				let collection2 = db.collection("comments")
+				// 删除这条动态
+				await collection.where({_id:this._id}).remove()
+				// 删除动态的所有评论
+				await collection.where({article_id:this._id}).remove()
+				this.$u.toast('删除成功')
+				
+			},
+			// 添加浏览人数
+			async addWatch(){
+				const db = uniCloud.database();
+				let collection = db.collection("love")
+				let res = await collection.where({_id:this._id})
+				  .update({
+				    watch:this.watch+1
+				  });
+			},
+			// 浏览图片
 			look(url) {
 				var urlList = []
 				urlList.push(url) //push中的参数为 :src="item.img_url" 中的图片地址
@@ -191,6 +232,7 @@
 				this.superNickname=userNickName
 				this.placeholderComment=placeholderComment
 				this.layer=layer
+				
 				this.reply_user_id=reply.super_user_id //上一个评论人的id
 				// this.pubComment(e)
 				// console.log('00',this.etext)
@@ -199,17 +241,16 @@
 					let params={}
 					let e_id=''
 					const db = uniCloud.database()
-					
 					this.$refs.ygcComment.toggleMask('none')
 					console.log(this.layer)
-					
 					if(this.layer==2 || this.layer==3){
 						const resid=await db.collection('comments').add({
 							comment_content:e,
 							comment_type:this.layer,
 							article_id:this.id,
 							reply_id:this.commentone_id,
-							reply_user_id:this.reply_user_id
+							reply_user_id:this.reply_user_id,
+							article_user_id:this.user_id._id
 						})
 						e_id=resid.result.id
 						// 找出刚刚的评论
@@ -220,6 +261,7 @@
 							comment_content:e,
 							comment_type:this.layer,
 							article_id:this.id,
+							article_user_id:this.user_id._id
 						})
 						e_id=resid.result.id
 						// 找出刚刚的评论
@@ -382,7 +424,7 @@
 				// 获取文章内容以及作者信息
 				const res = await db.collection('love,uni-id-users')
 				.where({_id:this.id})
-				.field('_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+				.field('_id,watch,time,school,isShow,address,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 				.get()
 				// 获取文章点赞信息
 				const likedata = await db.collection('like')
@@ -390,9 +432,14 @@
 				.get()
 				const {data}=res.result
 				const likedatas=likedata.result.data
-				let {statetext,time,img_url,user_id,text,state}=data[0]
+				console.log('data',data)
+				let {_id,watch,statetext,time,img_url,user_id,text,state,isShow,address}=data[0]
 				this.statetext=statetext
+				this.watch=watch
 				this.time=time
+				this._id=_id
+				this.isShow=isShow
+				this.address=address
 				this.img_url=img_url
 				this.state=state
 				this.user_id=user_id[0]
@@ -421,6 +468,10 @@
 </script>
 
 <style lang="scss" scoped>
+	.address{
+		display: flex;
+		padding-left: 15rpx;
+	}
 	.bottom-input{
 		width: 100%;
 		height: 80rpx;
@@ -468,6 +519,7 @@
 .rich{
 	color: #5C5D61;
 	// margin-top: ;
+	font-size: 34rpx;
 	padding: 20rpx;
 }
 

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的发布",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-sticky": "/node-modules/uview-ui/components/u-sticky/u-sticky",
+    "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
+    "release-iist": "/components/releaseIist/releaseIist"
+  }
+}

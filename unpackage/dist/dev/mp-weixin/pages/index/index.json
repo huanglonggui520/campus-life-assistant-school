@@ -10,8 +10,7 @@
     "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
     "u-image": "/node-modules/uview-ui/components/u-image/u-image",
     "u-tabs": "/node-modules/uview-ui/components/u-tabs/u-tabs",
-    "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
-    "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+    "name": "/components/name/name",
     "u-parse": "/node-modules/uview-ui/components/u-parse/u-parse",
     "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider",
     "u-back-top": "/node-modules/uview-ui/components/u-back-top/u-back-top"

@@ -16,7 +16,6 @@
 						</view>
 						<!-- <view style="width: 100%;height: 1rpx;background-color: black;"></view> -->
 					</view>
-					
 				</view>
 				<view v-if="showReplyList.indexOf(item.id) !== -1">
 					<view class="comment-item items" v-for="reply in item.children" :key="reply.id">
@@ -35,9 +34,7 @@
 								<text class="btm-back" >回复</text>
 							</view>
 						</view>
-					
 					</view>
-					
 				</view>
 				<view class="spread" v-if="item.children.length > 0" @click="isShowReply(item.id, index)">
 					<text>{{ showReplyList.indexOf(item.id) !== -1 ? '收起' : '展开' + item.children.length + '条回复' }}</text>
@@ -45,18 +42,17 @@
 				</view>
 			</view>
 		</scroll-view>
+		<!-- <view>{{user}}</view> -->
 		<u-popup v-model="isshow" mode="bottom"  >
 					<view>
-						
-						<view class="item isboder" @tap="deletecomment" v-if="isshowdeleteid==deleteuser_id">删除</view>
+						<view class="item isboder" @tap="deletecomment" v-if="isshowdeleteid==deleteuser_id || user._id==isshowdeleteid">删除</view>
 						<view class="item isboder">举报</view>
 						<view class="item" @tap='copy'>复制</view>
 						<view style="width: 100vw;height: 12rpx;background-color: #EAEAEC;"></view>
 						<view class="item" @tap='isshow=false'>取消</view>
+						
 					</view>
 		</u-popup>
-		
-		
 	</view>
 </template>
 
@@ -70,6 +66,12 @@ export default {
 				return [];
 			}
 		},
+		user:{
+			type:Object,
+			default:()=>{
+				return {};
+			}
+		},
 		value: ''
 	},
 	
@@ -77,11 +79,11 @@ export default {
 		return {
 			showReplyList: [],
 			copytext:'',
-			isshowdeleteid:this.$store.state.user.info._id,
+			isshowdeleteid:this.$store.state.user.info._id,//登录的本人id
 			placeholderComment: '发条评论吧~',
 			iptFocus: false,
 			layer: 1,
-			deleteuser_id:'',//删除评论作者ID,用来展示是否有删除按钮
+			deleteuser_id:'',//评论作者ID,用来展示是否有删除按钮
 			deleteid:'',
 			isshow:false,
 			
@@ -98,7 +100,6 @@ export default {
 	methods: {
 		// 复制
 		copy(){
-			
 			this.isshow=false
 			uni.setClipboardData({
 				data: this.copytext,
@@ -139,7 +140,10 @@ export default {
 			this.CommentIndex = index;
 			this.$emit('reply',this.placeholderComment,index,id,userNickName,tier,reply)
 		},
+		// 长按展示菜单
 		show(userNickName, id, tier, index, reply,copy){
+			console.log(this.user)
+			this.user_id=this.user
 			this.isshow=true
 			this.copytext=copy
 			this.deleteuser_id=reply.user_id
@@ -147,13 +151,19 @@ export default {
 			this.superCommentId = id;
 			this.layer = tier
 			console.log('长按',this.layer)
-			console.log(copy)
+			// console.log(copy)
 		},
 		// 删除评论
 		async deletecomment(){
 			this.isshow=false
 			const db = uniCloud.database();
-			await db.collection("comments").where({_id:this.deleteid,user_id:this.$store.state.user.info._id}).remove()
+			const dbCmd = db.command
+			await db.collection("comments")
+			.where(dbCmd.or(
+			{_id:this.deleteid,user_id:this.$store.state.user.info._id},
+			{_id:this.deleteid,article_user_id:this.user._id}
+			))
+			.remove()
 			if(this.layer==1){
 				const res=await db.collection("comments").where({reply_id:this.superCommentId}).remove()
 				this.comments.forEach((item,index)=>{
@@ -225,7 +235,7 @@ export default {
 	margin-top: 10rpx;
 }
 .comment-item-main {
-	margin-bottom: 40rpx;
+	margin-bottom: 10rpx;
 	.comment-item {
 		display: flex;
 		padding: 0 20rpx;

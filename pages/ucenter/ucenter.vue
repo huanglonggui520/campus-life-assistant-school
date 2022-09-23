@@ -54,36 +54,12 @@
 			
 				ucenterList: [
 					[
-						// // #ifdef APP-PLUS
-						// {
-						// 	"title": this.$t('mine.signInByAd'),
-						// 	"event": 'signInByAd',
-						// 	"icon": "compose"
-						// },
-						// // #endif
-						// {
-						// 	"title": this.$t('mine.signIn'),
-						// 	"event": 'signIn',
-						// 	"icon": "compose"
-						// },
-						// // #ifdef APP-PLUS
-						// {
-						// 	"title": this.$t('mine.toEvaluate'),
-						// 	"event": 'gotoMarket',
-						// 	"icon": "hand-thumbsup"
-						// },
-						// //#endif
-						// {
-						// 	"title":this.$t('mine.readArticles'),
-						// 	"to": '/pages/ucenter/read-news-log/read-news-log',
-						// 	"icon": "flag"
-						// },
-						// {
-						// 	"title": this.$t('mine.myScore'),
-						// 	"to": '',
-						// 	"event": 'getScore',
-						// 	"icon": "paperplane"
-						// }
+						
+						{
+							"title": '我的发布',
+							"to": '/pages/myRelease/myRelease',
+							"icon": "paperplane"
+						}
 						// #ifdef APP-PLUS
 						, {
 							"title": this.$t('mine.invite'),
@@ -214,36 +190,7 @@
 				}
 				// #endif
 			},
-			/**
-			 * 获取积分信息
-			 */
-			getScore() {
-				if (!this.userInfo) return uni.showToast({
-					title: this.$t('mine.checkScore'),
-					icon: 'none'
-				});
-				uni.showLoading({
-					mask: true
-				})
-				db.collection("uni-id-scores")
-					.where('"user_id" == $env.uid')
-					.field('score,balance')
-					.orderBy("create_date", "desc")
-					.limit(1)
-					.get()
-					.then((res) => {
-						console.log(res);
-						const data = res.result.data[0];
-						let msg = '';
-						msg = data ? (this.$t('mine.currentScore')+ data.balance) : this.$t('mine.noScore');
-						uni.showToast({
-							title: msg,
-							icon: 'none'
-						});
-					}).finally(()=>{
-						uni.hideLoading()
-					})
-			},
+			
 			async share() {
 				let {
 					result

@@ -98,6 +98,7 @@ var components
 try {
   components = {
     uNavbar: function() {
+<<<<<<< HEAD
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 273))
     },
     uIcon: function() {
@@ -135,6 +136,42 @@ try {
     },
     uBackTop: function() {
       return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 360))
+=======
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-navbar/u-navbar */ "node-modules/uview-ui/components/u-navbar/u-navbar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-navbar/u-navbar.vue */ 279))
+    },
+    uIcon: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */ "node-modules/uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 286))
+    },
+    uSelect: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-select/u-select */ "node-modules/uview-ui/components/u-select/u-select").then(__webpack_require__.bind(null, /*! uview-ui/components/u-select/u-select.vue */ 293))
+    },
+    uSearch: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-search/u-search */ "node-modules/uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 300))
+    },
+    uNoticeBar: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-notice-bar/u-notice-bar */ "node-modules/uview-ui/components/u-notice-bar/u-notice-bar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-notice-bar/u-notice-bar.vue */ 307))
+    },
+    uSwiper: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */ "node-modules/uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 314))
+    },
+    uImage: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-image/u-image */ "node-modules/uview-ui/components/u-image/u-image").then(__webpack_require__.bind(null, /*! uview-ui/components/u-image/u-image.vue */ 321))
+    },
+    uTabs: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-tabs/u-tabs */ "node-modules/uview-ui/components/u-tabs/u-tabs").then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs/u-tabs.vue */ 328))
+    },
+    name: function() {
+      return __webpack_require__.e(/*! import() | components/name/name */ "components/name/name").then(__webpack_require__.bind(null, /*! @/components/name/name.vue */ 335))
+    },
+    uParse: function() {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-parse/u-parse.vue */ 342))
+    },
+    uDivider: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 352))
+    },
+    uBackTop: function() {
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-back-top/u-back-top */ "node-modules/uview-ui/components/u-back-top/u-back-top").then(__webpack_require__.bind(null, /*! uview-ui/components/u-back-top/u-back-top.vue */ 359))
+>>>>>>> school
     }
   }
 } catch (e) {
@@ -161,12 +198,10 @@ var render = function() {
   var l0 = _vm.__map(_vm.databbai, function(item, __i0__) {
     var $orig = _vm.__get_orig(item)
 
-    var g0 = _vm.$u.timeFrom(item.time, "yyyy-mm-dd hh:MM:ss")
-    var g1 = item.text.replace("\n", "<br>")
+    var g0 = item.text.replace(/\n/g, "<br>")
     return {
       $orig: $orig,
-      g0: g0,
-      g1: g1
+      g0: g0
     }
   })
 
@@ -214,9 +249,552 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/uniappprojrcy/校园生活助手/pages/index/index.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
+<<<<<<< HEAD
 /***/ (function(module, exports) {
 
 throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js):\nSyntaxError: Unexpected token (297:0)\n    at Object._raise (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:746:17)\n    at Object.raiseWithData (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:739:17)\n    at Object.raise (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:733:17)\n    at Object.unexpected (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8807:16)\n    at Object.parseIdentifierName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10823:18)\n    at Object.parseIdentifier (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10800:23)\n    at Object.parseMaybePrivateName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10157:19)\n    at Object.parsePropertyName (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10624:126)\n    at Object.parseObjectMember (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10525:10)\n    at Object.parseObj (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10448:25)\n    at Object.parseExprAtom (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10055:28)\n    at Object.parseExprSubscripts (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9656:23)\n    at Object.parseMaybeUnary (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9636:21)\n    at Object.parseMaybeUnary (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6877:20)\n    at Object.parseExprOps (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9506:23)\n    at Object.parseMaybeConditional (D:\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9479:23)");
+=======
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var name = function name() {__webpack_require__.e(/*! require.ensure | components/name/name */ "components/name/name").then((function () {return resolve(__webpack_require__(/*! @/components/name/name.vue */ 335));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+  data: function data() {
+    return {
+      buttomtitle: '加载中...',
+      scrollTop: 0,
+      count: 0,
+      show: false,
+      colors: '#909399',
+      isshow: false,
+      listschool: [
+      {
+        value: 1,
+        label: '贵州师范大学' },
+
+      {
+        label: '贵州财经大学',
+        value: 2 },
+
+      {
+        label: '贵州医科大学',
+        value: 3 },
+
+      {
+        label: '贵州大学',
+        value: 4 }],
+
+
+      keyword: '',
+      SCHOOL: '贵州师范大学',
+      list: [],
+      isShow_id: this.$store.state.user.info._id,
+      list1: [{
+        image: 'https://cdn.uviewui.com/uview/swiper/1.jpg',
+        title: '昨夜星辰昨夜风，画楼西畔桂堂东' },
+
+      {
+        image: 'https://cdn.uviewui.com/uview/swiper/2.jpg',
+        title: '身无彩凤双飞翼，心有灵犀一点通' },
+
+      {
+        image: 'https://cdn.uviewui.com/uview/swiper/3.jpg',
+        title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳' }],
+
+
+      pages: 1,
+      listtab: [
+      {
+        name: '最新动态' },
+
+      {
+        name: '表白墙' },
+      {
+        name: '二手闲置' },
+
+
+      {
+        name: '快递代取' },
+
+
+      {
+        name: '失物招领' }],
+
+
+
+      current: 0,
+      databbai: [],
+      textid: '',
+      type: 1 };
+
+
+  },
+  components: {
+    name: name },
+
+  onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var arr;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              // const comments=uniCloud.importObject('comments')
+              // const a=await comments.comment()
+              // console.log('a',a)
+              // const db = uniCloud.database();
+              // const res=await db.collection("love").remove()
+              console.log(_this.$store.state.user);_context.next = 3;return (
+                _this.get());case 3:arr = _context.sent;
+              _this.databbai = arr;
+              console.log(_this.databbai);
+              console.log(_this.isShow_id);case 7:case "end":return _context.stop();}}}, _callee);}))();
+  },
+  onPullDownRefresh: function onPullDownRefresh() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var arr;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+              _this2.pages = 1;_context2.next = 3;return (
+                _this2.get());case 3:arr = _context2.sent;
+              if (arr.length != 0) {
+                _this2.databbai = arr;
+              } else {
+                uni.showToast({
+                  title: '没有更多信息了',
+                  icon: "none" });
+
+              }
+              uni.stopPullDownRefresh();case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+  },
+  onReachBottom: function onReachBottom() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var arr;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+              _this3.isshow = true;
+              _this3.buttomtitle = '玩命加载中...';
+              _this3.pages = _this3.pages + 1;_context3.next = 5;return (
+                _this3.get());case 5:arr = _context3.sent;
+              _this3.databbai = [].concat(_toConsumableArray(_this3.databbai), _toConsumableArray(arr));case 7:case "end":return _context3.stop();}}}, _callee3);}))();
+
+  },
+  computed: {
+    slotRightCurrent: function slotRightCurrent() {
+      return this.slotRight ? 0 : 1;
+    } },
+
+
+
+  methods: {
+    // 前往详情
+    goxiangq: function goxiangq(item) {
+      console.log(item);
+      uni.navigateTo({
+        url: "/pages/details/details?id=".concat(item._id._value) });
+
+    },
+    // 收藏
+    fabulous: function fabulous(e, val) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var db, params, paramsdz, pushdata, pushdatadz, count, collection, res, _collection, _res;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0: //e为每篇文章的对象,val为点赞还是收藏
+                db = uniCloud.database();
+                // 添加收藏数据
+                params = {
+                  like_id: e._id._value,
+                  state_type: 0 };
+
+                // 添加点赞数据
+                paramsdz = {
+                  like_id: e._id._value,
+                  state_type: 1 };
+
+                // 更新到本地收藏数据
+                pushdata = {
+                  like_id: e._id._value,
+                  state_type: 0,
+                  user_id: _this4.$store.state.user.info._id };
+
+                pushdatadz = {
+                  like_id: e._id._value,
+                  state_type: 1,
+                  user_id: _this4.$store.state.user.info._id };
+
+                count = 0;
+                // console.log('77',e)
+                if (!e._id.like.length) {_context5.next = 10;break;} //e._id.like为文章收藏人的数组
+                e._id.like.forEach( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(item, index) {var collection, res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:if (!(
+
+                            !val && item.user_id == _this4.$store.state.user.info._id && !item.state_type)) {_context4.next = 8;break;}_context4.next = 3;return (
+                              db.collection("like").where({ user_id: _this4.$store.state.user.info._id, like_id: e._id._value }).remove());case 3:
+                            uni.showToast({
+                              title: "取消收藏",
+                              icon: "none" });
+
+                            e.color = 0;
+                            e.numsc -= 1;
+                            e._id.like.splice(index, 1); //取消收藏后删除该人在文章点赞人的数据
+                            return _context4.abrupt("return");case 8:if (!(
+
+
+                            val && item.user_id == _this4.$store.state.user.info._id && item.state_type)) {_context4.next = 21;break;}_context4.next = 11;return (
+                              db.collection("like").where({ user_id: _this4.$store.state.user.info._id, like_id: e._id._value }).remove());case 11:
+
+                            uni.showToast({
+                              title: "取消点赞",
+                              icon: "none" });
+
+                            e.colordz = 0;
+                            e.numdz -= 1; //每篇文章点赞数
+                            console.log(e);
+                            e._id.like.splice(index, 1); //取消收藏后删除该人在文章点赞人的数据
+                            collection = db.collection("love");_context4.next = 19;return (
+                              collection.where({ _id: e._id._value }).
+                              update({
+                                fabulous: e.numdz }));case 19:res = _context4.sent;return _context4.abrupt("return");case 21:
+
+
+
+
+                            count += 1;case 22:case "end":return _context4.stop();}}}, _callee4);}));return function (_x, _x2) {return _ref.apply(this, arguments);};}());_context5.next = 30;break;case 10:if (
+
+                val) {_context5.next = 19;break;}_context5.next = 13;return (
+
+                  db.collection('like').add(params));case 13:
+                uni.showToast({
+                  title: "收藏成功",
+                  icon: "none" });
+
+                e.color = 1; //设置文章收藏按钮
+                e.numsc += 1;
+                e._id.like.push(pushdata); //添加到本地数组
+                _context5.next = 30;break;case 19:if (!
+                val) {_context5.next = 30;break;}_context5.next = 22;return (
+                  db.collection('like').add(paramsdz));case 22:
+
+                uni.showToast({
+                  title: "点赞成功",
+                  icon: "none" });
+
+                e.numdz += 1;
+
+                e.colordz = 1; //设置文章收藏按钮
+                e._id.like.push(pushdatadz); //添加到本地数组
+                collection = db.collection("love");_context5.next = 29;return (
+                  collection.where({ _id: e._id._value }).
+                  update({
+                    fabulous: e.numdz }));case 29:res = _context5.sent;case 30:if (!(
+
+
+
+
+                count >= e._id.like.length && !val)) {_context5.next = 37;break;}_context5.next = 33;return (
+                  db.collection('like').add(params));case 33:
+                uni.showToast({
+                  title: "收藏成功",
+                  icon: "none" });
+
+                e.color = 1;
+                e.numsc += 1;
+                e._id.like.push(pushdata);case 37:if (!(
+
+                count >= e._id.like.length && val)) {_context5.next = 48;break;}_context5.next = 40;return (
+                  db.collection('like').add(paramsdz));case 40:
+                uni.showToast({
+                  title: "点赞成功",
+                  icon: "none" });
+
+                e.colordz = 1;
+                e.numdz += 1;
+
+                e._id.like.push(pushdatadz);
+                _collection = db.collection("love");_context5.next = 47;return (
+                  _collection.where({ _id: e._id._value }) //更新点赞数
+                  .update({
+                    fabulous: e.numdz }));case 47:_res = _context5.sent;case 48:case "end":return _context5.stop();}}}, _callee5);}))();
+
+
+
+
+
+
+    },
+    // 获取收藏信息
+    getlike: function getlike(id) {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var db, res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                db = uniCloud.database();_context6.next = 3;return (
+                  db.collection('like').where({
+                    like_id: id }).
+                  get());case 3:res = _context6.sent;return _context6.abrupt("return",
+                res);case 5:case "end":return _context6.stop();}}}, _callee6);}))();
+
+    },
+    // 发布评论
+
+
+    //图片预览
+    look: function look(url) {
+      var urlList = [];
+      urlList.push(url); //push中的参数为 :src="item.img_url" 中的图片地址
+      uni.previewImage({
+        indicator: "number",
+        loop: true,
+        urls: urlList,
+        longPressActions: true });
+
+    },
+    //更新vuex里学校名字
+    school: function school(e) {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7() {var arr;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
+
+                _this5.$store.commit('user/SCHOOL', e[0].label);
+                _this5.SCHOOL = _this5.$store.state.user.school;_context7.next = 4;return (
+                  _this5.get());case 4:arr = _context7.sent;
+                _this5.databbai = arr;
+                console.log(arr);case 7:case "end":return _context7.stop();}}}, _callee7);}))();
+    },
+    get: function get() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8() {var db, dbCmd, res, SCHOOL, restext, data;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:
+                //获取notice滚动通知
+                db = uniCloud.database();
+                dbCmd = db.command;_context8.next = 4;return (
+                  db.collection('nocite').get());case 4:res = _context8.sent;
+                _this6.list = res.result.data[0].text;
+                // console.log(this.$store.state.user.school)
+                SCHOOL = _this6.$store.state.user.school;
+                // this.isshow=false
+                // 获取表白墙动态
+                if (!(_this6.current == 0)) {_context8.next = 13;break;}_context8.next = 10;return (
+
+                  db.collection("love,like,comments,uni-id-users").
+                  where(dbCmd.or({
+                    school: SCHOOL,
+                    isShow: 1 },
+                  {
+                    'user_id._id': _this6.$store.state.user.info._id ? _this6.$store.state.user.info._id : '',
+                    school: SCHOOL })).
+
+
+                  field('_id,time,school,address,isShow,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
+                  orderBy('time desc').
+                  skip((_this6.pages - 1) * 8).
+                  limit(8).
+                  get());case 10:restext = _context8.sent;_context8.next = 16;break;case 13:_context8.next = 15;return (
+
+                  db.collection("love,comments,uni-id-users,like").
+                  where(dbCmd.or({
+                    school: SCHOOL,
+                    isShow: 1,
+                    state: _this6.current },
+                  {
+                    'user_id._id': _this6.$store.state.user.info._id,
+                    school: SCHOOL,
+                    state: _this6.current })).
+
+
+                  field(
+                  '_id,time,school,statetext,address,isShow,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url').
+                  orderBy('time desc').
+                  skip((_this6.pages - 1) * 8).
+                  limit(8).
+                  get());case 15:restext = _context8.sent;case 16:
+
+                data = restext.result.data;
+                console.log(data);
+                // 将已经点赞的按钮颜色改为红色
+                data.forEach(function (item) {
+                  // 初始化点赞收藏按钮
+                  item.comments = 0;
+                  item.color = 0; //收藏是否为实心
+                  item.colordz = 0; //点赞按钮是否为实心
+                  item.numsc = 0; //初始化收藏人数
+                  item.numdz = 0; //初始化点赞人数
+                  item._id.like.forEach(function (itemchildren) {
+                    if (itemchildren.user_id == _this6.$store.state.user.info._id && !itemchildren.state_type) {
+                      item.color = 1; //将收藏按钮变为实心
+
+                      // return
+                    } else if (itemchildren.user_id == _this6.$store.state.user.info._id && itemchildren.state_type) {
+                      item.colordz = 1; //将点赞按钮变为实心
+
+                    }
+                    if (!itemchildren.state_type) {
+                      item.numsc += 1; //计算收藏人数
+                    } else if (itemchildren.state_type) {
+                      item.numdz += 1; //计算点赞人数
+                    }
+                  });
+                  item.comments = item._id.comments.length;
+                });
+                console.log('bbq', data);if (!(
+                data.length == 0)) {_context8.next = 26;break;}
+                _this6.buttomtitle = '我也是有底线的';
+                _this6.isshow = true;return _context8.abrupt("return",
+                []);case 26:
+
+                _this6.isshow = false;return _context8.abrupt("return",
+                data);case 28:case "end":return _context8.stop();}}}, _callee8);}))();
+
+    },
+    onPageScroll: function onPageScroll(e) {
+      this.scrollTop = e.scrollTop;
+    },
+    change: function change(index) {var _this7 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee9() {var arr;return _regenerator.default.wrap(function _callee9$(_context9) {while (1) {switch (_context9.prev = _context9.next) {case 0:
+                uni.showLoading({
+                  title: '加载中...' });
+
+                _this7.isshow = false;
+                _this7.databbai = [];
+                _this7.pages = 1;
+                _this7.current = index;_context9.next = 7;return (
+                  _this7.get());case 7:arr = _context9.sent;
+                _this7.databbai = arr;
+                uni.hideLoading();case 10:case "end":return _context9.stop();}}}, _callee9);}))();
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
+>>>>>>> school
 
 /***/ }),
 

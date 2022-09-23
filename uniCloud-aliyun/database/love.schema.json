@@ -39,10 +39,7 @@
 			// "defaultValue":
 		},
 		"collection":{  //收藏人数
-			"bsonType": "int",
-			// "defaultValue":{
-			// 	"collection":"0"
-			// }
+			"bsonType": "int"
 		},
 		"user_id":{  //用户id
 			"bsonType": "string",
@@ -53,6 +50,15 @@
 		},
 		"img_url":{
 			"bsonType": "array"
+		},
+		"address":{
+			"bsonType": "string"
+		},
+		"isShow":{
+			"bsonType": "int"
+		},
+		"watch":{
+			"bsonType": "int"
 		}
 	}
 }

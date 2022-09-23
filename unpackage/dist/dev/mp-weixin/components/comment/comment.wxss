@@ -46,7 +46,7 @@
   margin-top: 10rpx;
 }
 .comment-item-main.data-v-49203ec4 {
-  margin-bottom: 40rpx;
+  margin-bottom: 10rpx;
 }
 .comment-item-main .comment-item.data-v-49203ec4 {
   display: flex;

@@ -5,7 +5,7 @@
 			<view class="slot-wrap">
 				<view class="map-wrap" v-if="true" @tap="show = true">
 					<u-icon name="map" color="#ffffff" size="24"></u-icon>
-					<text class="map-wrap-text">{{$store.state.user.school}}</text>
+					<text class="map-wrap-text">{{SCHOOL}}</text>
 					<u-icon name="arrow-down-fill" color="#ffffff" size="22"></u-icon>
 				</view>
 			</view>
@@ -21,7 +21,7 @@
 			<u-notice-bar color='#D99D1F' bg-color='#F3EBD9' mode="horizontal" :list="list"></u-notice-bar>
 		</view>
 		<view>
-			<u-swiper :list="list1" border-radius='0rpx' height='350'></u-swiper>
+			<u-swiper :list="list1" border-radius='0rpx' height='300'></u-swiper>
 		</view>
 		<view class="nav">
 			<view class="navitem">
@@ -55,57 +55,43 @@
 			<!-- <u-sticky offset-top='231'> -->
 
 			<!-- <view class="sticky"> -->
-			<u-tabs :list="listtab" :is-scroll="true  " :current="current" @change="change"></u-tabs>
+			<u-tabs :list="listtab" :is-scroll="true" :current="current" @change="change"></u-tabs>
 			<!-- </view> -->
 			<!-- </u-sticky> -->
+
+
 		</view>
 		<!-- 表白墙 -->
-		<view v-for="item in databbai">
+		<view v-for="item in databbai" v-show='item.isShow || isShow_id==item.user_id[0]._id'>
 			<view class="textitem">
-				<view class="content" @tap='goxiangq(item)'>
-					<view>
-						<u-avatar  size='large'
-							:src="item.user_id[0].avatar_file ? item.user_id[0].avatar_file.url : '/static/uni-center/tx.jpg'"></u-avatar>
-					</view>
-					<view class="name">
-						<view style='display: flex; align-items: center;'>
-							<u-tag style='margin-right: 15rpx;height: 35rpx;' :text="item.statetext" :bg-color='color[item.state-1]' size='mini' mode="dark" />
-							<view style="">
-								{{item.user_id[0].nickname ? item.user_id[0].nickname : item.user_id[0].mobile}}
-							</view>
-						</view>
-						
-						<view style="font-size: 28rpx;color: #C6C8CB;">
-							{{$u.timeFrom(item.time, "yyyy-mm-dd hh:MM:ss")}}
-						</view>
-
-					</view>
-
-				</view>
+				<!-- 头像区域 -->
+				<view @tap='goxiangq(item)'><name :item='item' :isShow_id='isShow_id'></name></view>
 				<view class="text">
-					<view style="color: #606266;" @tap='goxiangq(item)'>
-						<u-parse :html="item.text"></u-parse>
+					<view style="color: #606266;font-size: 34rpx;" @tap='goxiangq(item)'>
+						<u-parse :html="item.text.replace(/\n/g,'<br>')"></u-parse>
 					</view>
 					<!-- 适配图片排列问题 -->
 					<view style="margin-top: 20rpx;">
-						<image   
-								:lazy-load='true' 
-								class='u-image' 
-								@tap='look(item.img_url[0].url)' 
-								:style="{'width':item.img_url[0].image.width*9/35+'rpx'}" 
+						<view @tap='goxiangq(item)'>
+							<image
+									:lazy-load='true' 
+									class='u-image' 
+									@tap.stop='look(item.img_url[0].url)' 
+									:style="{'width':item.img_url[0].image.width*9/35+'rpx'}" 
+									mode='widthFix' 
+									:src="item.img_url[0].url "
+									v-if="item.img_url.length==1 && item.img_url[0].image.width>900"
+								>
+							</image>
+							<image 
+								:lazy-load='true' class='u-image'  
+								@tap.stop='look(item.img_url[0].url)'
+								:style="{'width':item.img_url[0].image.width*9/12+'rpx'}" 
 								mode='widthFix' 
 								:src="item.img_url[0].url "
-								v-if="item.img_url.length==1 && item.img_url[0].image.width>900"
-							>
-						</image>
-						<image 
-							:lazy-load='true' class='u-image'  
-							@tap='look(item.img_url[0].url)'
-							:style="{'width':item.img_url[0].image.width*9/12+'rpx'}" 
-							mode='widthFix' 
-							:src="item.img_url[0].url "
-							v-if="item.img_url.length==1 && item.img_url[0].image.width<=900">
-						</image>
+								v-if="item.img_url.length==1 && item.img_url[0].image.width<=900">
+							</image>
+						</view>
 						<view>
 							<view v-if="item.img_url.length>=2 && item.img_url.length<=5 && item.img_url.length%2==0" class="image1">
 							
@@ -138,21 +124,26 @@
 						</view>
 					</view>
 				</view>
+				<!-- 地址 -->
+				<view class="address" v-if="item.address.length">
+					<u-icon name="map" color="#A5ACBD" size="26"></u-icon>
+					<view style="color: #A5ACBD;font-size: 26rpx;">{{item.address}}</view>
+				</view>
 				<view class="bot">
 					<view>
 						<!-- 点赞评论收藏 -->
-						<u-icon name="star-fill" color="#F3295C" :label='item.numsc'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
-						<u-icon name="star" color="#909399"  :label='item.numsc' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
+						<u-icon name="star-fill" color="#F3295C" :label='item.numsc?item.numsc:"收藏"'  v-if='item.color' size='40' @tap='fabulous(item,0)'></u-icon>
+						<u-icon name="star" color="#909399"  :label='item.numsc?item.numsc:"收藏"' v-else  size='40' @tap='fabulous(item,0)'></u-icon>
 					</view>
 					<view>
-						<u-icon name="chat" size='40' label="0" color='#909399' ></u-icon>
-						
+						<u-icon name="chat" size='40' :label="item.comments?item.comments:'评论'" @tap='goxiangq(item)' color='#909399' ></u-icon>
 					</view>
 					<view>
-						<u-icon name="thumb-up-fill" :label='item.numdz' size='40' v-if='item.colordz'  color='#F3295C' @tap='fabulous(item,1)'></u-icon>
-						<u-icon name="thumb-up" size='40' :label='item.numdz' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon>
+						<u-icon name="thumb-up-fill" :label='item.numdz?item.numdz:"点赞"' size='40' v-if='item.colordz'  color='#F3295C' @tap='fabulous(item,1)'></u-icon>
+						<u-icon name="thumb-up" size='40' :label='item.numdz?item.numdz:"点赞"' v-else  color='#909399' @tap='fabulous(item,1)'></u-icon>
 					</view>
 				</view>
+				
 			</view>
 			<!-- 动态之间分割线 -->
 			<view style="background-color: #f3f4f6;width: 100%;height: 8rpx;margin-top: -60rpx;">
@@ -167,7 +158,7 @@
 	</view>
 </template>
 <script>
-	
+	import name from '@/components/name/name.vue'
 	export default {
 		data() {
 			return {
@@ -195,9 +186,10 @@
 								value:4
 						}
 						],
-				color:['#F0C461','#AF58F2','#F270D0','#4FDC46'],
 				keyword: '',
+				SCHOOL:'贵州师范大学',
 				list: [],
+				isShow_id:this.$store.state.user.info._id,
 				list1: [{
 						image: 'https://cdn.uviewui.com/uview/swiper/1.jpg',
 						title: '昨夜星辰昨夜风，画楼西畔桂堂东'
@@ -236,20 +228,25 @@
 				textid:'',
 				type:1,
 				
-				
 			}
 		},
-		
+		components:{
+		name	
+		},
 		async onLoad() {
 			// const comments=uniCloud.importObject('comments')
 			// const a=await comments.comment()
 			// console.log('a',a)
+			// const db = uniCloud.database();
+			// const res=await db.collection("love").remove()
+			console.log(this.$store.state.user)
 			const arr=await this.get()
 			this.databbai=arr
 			console.log(this.databbai)
+			console.log(this.isShow_id)
 		},
 		async onPullDownRefresh() {
-			this.pages=this.pages+1
+			this.pages=1
 			const arr =await this.get()
 			if(arr.length!=0){
 				this.databbai=arr
@@ -263,7 +260,7 @@
 		},
 		async onReachBottom() {
 			this.isshow=true
-			this.buttomtitle='加载中...'
+			this.buttomtitle='玩命加载中...'
 			this.pages=this.pages+1
 			const arr=await this.get()
 			this.databbai=[...this.databbai,...arr]
@@ -316,7 +313,8 @@
 						if(!val && item.user_id==this.$store.state.user.info._id && !item.state_type){
 							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
 							uni.showToast({
-								title:"取消收藏"
+								title:"取消收藏",
+								icon:"none"
 							})
 							e.color=0
 							e.numsc-=1
@@ -328,11 +326,11 @@
 							await db.collection("like").where({user_id:this.$store.state.user.info._id,like_id:e._id._value}).remove()
 							
 							uni.showToast({
-								title:"取消点赞"
+								title:"取消点赞",
+								icon:"none"
 							})
 							e.colordz=0
 							e.numdz-=1 //每篇文章点赞数
-							// e.color
 							console.log(e)
 							e._id.like.splice(index,1)  //取消收藏后删除该人在文章点赞人的数据
 							let collection = db.collection("love")
@@ -349,7 +347,8 @@
 					
 					await db.collection('like').add(params)
 					uni.showToast({
-						title:"收藏成功"
+						title:"收藏成功",
+						icon:"none"
 					})
 					e.color=1 //设置文章收藏按钮
 					e.numsc+=1
@@ -359,7 +358,8 @@
 					await db.collection('like').add(paramsdz)
 					
 					uni.showToast({
-						title:"点赞成功"
+						title:"点赞成功",
+						icon:"none"
 					})
 					e.numdz+=1
 					
@@ -376,7 +376,8 @@
 				if(count>=e._id.like.length && !val){
 					await db.collection('like').add(params)
 					uni.showToast({
-						title:"收藏成功"
+						title:"收藏成功",
+						icon:"none"
 					})
 					e.color=1
 					e.numsc+=1
@@ -385,7 +386,8 @@
 				if(count>=e._id.like.length && val){
 					await db.collection('like').add(paramsdz)
 					uni.showToast({
-						title:"点赞成功"
+						title:"点赞成功",
+						icon:"none"
 					})
 					e.colordz=1
 					e.numdz+=1
@@ -412,6 +414,8 @@
 				// console.log(res)
 			},
 			// 发布评论
+			
+			
 			//图片预览
 			look(url) {
 				var urlList = []
@@ -427,14 +431,15 @@
 			async school(e){
 					
 					this.$store.commit('user/SCHOOL',e[0].label)
-					
-					const arr=await this.get(0)
+					this.SCHOOL=this.$store.state.user.school
+					const arr=await this.get()
 					this.databbai=arr
 					console.log(arr)
 			},
 			async get(){
 				//获取notice滚动通知
 				const db = uniCloud.database()
+				const dbCmd = db.command
 				const res = await db.collection('nocite').get()
 				this.list = res.result.data[0].text
 				// console.log(this.$store.state.user.school)
@@ -443,28 +448,45 @@
 				// 获取表白墙动态
 				if(this.current==0){
 					// console.log('S',SCHOOL.toString())
-					var restext = await db.collection("love,like,uni-id-users")
-								.where({school:SCHOOL})
-								.field('_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+					var restext = await db.collection("love,like,comments,uni-id-users")
+								.where(dbCmd.or({
+									school:SCHOOL,
+									isShow:1
+								},{
+									'user_id._id':this.$store.state.user.info._id?this.$store.state.user.info._id:'',
+									school:SCHOOL
+								})
+								)
+								.field('_id,time,school,address,isShow,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 								.orderBy('time desc')
 								.skip((this.pages-1)*8)
 								.limit(8)
 								.get()
 				}else{
-					var restext = await db.collection("love,uni-id-users,like")
-								.where({state:this.current,school:SCHOOL})
+					var restext = await db.collection("love,comments,uni-id-users,like")
+								.where(dbCmd.or({
+									school:SCHOOL,
+									isShow:1,
+									state:this.current
+								},{
+									'user_id._id':this.$store.state.user.info._id,
+									school:SCHOOL,
+									state:this.current
+								}
+								))
 								.field(
-								'_id,time,school,statetext,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
+								'_id,time,school,statetext,address,isShow,state,img_url,fabulous,text,collection,user_id._id,user_id.mobile,user_id.nickname,user_id.avatar_file.url')
 								.orderBy('time desc')
 								.skip((this.pages-1)*8)
 								.limit(8)
 								.get()
 				}
 				let data = restext.result.data
-				
+				console.log(data)
 				// 将已经点赞的按钮颜色改为红色
 				data.forEach((item)=>{
 					// 初始化点赞收藏按钮
+					item.comments=0
 					item.color=0 //收藏是否为实心
 					item.colordz=0//点赞按钮是否为实心
 					item.numsc=0//初始化收藏人数
@@ -484,6 +506,7 @@
 							item.numdz+=1//计算点赞人数
 						}
 					})
+					item.comments=item._id.comments.length
 				})
 				console.log('bbq',data)
 				if(data.length==0){
@@ -516,6 +539,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.address{
+		display: flex;
+	}
 	.u-image {
 		max-width: 80vw;
 		max-height: 800rpx;
@@ -543,17 +569,6 @@
 		margin-top: 20rpx;
 	}
 
-	.content {
-		display: flex;
-
-		// padding: 20rpx;
-		.name {
-			display: flex;
-			margin-left: 20rpx;
-			flex-direction: column;
-			justify-content: space-around;
-		}
-	}
 
 	.search {
 		background-color: #1CBBB4;
