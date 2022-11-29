@@ -21,3 +21,6 @@
 - JQL
 - javascript
  
+### 访问次数
+
+![]( https://visitor-badge.glitch.me/badge?page_id=<huanglongguischool>)
